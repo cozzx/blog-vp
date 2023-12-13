@@ -12,17 +12,23 @@ hero:
   actions:
     - theme: brand
       text: Start
-      link: /linux/index
+      link: /posts/index
     - theme: alt
-      text: About me
-      link: /code/index
+      text: Toolbox
+      link: /toolbox/read
 
 features:
-  - title: 🥝 Linux Command
-    details: Linux command query
-  - title: 🍅 Code Assistant
+  - title: 📕 Experience Summary
+    details: Summarize experience in development
+  - title: 📑 Code Assistant
     details: Programming language wiki
-  - title: 🥕 Project
+  - title: 🔨 Toolbox
+    details: Tool library for development
+  - title: 📚 Linux Command
+    details: Linux command query
+  - title: 🖌 Code Practice
+    details: Coding practice ground
+  - title: 💰 Project
     details: Project summary case
 ---
 

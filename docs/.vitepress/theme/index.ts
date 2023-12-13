@@ -4,7 +4,7 @@ import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
 
-// import Posts from './components/Posts.vue';
+import Posts from './components/Posts.vue';
 
 export default {
   extends: DefaultTheme,
@@ -14,6 +14,6 @@ export default {
     })
   },
   enhanceApp({ app, router, siteData }) {
-    // app.component('Posts', Posts);
+    app.component('Posts', Posts);
   }
 } satisfies Theme

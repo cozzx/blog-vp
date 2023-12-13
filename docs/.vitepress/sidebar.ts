@@ -15,7 +15,7 @@ const isDirectory = (path) => fs.lstatSync(path).isDirectory()
 const intersections = (arr1, arr2) => Array.from(new Set(arr1.filter((item) => !new Set(arr2).has(item))))
 
 // 把方法导出直接使用
-function getList(params, path1, pathname) {
+function getList(params, path1, pathname, isFilename) {
     // 存放结果
     const res = []
     // 开始遍历params
@@ -29,27 +29,49 @@ function getList(params, path1, pathname) {
             const files = fs.readdirSync(dir)
             res.push({
                 text: params[file],
-                collapsible: true,
-                items: getList(files, dir, `${pathname}/${params[file]}`),
+                collapsible: false,
+                items: getList(files, dir, `${pathname}/${params[file]}`, isFilename),
             })
         } else {
             // 获取名字
-            const name = path.basename(params[file])
+            const filename = path.basename(params[file]).slice(0, -3)
+            const title = isFilename ? filename : get_title(`${pathname}/${params[file]}`)
             // 排除非 md 文件
             const suffix = path.extname(params[file])
             if (suffix !== '.md') {
                 continue
             }
+            
             res.push({
-                text: name.slice(0, -3),
-                link: `${pathname}/${name}`,
+                text: title,
+                link: `${pathname}/${filename}`,
             })
         }
     }
     return res
 }
 
-export const set_sidebar = (pathname) => {
+// 获取文件内容中的title
+function get_title(file: string): string {
+    try {
+        const filepath = path.join(DIR_PATH, "docs", file)
+        const fileContent = fs.readFileSync(filepath, 'utf8');
+        const lines = fileContent.split('\n');
+        const count = Math.min(5, fileContent.split('\n').length);
+    
+        for (let i = 0; i < count; i++) {
+          const line = lines[i].trim();
+          if (line.startsWith('title:')) {
+            return line.substr(line.indexOf('title:') + 6).trim();
+          }
+        }
+      } catch (error) {
+        console.error(error);
+      }
+      return ''
+}
+
+export const set_sidebar = (pathname: string, isFilename: boolean = true) => {
     // 获取pathname的路径
     const dirPath = path.join(DIR_PATH, "docs", pathname)
     // 读取pathname下的所有文件或者文件夹
@@ -57,5 +79,5 @@ export const set_sidebar = (pathname) => {
     // 过滤掉
     const items = intersections(files, WHITE_LIST)
     // getList 函数后面会讲到
-    return getList(items, dirPath, pathname)
+    return getList(items, dirPath, pathname, isFilename)
 }

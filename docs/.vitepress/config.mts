@@ -26,7 +26,10 @@ export default defineConfig({
   },
   themeConfig: {
     siteTitle: "AR",
-    logo: "img/ar.logo.svg",
+    logo: "/img/ar.logo.svg",
+    search: {
+      provider: 'local'
+    },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/posts/index' },
@@ -58,25 +61,39 @@ export default defineConfig({
           }
         ]
       },
-      { text: 'Toolbox', link: '/toolbox' },
+      { text: 'Toolbox', link: '/toolbox/read' },
     ],
 
     sidebar: {
-      '/ex': [
+      '/posts': [
+        { text: '✨ 阅读须知', link: '/posts/read' },
         {
-          text: 'Examples',
-          items: [
-            { text: 'Markdown Examples', link: '/ex/markdown-examples' },
-            { text: 'Runtime API Examples', link: '/ex/api-examples' }
-          ]
+          text: '📕 开发笔记',
+          items: set_sidebar('/posts/code', false)
+        },
+        {
+          text: '🖥 macos笔记',
+          items: set_sidebar('/posts/mac', false)
         }
       ],
+      '/ex': set_sidebar('/ex'),
       '/command/linux': set_sidebar('/command/linux'),
       '/command/mac': set_sidebar('/command/mac'),
       '/command/win': set_sidebar('/command/win'),
       '/code/java': set_sidebar('/code/java'),
       '/code/py': set_sidebar('/code/py'),
       '/code/go': set_sidebar('/code/go'),
+      '/toolbox': [
+        { text: '✨ 阅读须知', link: '/toolbox/read' },
+        {
+          text: '⏱ 时间工具',
+          items: set_sidebar('/toolbox/time')
+        },
+        {
+          text: '🕹 网络工具',
+          items: set_sidebar('/toolbox/net')
+        }
+      ],
     },
 
      //上下篇文本
