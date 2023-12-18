@@ -24,8 +24,8 @@ features:
     details: Programming language wiki
   - title: 🔨 Toolbox
     details: Tool library for development
-  - title: 📚 Linux Command
-    details: Linux command query
+  - title: 📚 Command
+    details: system and software commands query
   - title: 🖌 Code Practice
     details: Coding practice ground
   - title: 💰 Project
