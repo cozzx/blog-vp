@@ -6,5 +6,7 @@ COPY . /app/
 RUN npm install pnpm -g
 RUN pnpm install
 
-EXPOSE 8080
-CMD ["pnpm", "run" "docs:dev"]
+EXPOSE 5173
+
+ENTRYPOINT ["pnpm", "run" "docs:dev"]
+
