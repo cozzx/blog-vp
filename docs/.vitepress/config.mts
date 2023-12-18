@@ -33,7 +33,7 @@ export default defineConfig({
     outline: 'deep',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/posts/index' },
+      { text: 'Mode', link: '/posts/index' },
       { text: 'Examples', link: '/ex/markdown-examples' },
       { 
         text: 'Command',
