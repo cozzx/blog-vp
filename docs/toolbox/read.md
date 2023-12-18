@@ -8,13 +8,8 @@ AR Code 的内容是免费开源的，但也希望各位遵循开源精神，不
 
 > Give a ⭐️ if this project helped you!
 
-[https://github.com/cozzx/blog-vp](https://github.com/cozzx/blog-vp) 
-
 ::: info 附：
 
-- [关于 AR Code](/arcode)
-
-- [学习圈子](/arcode)
 :::
 
 ## 📓 内容

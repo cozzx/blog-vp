@@ -1,6 +1,8 @@
 {
   "devDependencies": {
-    "vitepress": "1.0.0-rc.31"
+    "unocss": "^0.58.0",
+    "vitepress": "1.0.0-rc.31",
+    "vue": "^3.3.11"
   },
   "scripts": {
     "docs:dev": "vitepress dev docs",

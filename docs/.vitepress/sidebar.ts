@@ -27,11 +27,15 @@ function getList(params, path1, pathname, isFilename) {
         if (isDir) {
             // 如果是文件夹,读取之后作为下一次递归参数
             const files = fs.readdirSync(dir)
-            res.push({
+            const itemList = getList(files, dir, `${pathname}/${params[file]}`, isFilename)
+            if (itemList.length > 0) {
+              res.push({
                 text: params[file],
-                collapsible: false,
-                items: getList(files, dir, `${pathname}/${params[file]}`, isFilename),
-            })
+                collapsible: true,
+                collapsed: true,
+                items: itemList,
+              })
+            }
         } else {
             // 获取名字
             const filename = path.basename(params[file]).slice(0, -3)
@@ -63,6 +67,8 @@ function get_title(file: string): string {
           const line = lines[i].trim();
           if (line.startsWith('title:')) {
             return line.substr(line.indexOf('title:') + 6).trim();
+          } else if (line.startsWith('# ')) {
+            return line.substr(line.indexOf('# ') + 2).trim();
           }
         }
       } catch (error) {

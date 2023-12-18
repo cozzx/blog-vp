@@ -70,7 +70,7 @@ service tftp
 }
 ```
 
-说明：修改项`server_args= -s <path> -c`，其中<path>处可以改为你的tftp-server的根目录，参数-s指定chroot，-c指定了可以创建文件。
+说明：修改项`server_args= -s <path> -c`，其中`<path>`处可以改为你的tftp-server的根目录，参数-s指定chroot，-c指定了可以创建文件。
 
  **3、启动tftp服务器并关闭防火墙** 
 

@@ -30,6 +30,7 @@ export default defineConfig({
     search: {
       provider: 'local'
     },
+    outline: 'deep',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/posts/index' },
@@ -45,8 +46,8 @@ export default defineConfig({
       { 
         text: 'Code',
         items: [
-          { text: 'java', link: '/code/java/' },
-          { text: 'python', link: '/code/py/' },
+          { text: 'java', link: '/code/java/basic/01_var.md' },
+          { text: 'python', link: '/code/py/1_basic' },
           { text: 'golang', link: '/code/go/' },
           {
             items: [
@@ -80,8 +81,21 @@ export default defineConfig({
       '/command/linux': set_sidebar('/command/linux'),
       '/command/mac': set_sidebar('/command/mac'),
       '/command/win': set_sidebar('/command/win'),
-      '/code/java': set_sidebar('/code/java'),
-      '/code/py': set_sidebar('/code/py'),
+      '/code/java': [
+        {
+          text: 'java 基础', 
+          items: set_sidebar('/code/java/basic', false)
+        },
+        {
+          text: 'java web',
+          items: set_sidebar('/code/java//web')
+        },
+        {
+          text: 'java 高级',
+          items: set_sidebar('/code/java/adv')
+        }
+      ],
+      '/code/py': set_sidebar('/code/py', false),
       '/code/go': set_sidebar('/code/go'),
       '/toolbox': [
         { text: '✨ 阅读须知', link: '/toolbox/read' },
@@ -100,7 +114,7 @@ export default defineConfig({
     docFooter: {
       prev: '上一篇',
       next: '下一篇',
-  },
+    },
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/cozzx' },
