@@ -1,4 +1,7 @@
 {
+  "name": "docs",
+  "version": "0.0.1",
+  "packageManager": "pnpm@8.6.3",
   "devDependencies": {
     "unocss": "^0.58.0",
     "vitepress": "1.0.0-rc.31",
