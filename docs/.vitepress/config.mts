@@ -90,10 +90,10 @@ export default defineConfig({
           text: 'java web',
           items: set_sidebar('/code/java//web')
         },
-        {
-          text: 'java 高级',
-          items: set_sidebar('/code/java/adv')
-        }
+        // {
+        //   text: 'java 高级',
+        //   items: set_sidebar('/code/java/adv')
+        // }
       ],
       '/code/py': set_sidebar('/code/py', false),
       '/code/go': set_sidebar('/code/go'),
