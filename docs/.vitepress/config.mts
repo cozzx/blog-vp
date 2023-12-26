@@ -6,7 +6,7 @@ const mode = process.argv[process.argv.length - 1]
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "AR Doc",
-  base: "/",
+  base: '/blog-vp/',
   description: "A Technology Sharing Site",
     locales: {
       root: {
