@@ -83,17 +83,17 @@ export default defineConfig({
       '/command/win': set_sidebar('/command/win'),
       '/code/java': [
         {
-          text: 'java 基础', 
+          text: '🍎 java 基础', 
           items: set_sidebar('/code/java/basic', false)
         },
         {
-          text: 'java web',
-          items: set_sidebar('/code/java//web')
+          text: '🍟 java web',
+          items: set_sidebar('/code/java/web', false)
         },
-        // {
-        //   text: 'java 高级',
-        //   items: set_sidebar('/code/java/adv')
-        // }
+        {
+          text: '🍔 JVM',
+          items: set_sidebar('/code/java/jvm', false)
+        }
       ],
       '/code/py': set_sidebar('/code/py', false),
       '/code/go': set_sidebar('/code/go'),
@@ -117,7 +117,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/cozzx' },
+      { icon: 'github', link: 'https://github.com/cozzx/blog-vp' },
       // { icon: 'twitter', link: 'https://github.com/cozzx' },
       // { icon: 'discord', link: 'https://github.com/cozzx' },
       // { icon: 'facebook', link: 'https://github.com/cozzx' },

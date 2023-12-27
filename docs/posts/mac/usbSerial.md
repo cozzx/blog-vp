@@ -9,7 +9,7 @@ tags:
 
 # mac使用iterm连接串口
 
-下载驱动：https://plugable.com/pages/prolific-drivers
+下载驱动：<https://plugable.com/pages/prolific-drivers>
 
 选择端口：/dev/tty.usbserial-A10M6I2G
 
