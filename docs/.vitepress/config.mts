@@ -33,8 +33,8 @@ export default defineConfig({
     outline: 'deep',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Mode', link: '/posts/index' },
-      { text: 'Examples', link: '/ex/markdown-examples' },
+      { text: 'Posts', link: '/posts/index' },
+      { text: 'Interview', link: '/interview/read' },
       { 
         text: 'Command',
         items: [
@@ -46,7 +46,7 @@ export default defineConfig({
       { 
         text: 'Code',
         items: [
-          { text: 'java', link: '/code/java/basic/01_var.md' },
+          { text: 'java', link: '/code/java/basic/01_var' },
           { text: 'python', link: '/code/py/1_basic' },
           { text: 'golang', link: '/code/go/' },
           {
@@ -69,6 +69,10 @@ export default defineConfig({
       '/posts': [
         { text: '✨ 阅读须知', link: '/posts/read' },
         {
+          text: '🏭 模型',
+          items: set_sidebar('/posts/mode', false)
+        },
+        {
           text: '📕 开发笔记',
           items: set_sidebar('/posts/code', false)
         },
@@ -77,7 +81,7 @@ export default defineConfig({
           items: set_sidebar('/posts/mac', false)
         }
       ],
-      '/ex': set_sidebar('/ex'),
+      '/interview': set_sidebar('/interview', false),
       '/command/linux': set_sidebar('/command/linux'),
       '/command/mac': set_sidebar('/command/mac'),
       '/command/win': set_sidebar('/command/win'),
