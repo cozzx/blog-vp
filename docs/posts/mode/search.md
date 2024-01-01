@@ -121,7 +121,7 @@ tags:
 7. 测网速 [fast.com](https://fast.com/)
 8. 检测陌生链接安全性 [virustotal.com](https://www.virustotal.com/gui/home/upload)
 9. 生成不存在人像 [thispersondoesnotexist.com](https://thispersondoesnotexist.com/)
-10. 造词网站 [litscape.com](www.litscape.com/word_tools/)
+10. 造词网站 [litscape.com](https://www.litscape.com/word_tools)
 11. 给末来自己写信 [futureme.org](https://www.futureme.org/)
 
 #### 生产力软件和插件
