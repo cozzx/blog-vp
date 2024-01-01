@@ -483,7 +483,7 @@ System.out.println(classLoader);
 
 执行结果：
 
-![bootstrap_classloader_2](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/bootstrap_classloader_2.png)
+![bootstrap_classloader_2](./images/bootstrap_classloader_2.png)
 
 ### 扩展类加载器
 
@@ -958,7 +958,7 @@ JDK1.0 中如此严格的安全机制也给程序的功能扩展带来障碍，�
 
 ![jdk9_classloader](./images/jdk9_classloader.png)
 
-​	如果有程序直接依赖了这种继承关系，或者依赖了 URLClassLoader 类的特定方法，那代码很可能会在 JDK9 及更高版本的 JDK 中崩溃。
+​ 如果有程序直接依赖了这种继承关系，或者依赖了 URLClassLoader 类的特定方法，那代码很可能会在 JDK9 及更高版本的 JDK 中崩溃。
 
 3. 在 JDK9 中，类加载器有了名称。该名称在构造方法中指定，可以通过 getName() 方法来获取。平台类加载器的名称是 platform，应用类加载器的名称是 app。类加载器的名称在调试与类加载器相关的问题时会非常有用。
 4. 启动类加载器现在是在 jvm 内部和 java 类库共同协作实现的类加载器（以前是C++实现），但为了与之前代码兼容，在获取启动类加载器的场景中仍然会返回 null，而不会得到 BootClassLoader实例。
@@ -990,4 +990,3 @@ public class ClassLoaderTest {
     }
 }
 ```
-
