@@ -513,7 +513,7 @@ System.out.print1n(classLoader1); //sun.misc. Launcher$ExtCLassLoader@1540e19d
 
 **执行结果：**
 
-![ext_classloader_1](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/ext_classloader_1.png)
+![ext_classloader_1](./images/ext_classloader_1.png)
 
 ### 系统类加载器
 
