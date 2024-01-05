@@ -72,7 +72,7 @@ tags:
 
 ### 视频
 
-搜索关键词：`bestsitesforfreestockvideos`
+关键词：`best sites for free stock videos`
 
 常用网站：[pexels](https://www.pexels.com/), [pixabay](https://pixabay.com/), [youtube](https://www.youtube.com)
 
@@ -86,7 +86,7 @@ tags:
 
 ### 音频
 
-搜索关键词: `royaltyfreeBGMsites`
+关键词: `best sites for free BGM` `royalty free BGM sites`
 
 常用网站: [pixabay](https://pixabay.com/)
 
@@ -96,15 +96,19 @@ tags:
 
 1. 谷歌通过语法 `imagesize` 搜图片
 
-2. 复制网址到下载器 `gettyimagesdownloader`
+2. 复制网址到下载器 `gettyimages downloader`
+
+常用网站: [gettyimages](https://www.gettyimages.co.jp/)
 
 #### GIF动图
 
-搜索关键词 `bestgifsites`
+搜索关键词 `best gif sites`
+
+常用网站: [giphy](https://giphy.com/)
 
 #### icon图标
 
-搜索关键词 `iconfiletype:PNG`
+搜索关键词 `{SEARCH} icon filetype:PNG`
 
 常用网站: [iconion.com](https://iconion.com/)
 
@@ -115,7 +119,7 @@ tags:
 1. 设计网站 [canva.com](https://www.canva.com)
 2. 在线抠图 [remove.bg](https://www.remove.bg)
 3. 文字转语音 [腾讯智影](https://zenvideo.qq.com/) [Azure](https://azure.microsoft.com/en-us)
-4. 画胶图 [miro](https://miro.com/) [canva](https://www.canva.com)
+4. 画脑图 [miro](https://miro.com/) [canva](https://www.canva.com)
 5. 找台词 [找台词网](https://zhaotaici.cn/)
 6. 在线剪辑视频 [Clipchamp](https://clipchamp.com/en/) [FLexclip](https://www.flexclip.com/)
 7. 测网速 [fast.com](https://fast.com/)
@@ -126,7 +130,7 @@ tags:
 
 #### 生产力软件和插件
 
-1. 谷歌、youtube搜: `2023bestAPPs` `Top10bestMacAPPsproductivity` `bestchormeplugin`
+1. 谷歌、youtube搜: `2023 best APPs` `Top10 best Mac APPs productivity` `best chrome plugin`
 2. 找替代软件: [alternativeto.net](https://alternativeto.net)
 3. 插件商店
-4. 插件搜索: `bestchormeextensionproductivity`
+4. 插件搜索: `best chrome extension productivity`
