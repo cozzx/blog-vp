@@ -48,7 +48,7 @@ export default defineConfig({
         items: [
           { text: 'java', link: '/code/java/basic/01_var' },
           { text: 'python', link: '/code/py/1_basic' },
-          { text: 'golang', link: '/code/go/' },
+          { text: 'golang', link: '/code/go/basic/01_datatypes' },
           {
             items: [
               { text: 'mysql', link: '/code/mysql/' },
@@ -100,7 +100,12 @@ export default defineConfig({
         }
       ],
       '/code/py': set_sidebar('/code/py', false),
-      '/code/go': set_sidebar('/code/go'),
+      '/code/go': [
+        {
+          text: '🪤 golang 基础', 
+          items: set_sidebar('/code/go/basic', false)
+        },
+      ],
       '/toolbox': [
         { text: '✨ 阅读须知', link: '/toolbox/read' },
         {

@@ -36,7 +36,7 @@ Java 代码编译是由 Java 源码编译器（前端编译器）来完成，流
 
 Java 字节码的执行是由 JVM 执行引擎（后端编译器）来完成，流程图 如下所示
 
-![compile2](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/compile2.png)
+![compile2](./images/compile2.png)
 
 ### 解释器与 JIT 编译器
 
