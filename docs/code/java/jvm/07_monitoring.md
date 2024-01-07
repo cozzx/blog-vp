@@ -18,9 +18,9 @@ Java 作为最流行的编程语言之一，其应用性能诊断一直受到业
 
 我们进入到安装 jdk 的 bin 目录，发现还有一系列辅助工具。这些辅助工具用来获取目标 JVM 不同方面、不同层次的信息，帮助开发人员很好地解决 Java 应用程序的一些疑难杂症。
 
-![command_line_tools](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/command_line_tools.png)
+![command_line_tools](./images/command_line_tools.png)
 
-![command_line_tools2](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/command_line_tools2.png)
+![command_line_tools2](./images/command_line_tools2.png)
 
 官方源码地址：[http://hg.openjdk.java.net/jdk/jdk11/file/1ddf9a99e4ad/src/jdk.jcmd/share/classes/sun/tools](http://hg.openjdk.java.net/jdk/jdk11/file/1ddf9a99e4ad/src/jdk.jcmd/share/classes/sun/tools)
 
@@ -65,7 +65,7 @@ jstat（JVM Statistics Monitoring Tool）：用于监视虚拟机各种运行状
 
 其中 vmid 是进程 id 号，也就是 jps 之后看到的前面的号码，如下：
 
-![command_jps](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/command_jps.png)
+![command_jps](./images/command_jps.png)
 
 **option 参数**
 
@@ -95,55 +95,55 @@ jstat（JVM Statistics Monitoring Tool）：用于监视虚拟机各种运行状
 
 **jstat -class**
 
-![command_jstat](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/command_jstat.png)
+![command_jstat](./images/command_jstat.png)
 
 **jstat -compiler**
 
-![command_jstat2](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/command_jstat2.png)
+![command_jstat2](./images/command_jstat2.png)
 
 **jstat -printcompilation**
 
-![command_jstat3](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/command_jstat3.png)
+![command_jstat3](./images/command_jstat3.png)
 
 **jstat -gc**
 
-![command_jstat4](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/command_jstat4.png)
+![command_jstat4](./images/command_jstat4.png)
 
 **jstat -gccapacity**
 
-![command_jstat5](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/command_jstat5.png)
+![command_jstat5](./images/command_jstat5.png)
 
 **jstat -gcutil**
 
-![command_jstat6](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/command_jstat6.png)
+![command_jstat6](./images/command_jstat6.png)
 
 **jstat -gccause**
 
-![command_jstat8](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/command_jstat8.png)
+![command_jstat8](./images/command_jstat8.png)
 
 **jstat -gcnew**
 
-![command_jstat9](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/command_jstat9.png)
+![command_jstat9](./images/command_jstat9.png)
 
 **jstat -gcnewcapacity**
 
-![command_jstat10](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/command_jstat10.png)
+![command_jstat10](./images/command_jstat10.png)
 
 **jstat -gcold**
 
-![command_jstat11](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/command_jstat11.png)
+![command_jstat11](./images/command_jstat11.png)
 
 **jstat -gcoldcapacity**
 
-![command_jstat12](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/command_jstat12.png)
+![command_jstat12](./images/command_jstat12.png)
 
 **jstat -t**
 
-![command_jstat13](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/command_jstat13.png)
+![command_jstat13](./images/command_jstat13.png)
 
 **jstat -t -h**
 
-![command_jstat14](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/command_jstat14.png)
+![command_jstat14](./images/command_jstat14.png)
 
 | 表头 | 含义（字节）                                      |
 | :--- | :------------------------------------------------ |
@@ -372,7 +372,7 @@ jcmd 拥有 jmap 的大部分功能，并且在 Oracle 的官方网站上也推�
 
 **jcmd 进程号 help：**针对指定的进程，列出支持的所有具体命令
 
-![command_jcmd](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/command_jcmd.png)
+![command_jcmd](./images/command_jcmd.png)
 
 **jcmd 进程号 具体命令：**显示指定进程的指令命令的数据
 
@@ -388,7 +388,7 @@ jcmd 拥有 jmap 的大部分功能，并且在 Oracle 的官方网站上也推�
 
 之前的指令只涉及到监控本机的 Java 应用程序，而在这些工具中，一些监控工具也支持对远程计算机的监控（如 jps、jstat）。为了启用远程监控，则需要配合使用 jstatd 工具。命令 jstatd 是一个 RMI 服务端程序，它的作用相当于代理服务器，建立本地计算机与远程监控工具的通信。jstatd 服务器将本机的 Java 应用程序信息传递到远程计算机。
 
-![command_jstatd](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/command_jstatd.png)
+![command_jstatd](./images/command_jstatd.png)
 
 ## JVM 监控及诊断工具-GUI 篇
 
@@ -422,15 +422,15 @@ jconsole：从 Java5 开始，在 JDK 中自带的 java 监控和管理控制台
 
 官方地址：[https://docs.oracle.com/javase/7/docs/technotes/guides/management/jconsole.html](https://docs.oracle.com/javase/7/docs/technotes/guides/management/jconsole.html)
 
-![tools_jconsole](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jconsole.png)
+![tools_jconsole](./images/tools_jconsole.png)
 
-![tools_jconsole2](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jconsole2.png)
+![tools_jconsole2](./images/tools_jconsole2.png)
 
-![tools_jconsole3](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jconsole3.png)
+![tools_jconsole3](./images/tools_jconsole3.png)
 
-![tools_jconsole4](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jconsole4.png)
+![tools_jconsole4](./images/tools_jconsole4.png)
 
-![tools_jconsole5](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jconsole5.png)
+![tools_jconsole5](./images/tools_jconsole5.png)
 
 ### Visual VM
 
@@ -446,11 +446,11 @@ Visual VM 是一个功能强大的多合一故障诊断和性能监控的可视�
 
 官方地址：[https://visualvm.github.io/index.html](https://visualvm.github.io/index.html)
 
-![tools_visualvm](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_visualvm.png)
+![tools_visualvm](./images/tools_visualvm.png)
 
-![tools_visualvm2](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_visualvm2.png)
+![tools_visualvm2](./images/tools_visualvm2.png)
 
-![tools_visualvm3](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_visualvm3.png)
+![tools_visualvm3](./images/tools_visualvm3.png)
 
 ### Eclipse MAT
 
@@ -469,13 +469,13 @@ MAT 不是一个万能工具，它并不能处理所有类型的堆存储文件�
 
 官方地址： [https://www.eclipse.org/mat/downloads.php](https://www.eclipse.org/mat/downloads.php)
 
-![tools_eclipsemat](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_eclipsemat.png)
+![tools_eclipsemat](./images/tools_eclipsemat.png)
 
-![tools_eclipsemat2](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_eclipsemat2.png)
+![tools_eclipsemat2](./images/tools_eclipsemat2.png)
 
-![tools_eclipsemat3](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_eclipsemat3.png)
+![tools_eclipsemat3](./images/tools_eclipsemat3.png)
 
-![tools_eclipsemat4](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_eclipsemat4.png)
+![tools_eclipsemat4](./images/tools_eclipsemat4.png)
 
 ### JProfiler
 
@@ -518,19 +518,19 @@ JProfier 数据采集方式分为两种：Sampling（样本采集）和 Instrume
 
 **遥感监测 Telemetries**
 
-![tools_jprofiler](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jprofiler.png)
+![tools_jprofiler](./images/tools_jprofiler.png)
 
-![tools_jprofiler2](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jprofiler2.png)
+![tools_jprofiler2](./images/tools_jprofiler2.png)
 
-![tools_jprofiler3](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jprofiler3.png)
+![tools_jprofiler3](./images/tools_jprofiler3.png)
 
-![tools_jprofiler4](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jprofiler4.png)
+![tools_jprofiler4](./images/tools_jprofiler4.png)
 
-![tools_jprofiler5](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jprofiler5.png)
+![tools_jprofiler5](./images/tools_jprofiler5.png)
 
-![tools_jprofiler6](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jprofiler6.png)
+![tools_jprofiler6](./images/tools_jprofiler6.png)
 
-![tools_jprofiler7](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jprofiler7.png)
+![tools_jprofiler7](./images/tools_jprofiler7.png)
 
 **内存视图 Live Memory**
 
@@ -542,15 +542,15 @@ Live memory 内存剖析：class／class instance 的相关信息。例如对象
 - **分配热点 Allocation Hot Spots**：显示一个列表，包括方法、类、包或分配已选类的 J2EE 组件。你可以标注当前值并且显示差异值。对于每个热点都可以显示它的跟踪记录树。
 - **类追踪器 Class Tracker**：类跟踪视图可以包含任意数量的图表，显示选定的类和包的实例与时间。
 
-![tools_jprofiler8](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jprofiler8.png)
+![tools_jprofiler8](./images/tools_jprofiler8.png)
 
-![tools_jprofiler9](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jprofiler9.png)
+![tools_jprofiler9](./images/tools_jprofiler9.png)
 
 **堆遍历 heap walker**
 
-![tools_jprofiler10](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jprofiler10.png)
+![tools_jprofiler10](./images/tools_jprofiler10.png)
 
-![tools_jprofiler11](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jprofiler11.png)
+![tools_jprofiler11](./images/tools_jprofiler11.png)
 
 **cpu 视图 cpu views**
 
@@ -561,9 +561,9 @@ JProfiler 提供不同的方法来记录访问树以优化性能和细节。线�
 - **访问图 Call Graph**：显示一个从已选方法、类、包或 J2EE 组件开始的访问队列的图。
 - **方法统计 Method Statistis**：显示一段时间内记录的方法的调用时间细节。
 
-![tools_jprofiler12](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jprofiler12.png)
+![tools_jprofiler12](./images/tools_jprofiler12.png)
 
-![tools_jprofiler13](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jprofiler13.png)
+![tools_jprofiler13](./images/tools_jprofiler13.png)
 
 **线程视图 threads**
 
@@ -579,7 +579,7 @@ JProfiler 通过对线程历史的监控判断其运行状态，并监控是否�
 - 2．线程阻塞
 - 3．线程死锁
 
-![tools_jprofiler14](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jprofiler14.png)
+![tools_jprofiler14](./images/tools_jprofiler14.png)
 
 **监控和锁 Monitors ＆Locks**
 
@@ -727,7 +727,7 @@ JMC 的另一个优点就是：采用取样，而不是传统的代码植入技�
 
 官方地址：[https://github.com/JDKMissionControl/jmc](https://github.com/JDKMissionControl/jmc)
 
-![tools_jmc](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jmc.png)
+![tools_jmc](./images/tools_jmc.png)
 
 **Java Flight Recorder**
 
@@ -747,19 +747,19 @@ Java Flight Recorder 和 JDK Mission Control 共同创建了一个完整的工�
 
 取样事件的其中一个常见例子便是方法抽样（Method Sampling），即每隔一段时问统计各个线程的栈轨迹。如果在这些抽样取得的栈轨迹中存在一个反复出现的方法，那么我们可以推测该方法是热点方法
 
-![tools_jmc2](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jmc2.png)
+![tools_jmc2](./images/tools_jmc2.png)
 
-![tools_jmc3](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jmc3.png)
+![tools_jmc3](./images/tools_jmc3.png)
 
-![tools_jmc4](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jmc4.png)
+![tools_jmc4](./images/tools_jmc4.png)
 
-![tools_jmc5](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jmc5.png)
+![tools_jmc5](./images/tools_jmc5.png)
 
-![tools_jmc6](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jmc6.png)
+![tools_jmc6](./images/tools_jmc6.png)
 
-![tools_jmc7](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jmc7.png)
+![tools_jmc7](./images/tools_jmc7.png)
 
-![tools_jmc8](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_jmc8.png)
+![tools_jmc8](./images/tools_jmc8.png)
 
 ### 其他工具
 
@@ -769,7 +769,7 @@ Java Flight Recorder 和 JDK Mission Control 共同创建了一个完整的工�
 
 网上的关于 Java 火焰图的讲解大部分来自于 Brenden Gregg 的博客 [http://new.brendangregg.com/flamegraphs.html](http://new.brendangregg.com/flamegraphs.html)
 
-![tools_flamegraphs](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_flamegraphs.png)
+![tools_flamegraphs](./images/tools_flamegraphs.png)
 
 火焰图，简单通过 x 轴横条宽度来度量时间指标，y 轴代表线程栈的层次。
 
@@ -792,7 +792,7 @@ Java Flight Recorder 和 JDK Mission Control 共同创建了一个完整的工�
 
 BTrace 是 SUN Kenai 云计算开发平台下的一个开源项目，旨在为 java 提供安全可靠的动态跟踪分析工具。先看一卜日 Trace 的官方定义：
 
-![tools_btrace](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/tools_btrace.png)
+![tools_btrace](./images/tools_btrace.png)
 
 大概意思是一个 Java 平台的安全的动态追踪工具，可以用来动态地追踪一个运行的 Java 程序。BTrace 动态调整目标应用程序的类以注入跟踪代码（“字节码跟踪“）。
 
@@ -1027,7 +1027,7 @@ jinfo -flag <name>=<value> <pid>
 - 绿色虚线表示在 jdk14 时被 Deprecate
 - 绿色虚框表示在 jdk9 时被 Deprecate，jdk14 时被删除
 
-![gc_composition](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/gc_composition.png)
+![gc_composition](./images/gc_composition.png)
 
 ```shell
 # Serial回收器
@@ -1128,7 +1128,7 @@ $$
 -Xloggc:<file> 输出GC导指定路径下的文件中
 ```
 
-![gc_printheap](/Users/zhangtao/Code/JS/blog-vp/docs/code/java/jvm/images/gc_printheap.png)
+![gc_printheap](./images/gc_printheap.png)
 
 ```shell
 -XX:+TraceClassLoading  监控类的加载
