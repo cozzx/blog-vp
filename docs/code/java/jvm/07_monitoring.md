@@ -318,7 +318,7 @@ jmap（JVM Memory Map）：作用一方面是获取 dump 文件（堆转储快�
 
 jhat(JVM Heap Analysis Tool)：Sun JDK 提供的 jhat 命令与 jmap 命令搭配使用，用于分析 jmap 生成的 heap dump 文件（堆转储快照）。jhat 内置了一个微型的 HTTP/HTML 服务器，生成 dump 文件的分析结果后，用户可以在浏览器中查看分析结果（分析虚拟机转储快照信息）。
 
-使用了 jhat 命令，就启动了一个 http 服务，端口是 7000，即 <http://localhost:7000/，就可以在浏览器里分析。>
+使用了 jhat 命令，就启动了一个 http 服务，端口是 7000。
 
 说明：jhat 命令在 JDK9、JDK10 中已经被删除，官方建议用 VisualVM 代替。
 
