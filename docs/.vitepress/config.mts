@@ -46,18 +46,19 @@ export default defineConfig({
       { 
         text: 'Code',
         items: [
-          { text: 'java', link: '/code/java/basic/01_var' },
-          { text: 'python', link: '/code/py/1_basic' },
-          { text: 'golang', link: '/code/go/basic/01_datatypes' },
+          { text: 'Java', link: '/code/java/basic/01_var' },
+          { text: 'Python', link: '/code/py/1_basic' },
+          { text: 'Golang', link: '/code/go/basic/01_var' },
+          // {
+          //   items: [
+          //     { text: 'MySQL', link: '/code/mysql/' },
+          //     { text: 'MongoDB', link: '/code/mongodb/' },
+          //     { text: 'Nginx', link: '/code/nginx/' },
+          //   ]
+          // },
           {
             items: [
-              { text: 'mysql', link: '/code/mysql/' },
-              { text: 'mongodb', link: '/code/mongodb/' },
-            ]
-          },
-          {
-            items: [
-              { text: 'nginx', link: '/code/mysql/' }
+              { text: 'other', link: '/code/other/' }
             ]
           }
         ]
@@ -91,12 +92,16 @@ export default defineConfig({
           items: set_sidebar('/code/java/basic', false)
         },
         {
-          text: '🍟 java web',
+          text: '🧀 java web',
           items: set_sidebar('/code/java/web', false)
         },
         {
           text: '🍔 JVM',
           items: set_sidebar('/code/java/jvm', false)
+        },
+        {
+          text: '🍟 JUC',
+          items: set_sidebar('/code/java/juc', false)
         }
       ],
       '/code/py': set_sidebar('/code/py', false),
@@ -106,6 +111,7 @@ export default defineConfig({
           items: set_sidebar('/code/go/basic', false)
         },
       ],
+      '/code/other': set_sidebar('/code/other', false),
       '/toolbox': [
         { text: '✨ 阅读须知', link: '/toolbox/read' },
         {

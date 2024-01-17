@@ -1,10 +1,10 @@
 ---
 title: 搜索引擎
-description: 。
+description: 搜索引擎的使用。
 date: 2023-12-31
 tags:
-  - mode
-  - learn
+  - search
+  - chrome
 ---
 
 # 搜索
@@ -20,7 +20,6 @@ tags:
 ### 限定标题
 
 `intitle:{SEARCH}`
-
 
 搜索标题中包含关键词的记录
 

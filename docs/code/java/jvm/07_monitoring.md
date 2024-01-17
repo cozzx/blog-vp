@@ -1,4 +1,4 @@
-# JVM 性能监控
+# 性能监控
 
 ## JVM 监控及诊断工具-命令行篇
 
@@ -297,7 +297,7 @@ jmap（JVM Memory Map）：作用一方面是获取 dump 文件（堆转储快�
 | -dump           | 生成 dump 文件（Java 堆转储快照），-dump:live 只保存堆中的存活对象 |
 | -heap           | 输出整个堆空间的详细信息，包括 GC 的使用、堆配置信息，以及内存的使用信息等 |
 | -histo          | 输出堆空间中对象的统计信息，包括类、实例数量和合计容量，-histo:live 只统计堆中的存活对象 |
-| -J &lt;flag&gt; | 传递参数给 jmap 启动的 jvm                                   |
+| `-J <flag>` | 传递参数给 jmap 启动的 jvm                                   |
 | -finalizerinfo  | 显示在 F-Queue 中等待 Finalizer 线程执行 finalize 方法的对象，仅 linux/solaris 平台有效 |
 | -permstat       | 以 ClassLoader 为统计口径输出永久代的内存状态信息，仅 linux/solaris 平台有效 |
 | -F              | 当虚拟机进程对-dump 选项没有任何响应时，强制执行生成 dump 文件，仅 linux/solaris 平台有效 |
@@ -322,7 +322,7 @@ jhat(JVM Heap Analysis Tool)：Sun JDK 提供的 jhat 命令与 jmap 命令搭�
 
 说明：jhat 命令在 JDK9、JDK10 中已经被删除，官方建议用 VisualVM 代替。
 
-基本适用语法：jhat &lt;option&gt; &lt;dumpfile&gt;
+基本适用语法：`jhat <option> <dumpfile>`
 
 | option 参数            | 作用                                      |
 | :--------------------- | :---------------------------------------- |
@@ -333,7 +333,7 @@ jhat(JVM Heap Analysis Tool)：Sun JDK 提供的 jhat 命令与 jmap 命令搭�
 | -baseline exclude-file | 指定一个基准堆转储                        |
 | -debug int             | 设置 debug 级别                           |
 | -version               | 启动后显示版本信息就退出                  |
-| -J &lt;flag&gt;        | 传入启动参数，比如-J-Xmx512m              |
+| `-J <flag>`        | 传入启动参数，比如-J-Xmx512m              |
 
 ### jstack：打印 JVM 中线程快照
 
