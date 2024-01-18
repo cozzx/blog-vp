@@ -156,7 +156,30 @@ volatile 变量的符合操作不具有原子性
 
 - 作为一个布尔状态标志，用于指示发生了一个重要的一次性事件，例如完成初始化或任务结束
 
-  ![juc_volatile_usage1](./images/juc_volatile_usage1.png)
+  ```java
+  private volatile boolean enable = true;
+  
+  @Test
+  public void test() {
+    Thread t1 = new Thread(() -> {
+      try {
+        Thread.sleep(1000);
+      } catch (InterruptedException e) {
+        throw new RuntimeException(e);
+      }
+      enable = false;
+    }, "t1");
+    t1.start();
+  
+    long i = 0;
+    while (enable) {
+      i++;
+    }
+    System.out.println(STR."i = \{i}");
+  }
+  ```
+  
+  
 
 开销较低的读，写锁策略
 
@@ -164,23 +187,79 @@ volatile 变量的符合操作不具有原子性
 
 - 原理是：利用 volatile 保证读操作的可见性，利用 synchronized 保证符合操作的原子性
 
-  ![juc_volatile_usage2](./images/juc_volatile_usage2.png)
+  ```java
+  /**
+       * 读写策略
+       */
+      private volatile int value;
+  
+      public int getValue() {
+          // 利用 volatile 保证读取操作的可见性
+          return value;
+      }
+  
+      public synchronized int increment() {
+          // 利用 synchronized 保证复合操作的原子性
+          return value++;
+      }
+  ```
 
 DCL双端锁的发布
 
 - 问题描述：首先设定一个加锁的单例模式场景
 
-  ![juc_volatile_usage3](./images/juc_volatile_usage3.png)
+  ```java
+  public class SafeDoubleCheckSingleton {
+    private static SafeDoubleCheckSingleton singleton;
+    private SafeDoubleCheckSingleton() {
+    }
+    // 双重锁设计
+    public static SafeDoubleCheckSingleton getInstance() {
+      if (singleton == null) {
+        // 多线程并发创建对象时,会通过加锁保证只有一个线程能够创造对象
+        synchronized (SafeDoubleCheckSingleton.class) {
+          if (singleton == null) {
+            // 隐患: 多线程环境下, 由于重排序, 该对象可能还未完成初始化就被其他线程读取
+            singleton = new SafeDoubleCheckSingleton();
+          }
+        }
+      }
+      return singleton;
+    }
+  }
+  ```
 
-- 在单线程环境下（或者说正常情况下），在“问题代码处”，会执行以下操作，保证能获取到已完成初始化的实例：
+- 在单线程环境下（或者说正常情况下），在“隐患处”，会执行以下操作，保证能获取到已完成初始化的实例：
 
   ![juc_volatile_usage4](./images/juc_volatile_usage4.png)
 
-- 隐患：在多线程环境下，在“问题代码处”，会执行以下操作，由于重排序导致2，3乱序，后果就是其他线程得到的是null而不是完成初始化的对象，其中第3步中实例化分多步执行（分配内存空间、初始化对象、将对象指向分配的内存空间），某些编译器为了性能原因，会将第二步和第三步重排序，这样某个线程肯能会获得一个未完全初始化的实例：
+- 在多线程环境下，在“隐患处”，会执行以下操作，由于重排序导致2，3乱序，后果就是其他线程得到的是null而不是完成初始化的对象，其中第3步中实例化分多步执行（分配内存空间、初始化对象、将对象指向分配的内存空间），某些编译器为了性能原因，会将第二步和第三步重排序，这样某个线程肯能会获得一个未完全初始化的实例：
 
   ![juc_volatile_usage5](./images/juc_volatile_usage5.png)
 
 - 多线程下的解决方案：加 volatile 修饰
 
-  ![juc_volatile_usage6](./images/juc_volatile_usage6.png)
+  ```java
+  public class SafeDoubleCheckSingleton {
+    private static volatile SafeDoubleCheckSingleton singleton;
+    private SafeDoubleCheckSingleton() {
+    }
+    // 双重锁设计
+    public static SafeDoubleCheckSingleton getInstance() {
+      if (singleton == null) {
+        // 多线程并发创建对象时,会通过加锁保证只有一个线程能够创造对象
+        synchronized (SafeDoubleCheckSingleton.class) {
+          if (singleton == null) {
+            // 隐患: 多线程环境下, 由于重排序, 该对象可能还未完成初始化就被其他线程读取
+            // 解决原理: 利用 volatile, 禁止 "初始化对象" 和 "设置 singleton 指向内存空间" 的重排序
+            singleton = new SafeDoubleCheckSingleton();
+          }
+        }
+      }
+      return singleton;
+    }
+  }
+  ```
+  
+  
 
