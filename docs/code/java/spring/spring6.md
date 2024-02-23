@@ -1018,13 +1018,13 @@ public void setHobbies(String[]hobbies){
 ```java
 private List<Student> students;
 
-public List<Student> getStudents(){
-        return students;
-        }
+public List<Student> getStudents() {
+    return students;
+}
 
-public void setStudents(List<Student> students){
-        this.students=students;
-        }
+public void setStudents(List<Student> students) {
+    this.students = students;
+}
 ```
 
 配置bean：
