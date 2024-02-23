@@ -88,7 +88,7 @@ public class HelloController {
 
 导入相关的场景，拥有相关的功能。场景启动器
 
-默认支持的所有场景：https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using.build-systems.starters
+默认支持的所有场景：<https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using.build-systems.starters>
 
 - 官方提供的场景：命名为：`spring-boot-starter-*`
 - 第三方提供场景：命名为：`*-spring-boot-starter`
@@ -106,7 +106,7 @@ public class HelloController {
 - 集中式管理配置。只需要修改这个文件就行 。
 - 配置基本都有默认值
 
-能写的所有配置都在： https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#appendix.application-properties
+能写的所有配置都在： <https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#appendix.application-properties>
 
 #### 1.2.4、简化部署
 
@@ -158,10 +158,10 @@ linux服务器上有java环境。
 ##### 1.3.2.1、初步理解
 
 - **自动配置**的 Tomcat、SpringMVC 等
-    - **导入场景**，容器中就会自动配置好这个场景的核心组件。
-    - 以前：DispatcherServlet、ViewResolver、CharacterEncodingFilter....
-    - 现在：自动配置好的这些组件
-    - 验证：**容器中有了什么组件，就具有什么功能**
+  - **导入场景**，容器中就会自动配置好这个场景的核心组件。
+  - 以前：DispatcherServlet、ViewResolver、CharacterEncodingFilter....
+  - 现在：自动配置好的这些组件
+  - 验证：**容器中有了什么组件，就具有什么功能**
 
 ```java
 public static void main(String[]args){
@@ -179,14 +179,13 @@ public static void main(String[]args){
 ```
 
 - **默认的包扫描规则**
-    - `@SpringBootApplication` 标注的类就是主程序类
-    - **SpringBoot 只会扫描主程序所在的包及其下面的子包，自动的 component-scan 功能**
-    - 自定义扫描路径：`@SpringBootApplication(scanBasePackages = "com.zt")`、`@ComponentScan("com.zt")`
-
+  - `@SpringBootApplication` 标注的类就是主程序类
+  - **SpringBoot 只会扫描主程序所在的包及其下面的子包，自动的 component-scan 功能**
+  - 自定义扫描路径：`@SpringBootApplication(scanBasePackages = "com.zt")`、`@ComponentScan("com.zt")`
 
 - **配置默认值**
 
-    - **配置文件**的所有配置项是和某个**类的对象**值进行一一绑定的。
+  - **配置文件**的所有配置项是和某个**类的对象**值进行一一绑定的。
 
       绑定了配置文件中每一项值的类： **属性类**。
 
@@ -194,13 +193,12 @@ public static void main(String[]args){
 
       参照[官方文档](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#appendix.application-properties.server)，或者参照绑定的属性类。
 
-
 - 按需加载自动配置
-    - 导入场景 `spring-boot-starter-web`。
-    - 场景启动器除了会导入相关功能依赖，还导入一个 `spring-boot-starter`，是所有 `starter` 的 `starter`，基础核心 starter。
-    - `spring-boot-starter` 导入了一个包 `spring-boot-autoconfigure`。包里面都是各种场景的 `AutoConfiguration` **自动配置类。
+  - 导入场景 `spring-boot-starter-web`。
+  - 场景启动器除了会导入相关功能依赖，还导入一个 `spring-boot-starter`，是所有 `starter` 的 `starter`，基础核心 starter。
+  - `spring-boot-starter` 导入了一个包 `spring-boot-autoconfigure`。包里面都是各种场景的 `AutoConfiguration` **自动配置类。
       **
-    - 虽然全场景的自动配置都在 `spring-boot-autoconfigure` 这个包，但是不是全都开启的。导入哪个场景就开启哪个自动配置。
+  - 虽然全场景的自动配置都在 `spring-boot-autoconfigure` 这个包，但是不是全都开启的。导入哪个场景就开启哪个自动配置。
 
 总结： 导入场景启动器、触发 `spring-boot-autoconfigure` 这个包的自动配置生效、容器中就会具有相关场景的功能。
 
@@ -223,7 +221,7 @@ public static void main(String[]args){
     4. `spring-boot-autoconfigure` 里面囊括了所有场景的所有配置。
     5. 只要这个包下的所有类都能生效，那么相当于 SpringBoot 官方写好的整合功能就生效了。
     6. SpringBoot 默认扫描不到 `spring-boot-autoconfigure` 下写好的所有**配置类**。（这些**配置类**给我们做了整合操作），**默认只扫描主程序所在的包**。
-    
+
 2. **主程序**：`@SpringBootApplication`
     1. `@SpringBootApplication` 由三个注解组成 `@SpringBootConfiguration`、`@EnableAutoConfiguratio`、`@ComponentScan`。
     2. SpringBoot 默认只能扫描自己主程序所在的包及其下面的子包，扫描不到 `spring-boot-autoconfigure` 包中官方写好的**配置类**。
@@ -234,7 +232,7 @@ public static void main(String[]args){
           下 `META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports` 文件指定的。
         - 项目启动的时候利用 @Import 批量导入组件机制把 `autoconfigure` 包下的142 `xxxxAutoConfiguration`类导入进来（**自动配置类**）。
         - 虽然导入了152个自动配置类，并不是都能生效，每一个自动配置类，都有条件注解 `@ConditionalOnxxx`，只有条件成立，才能生效。
-    
+
 3. `xxxxAutoConfiguratio`**自动配置类**
     1. 给容器中使用 @Bean 放一堆组件。
     2. 每个**自动配置类**都可能有这个注解 `@EnableConfigurationProperties(ServerProperties.class)`，用来把配置文件中配的指定前缀的属性值封装到 `xxxProperties` **属性类**中。
@@ -269,38 +267,33 @@ public static void main(String[]args){
 实践：
 
 - 选场景，导入到项目
-    - 官方：starter
-    - 第三方：去仓库搜
-
+  - 官方：starter
+  - 第三方：去仓库搜
 
 - 写配置，改配置文件关键项
-    - 数据库参数（连接地址、账号密码...）
-
+  - 数据库参数（连接地址、账号密码...）
 
 - 分析这个场景给我们导入了**哪些能用的组件**
-    - **自动装配**这些组件进行后续使用。
-    - 不满意boot提供的自动配好的默认组件，**定制化**，改配置、自定义组件。
+  - **自动装配**这些组件进行后续使用。
+  - 不满意boot提供的自动配好的默认组件，**定制化**，改配置、自定义组件。
 
 整合redis：
 
-- [选场景](https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using.build-systems.starters)：`spring-boot-starter-data-redis `
-    - 场景 AutoConfiguration 就是这个场景的自动配置类
-
+- [选场景](https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using.build-systems.starters)：`spring-boot-starter-data-redis`
+  - 场景 AutoConfiguration 就是这个场景的自动配置类
 
 - 写配置：
-    - 分析到这个场景的自动配置类开启了哪些属性绑定关系
-    - `@EnableConfigurationProperties(RedisProperties.class)`
-    - 修改redis相关的配置
-
+  - 分析到这个场景的自动配置类开启了哪些属性绑定关系
+  - `@EnableConfigurationProperties(RedisProperties.class)`
+  - 修改redis相关的配置
 
 - 分析组件：
-    - 分析到 `RedisAutoConfiguration`  给容器中放了 `StringRedisTemplate`
-    - 给业务代码中自动装配 `StringRedisTemplate`
-
+  - 分析到 `RedisAutoConfiguration`  给容器中放了 `StringRedisTemplate`
+  - 给业务代码中自动装配 `StringRedisTemplate`
 
 - 定制化
-    - 修改配置文件
-    - 自定义组件，自己给容器中放一个 `StringRedisTemplate`
+  - 修改配置文件
+  - 自定义组件，自己给容器中放一个 `StringRedisTemplate`
 
 ### 1.4、核心技能
 
@@ -501,16 +494,15 @@ person:
 
 - birthDay 推荐写为 birth-day
 - **文本**：
-    - **单引号**不会转义【\n 则为普通字符串显示】
-    - **双引号**会转义【\n会显示为**换行符**】
-
+  - **单引号**不会转义【\n 则为普通字符串显示】
+  - **双引号**会转义【\n会显示为**换行符**】
 
 - **大文本**
-    - `|`开头，大文本写在下层，**保留文本格式**，**换行符正确显示**
-    - `>`开头，大文本写在下层，折叠换行符
+  - `|`开头，大文本写在下层，**保留文本格式**，**换行符正确显示**
+  - `>`开头，大文本写在下层，折叠换行符
 
 - **多文档合并**
-    - 使用`---`可以把多个yaml文档合并在一个文档中，每个文档区依然认为内容独立
+  - 使用`---`可以把多个yaml文档合并在一个文档中，每个文档区依然认为内容独立
 
 ##### 1.4.2.4、lombok
 
@@ -524,7 +516,7 @@ person:
 </dependency>
 ```
 
-使用 `@Data `等注解。
+使用 `@Data`等注解。
 
 #### 1.4.3、日志配置
 
@@ -582,19 +574,19 @@ person:
 
 - 由低到高：`ALL, TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF`；
 
-    - **只会打印指定级别及以上级别的日志**
-        - ALL：打印所有日志
-    - TRACE：追踪框架详细流程日志，一般不使用
-    - DEBUG：开发调试细节日志
-    - INFO：关键、感兴趣信息日志
-    - WARN：警告但不是错误的信息日志，比如：版本过时
-    - ERROR：业务错误日志，比如出现各种异常
-    - FATAL：致命错误日志，比如jvm系统崩溃
-    - OFF：关闭所有日志记录
+  - **只会打印指定级别及以上级别的日志**
+    - ALL：打印所有日志
+  - TRACE：追踪框架详细流程日志，一般不使用
+  - DEBUG：开发调试细节日志
+  - INFO：关键、感兴趣信息日志
+  - WARN：警告但不是错误的信息日志，比如：版本过时
+  - ERROR：业务错误日志，比如出现各种异常
+  - FATAL：致命错误日志，比如jvm系统崩溃
+  - OFF：关闭所有日志记录
 
 - 不指定级别的所有类，都使用 root 指定的级别作为默认级别
 - SpringBoot 日志**默认级别是** **INFO**
-- 在application.properties/yaml中配置logging.level.<logger-name>=<level>指定日志级别
+- 在application.properties/yaml中配置logging.level.`<logger-name>`=`<level>`指定日志级别
 - level可取值范围：`TRACE, DEBUG, INFO, WARN, ERROR, FATAL, or OFF`，定义在 `LogLevel`类中
 - root 的logger-name叫root，可以配置logging.level.root=warn，代表所有未指定日志级别都使用 root 的 warn 级别
 
@@ -696,7 +688,7 @@ log4j2 支持 yaml 和 json 格式的配置文件
 1. 导入任何第三方框架，先排除它的日志包，因为Boot底层控制好了日志
 2. 修改 `application.properties`
    配置文件，就可以调整日志的所有行为。如果不够，可以编写日志框架自己的配置文件放在类路径下就行，比如`logback-spring.xml`，`log4j2-spring.xml`
-3. 如需对接**专业日志系统**，也只需要把 logback 记录的**日志**灌倒 **kafka **之类的中间件，这和 SpringBoot 没关系，都是日志框架自己的配置，**修改配置文件即可**
+3. 如需对接**专业日志系统**，也只需要把 logback 记录的**日志**灌倒 **kafka**之类的中间件，这和 SpringBoot 没关系，都是日志框架自己的配置，**修改配置文件即可**
 4. **业务中使用 slf4j-api 记录日志。不要再 sout 了**
 
 ## 2、web开发
@@ -1152,7 +1144,7 @@ public String hello(HttpServletRequest request,@PathVariable("p1") String path){
 
     1. 引入支持写入xml内容依赖
 
-       ```java 
+       ```java
        <dependency>
          <groupId>com.fasterxml.jackson.dataformat</groupId>
          <artifactId>jackson-dataformat-xml</artifactId>
@@ -1556,7 +1548,7 @@ th:switch
 
 #### 2.6.7、行内写法
 
-```
+```html
 [[...]] or [(...)]
 <p>Hello, [[${session.user.name}]]!</p>
 ```
@@ -1635,7 +1627,7 @@ java代码的修改，如果`devtools`热启动了，可能会引起一些bug，
     2. `messages_zh_CN.properties`：中文环境
     3. `messages_en_US.properties`：英语环境
 3. 在**程序中**可以自动注入 `MessageSource` 组件，获取国际化的配置项值
-4. 在**页面中**可以使用表达式 ` #{}` 获取国际化的配置项值
+4. 在**页面中**可以使用表达式 `#{}` 获取国际化的配置项值
 
 ```java
 /**
@@ -1828,9 +1820,9 @@ SpringBoot 默认嵌入 Tomcat 作为 Servlet 容器。
 @ConditionalOnWebApplication(type = Type.SERVLET)
 @EnableConfigurationProperties(ServerProperties.class)
 @Import({ ServletWebServerFactoryAutoConfiguration.BeanPostProcessorsRegistrar.class,
-		ServletWebServerFactoryConfiguration.EmbeddedTomcat.class,
-		ServletWebServerFactoryConfiguration.EmbeddedJetty.class,
-		ServletWebServerFactoryConfiguration.EmbeddedUndertow.class })
+  ServletWebServerFactoryConfiguration.EmbeddedTomcat.class,
+  ServletWebServerFactoryConfiguration.EmbeddedJetty.class,
+  ServletWebServerFactoryConfiguration.EmbeddedUndertow.class })
 public class ServletWebServerFactoryAutoConfiguration {
     
 }
@@ -1850,16 +1842,16 @@ public class ServletWebServerFactoryAutoConfiguration {
 7. `refresh()` 容器刷新 十二大步的刷新子容器会调用 `onRefresh()`；
 
 ```java
-	@Override
-	protected void onRefresh() {
-		super.onRefresh();
-		try {
-			createWebServer();
-		}
-		catch (Throwable ex) {
-			throw new ApplicationContextException("Unable to start web server", ex);
-		}
-	}
+ @Override
+ protected void onRefresh() {
+  super.onRefresh();
+  try {
+   createWebServer();
+  }
+  catch (Throwable ex) {
+   throw new ApplicationContextException("Unable to start web server", ex);
+  }
+ }
 ```
 
 Web场景的Spring容器启动，在onRefresh的时候，会调用创建web服务器的方法。
@@ -1966,9 +1958,9 @@ WebMvcConfigurer 定义SpringMVC底层组件的功能类
 | configurePathMatch                 | PathMatchConfigurer                   | **路径匹配**：自定义 URL 路径匹配。可以自动为所有路径加上指定前缀，比如 /api | 无                                                           |
 | configureAsyncSupport              | AsyncSupportConfigurer                | **异步支持**：                                               | TaskExecutionAutoConfiguration                               |
 | addCorsMappings                    | CorsRegistry                          | **跨域**：                                                   | 无                                                           |
-| addArgumentResolvers               | List<HandlerMethodArgumentResolver>   | **参数解析器**：                                             | mvc 默认提供                                                 |
-| addReturnValueHandlers             | List<HandlerMethodReturnValueHandler> | **返回值解析器**：                                           | mvc 默认提供                                                 |
-| configureHandlerExceptionResolvers | List<HandlerExceptionResolver>        | **异常处理器**：                                             | 默认 3 个 ExceptionHandlerExceptionResolver ResponseStatusExceptionResolver DefaultHandlerExceptionResolver |
+| addArgumentResolvers               | `List<HandlerMethodArgumentResolver>`   | **参数解析器**：                                             | mvc 默认提供                                                 |
+| addReturnValueHandlers             | `List<HandlerMethodReturnValueHandler>` | **返回值解析器**：                                           | mvc 默认提供                                                 |
+| configureHandlerExceptionResolvers | `List<HandlerExceptionResolver>`        | **异常处理器**：                                             | 默认 3 个 ExceptionHandlerExceptionResolver ResponseStatusExceptionResolver DefaultHandlerExceptionResolver |
 | getMessageCodesResolver            | 无                                    | **消息码解析器**：国际化使用                                 | 无                                                           |
 
 ### 2.11、最佳实践
@@ -1994,7 +1986,7 @@ SpringBoot 已经默认配置好了**Web开发**场景常用功能。我们直�
 
 #### 2.12.1、Problemdetails
 
-RFC 7807: https://www.rfc-editor.org/rfc/rfc7807
+RFC 7807: <https://www.rfc-editor.org/rfc/rfc7807>
 
 **错误信息**返回新格式
 
@@ -2450,7 +2442,7 @@ Spring Boot 允许将配置外部化，以便可以在不同的环境中使用�
 9. ServletConfig 初始化参数
 10. SPRING\_APPLICATION\_JSON属性（内置在环境变量或系统属性中的 JSON）
 11. 命令行参数
-12. 测试属性。(@SpringBootTest进行测试时指定的属性) 
+12. 测试属性。(@SpringBootTest进行测试时指定的属性)
 13. 测试类@TestPropertySource注解
 14. Devtools 设置的全局属性。($HOME/.config/spring-boot)
 
@@ -2458,7 +2450,7 @@ Spring Boot 允许将配置外部化，以便可以在不同的环境中使用�
 >
 > 命令行 > 配置文件 > springapplication配置
 
-配置文件优先级如下：(后面覆盖前面) 
+配置文件优先级如下：(后面覆盖前面)
 
 1. jar 包内的application.properties/yml
 2. jar 包内的application-{profile}.properties/yml
@@ -2503,7 +2495,7 @@ SpringBoot 应用启动时会自动寻找application.properties和application.ya
 - 命令行 > 所有
 - 包外 > 包内
 - config目录 > 根目录
-- profile > application 
+- profile > application
 - properties > yaml
 
 配置不同就都生效（互补），配置相同高优先级覆盖低优先级
@@ -2566,7 +2558,7 @@ spring-boot-starter-test 默认提供了以下库供我们测试使用
 
 JUnit5的注解与JUnit4的注解有所变化
 
-https://junit.org/junit5/docs/current/user-guide/#writing-tests-annotations
+<https://junit.org/junit5/docs/current/user-guide/#writing-tests-annotations>
 
 - **@Test :** 表示方法是测试方法。但是与JUnit4的@Test不同，他的职责非常单一不能声明任何属性，拓展的测试将会由Jupiter提供额外测试
 - **@ParameterizedTest :** 表示方法是参数化测试，下方会有详细介绍
@@ -2574,12 +2566,12 @@ https://junit.org/junit5/docs/current/user-guide/#writing-tests-annotations
 - **@DisplayName :** 为测试类或者测试方法设置展示名称
 - **@BeforeEach :** 表示在每个单元测试之前执行
 - **@AfterEach :** 表示在每个单元测试之后执行
-- **@BeforeAll : **表示在所有单元测试之前执行
+- **@BeforeAll :**表示在所有单元测试之前执行
 - **@AfterAll :** 表示在所有单元测试之后执行
-- **@Tag : **表示单元测试类别，类似于JUnit4中的@Categories
+- **@Tag :**表示单元测试类别，类似于JUnit4中的@Categories
 - **@Disabled :** 表示测试类或测试方法不执行，类似于JUnit4中的@Ignore
-- **@Timeout : **表示测试方法运行如果超过了指定时间将会返回错误
-- **@ExtendWith : **为测试类或测试方法提供扩展类引用
+- **@Timeout :**表示测试方法运行如果超过了指定时间将会返回错误
+- **@ExtendWith :**为测试类或测试方法提供扩展类引用
 
 ```java
 import static org.junit.jupiter.api.Assertions.fail;
@@ -2790,7 +2782,7 @@ static Stream<String> method() {
    2. `environmentPrepared` ：环境准备好（把启动参数等绑定到环境变量中），但是ioc还没有创建；【调一次】
 2. 启动
    1. `contextPrepared` ：ioc容器创建并准备好，但是sources（主配置类）没加载。并关闭引导上下文；组件都没创建  【调一次】
-   2. `contextLoaded ` ：ioc容器加载。主配置类加载进去了。但是ioc容器还没刷新（我们的bean没创建）。
+   2. `contextLoaded` ：ioc容器加载。主配置类加载进去了。但是ioc容器还没刷新（我们的bean没创建）。
    3. `started` ：ioc容器刷新了（所有bean造好了），但是 runner 没调用。
    4. `ready` ：ioc容器刷新了（所有bean造好了），所有 runner 调用完了。
 3. 运行
@@ -3184,7 +3176,7 @@ public @interface EnableRobot {
 
 ### 6.2、接口文档
 
-#### 6.2.1、OpenAPI 3 
+#### 6.2.1、OpenAPI 3
 
 ![springboot_6.2_1](images/springboot_6.2_1.png)
 
@@ -3498,15 +3490,15 @@ Spring 允许我们通过定义接口的方式，给任意位置发送 http 请�
 2. Kafka工作原理
 
    核心概念
-    *    分区： 分散存储，1T的数据分散到N个节点
-    *    副本： 备份机制，每个小分区的数据都有备份
-    *    主题： topics； 消息是发送给某个主题
+    - 分区： 分散存储，1T的数据分散到N个节点
+    - 副本： 备份机制，每个小分区的数据都有备份
+    - 主题： topics； 消息是发送给某个主题
 
 ![img](https://cdn.nlark.com/yuque/0/2023/png/1613913/1683170677428-6ffa28b6-d522-435f-9e50-20fe3ddfd024.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_36%2Ctext_5bCa56GF6LC3IGF0Z3VpZ3UuY29t%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10)
 
 3. SpringBoot整合
 
-   参照：https://docs.spring.io/spring-kafka/docs/current/reference/html/#preface
+   参照：<https://docs.spring.io/spring-kafka/docs/current/reference/html/#preface>
 
    ```java
    <dependency>
@@ -3774,9 +3766,9 @@ Spring 允许我们通过定义接口的方式，给任意位置发送 http 请�
 
    默认SecurityFilterChain组件：
 
-    *   所有请求都需要认证（登录）
-    *   开启表单登录: spring security提供一个默认登录页，未经登录的所有请求都需要登录
-    *   httpbasic方式登录
+    - 所有请求都需要认证（登录）
+    - 开启表单登录: spring security提供一个默认登录页，未经登录的所有请求都需要登录
+    - httpbasic方式登录
 
    @EnableWebSecurity 生效
    - WebSecurityConfiguration生效：web安全配置
@@ -3820,10 +3812,10 @@ Spring 允许我们通过定义接口的方式，给任意位置发送 http 请�
 3. 访问数据
 
    - 访问 [http://localhost:8080/actuator](http://localhost:8080/actuator/)；展示出所有可以用的监控端点
-   - http://localhost:8080/actuator/beans
-   - http://localhost:8080/actuator/configprops
-   - http://localhost:8080/actuator/metrics
-   - http://localhost:8080/actuator/metrics/jvm.gc.pause
+   - <http://localhost:8080/actuator/beans>
+   - <http://localhost:8080/actuator/configprops>
+   - <http://localhost:8080/actuator/metrics>
+   - <http://localhost:8080/actuator/metrics/jvm.gc.pause>
    - [http://localhost:8080/actuator/](http://localhost:8080/actuator/metrics)endpointName/detailPath
 
 Endpoint
@@ -3932,7 +3924,7 @@ Endpoint
    }
    ```
 
-   MetricsEndpoint 
+   MetricsEndpoint
 
    ```java
    class MyService{
@@ -3988,7 +3980,7 @@ Endpoint
            include: '*'
    ```
 
-   访问： http://localhost:8001/actuator/prometheus  验证，返回 prometheus 格式的所有指标
+   访问： <http://localhost:8001/actuator/prometheus>  验证，返回 prometheus 格式的所有指标
 
    ```shell
    #安装上传工具
@@ -4049,7 +4041,7 @@ Endpoint
 
 Java：**半编译半解释**
 
-https://anycodes.cn/editor
+<https://anycodes.cn/editor>
 
 ![springboot_6.7_1](images/springboot_6.7_1.png)
 
@@ -4090,8 +4082,8 @@ https://anycodes.cn/editor
 
 建议阅读：
 
-- 美团技术：https://tech.meituan.com/2020/10/22/java-jit-practice-in-meituan.html
-- openjdk官网：https://wiki.openjdk.org/display/HotSpot/Compiler
+- 美团技术：<https://tech.meituan.com/2020/10/22/java-jit-practice-in-meituan.html>
+- openjdk官网：<https://wiki.openjdk.org/display/HotSpot/Compiler>
 
 流程概要：
 
@@ -4143,8 +4135,6 @@ Java 7开始引入了分层编译(**Tiered Compiler**)的概念，它结合了**
 
 总的来说，C1的编译速度更快，C2的编译质量更高，分层编译的不同编译路径，也就是JVM根据当前服务的运行情况来寻找当前服务的最佳平衡点的一个过程。从JDK 8开始，JVM默认开启分层编译。
 
-
-
 **云原生**：Cloud Native； Java小改版；
 
 最好的效果：
@@ -4180,7 +4170,7 @@ Java 7开始引入了分层编译(**Tiered Compiler**)的概念，它结合了**
 
 1. VisualStudio
 
-   https://visualstudio.microsoft.com/zh-hans/free-developer-offers/
+   <https://visualstudio.microsoft.com/zh-hans/free-developer-offers/>
 
    ![springboot_6.7_10](images/springboot_6.7_10.png)
 
@@ -4198,7 +4188,7 @@ Java 7开始引入了分层编译(**Tiered Compiler**)的概念，它结合了**
 
    验证：java -version 验证JDK环境为GraalVM提供的
 
-   依赖：安装 native-image 依赖 https://www.graalvm.org/latest/reference-manual/native-image/#install-native-image
+   依赖：安装 native-image 依赖 <https://www.graalvm.org/latest/reference-manual/native-image/#install-native-image>
 
    验证：native-image
 
@@ -4236,7 +4226,7 @@ Java 7开始引入了分层编译(**Tiered Compiler**)的概念，它结合了**
 
    2. 下载安装配置Linux下的GraalVM、native-image
 
-      下载：[https://www.graalvm.org/downloads/](https://www.graalvm.org/downloads/) 
+      下载：[https://www.graalvm.org/downloads/](https://www.graalvm.org/downloads/)
 
       安装：GraalVM、native-image
 
