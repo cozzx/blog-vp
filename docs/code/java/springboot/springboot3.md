@@ -3811,12 +3811,12 @@ Spring 允许我们通过定义接口的方式，给任意位置发送 http 请�
 
 3. 访问数据
 
-   - 访问 [http://localhost:8080/actuator](http://localhost:8080/actuator/)；展示出所有可以用的监控端点
-   - <http://localhost:8080/actuator/beans>
-   - <http://localhost:8080/actuator/configprops>
-   - <http://localhost:8080/actuator/metrics>
-   - <http://localhost:8080/actuator/metrics/jvm.gc.pause>
-   - [http://localhost:8080/actuator/](http://localhost:8080/actuator/metrics)endpointName/detailPath
+   - 访问 `http://localhost:8080/actuator` 展示出所有可以用的监控端点
+   - `http://localhost:8080/actuator/beans`
+   - `http://localhost:8080/actuator/configprops`
+   - `http://localhost:8080/actuator/metrics`
+   - `http://localhost:8080/actuator/metrics/jvm.gc.pause`
+   - `http://localhost:8080/actuator/metrics/endpointName/detailPath`
 
 Endpoint
 
