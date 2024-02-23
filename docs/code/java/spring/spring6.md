@@ -1991,7 +1991,7 @@ Beans的自动扫描功能。开启此功能后，Spring 会自动从扫描指�
 </beans>
 ```
 
-注意：在使用 <context:component-scan> 元素开启自动扫描功能前，首先需要在 XML 配置的一级标签 <beans> 中添加 context 相关的约束。
+注意：在使用 `<context:component-scan>` 元素开启自动扫描功能前，首先需要在 XML 配置的一级标签 `<beans>` 中添加 context 相关的约束。
 
 **情况一：最基本的扫描方式**
 
