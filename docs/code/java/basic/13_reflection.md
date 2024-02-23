@@ -1,12 +1,12 @@
-# java 反射
+# Java 反射
 
 ## 1 反射(Reflection)的概念
 
 ### 1.1 反射的出现背景
 
-Java程序中，所有的对象都有两种类型：`编译时类型`和`运行时类型`，而很多时候对象的编译时类型和运行时类型`不一致`。
+Java程序中，所有的对象都有两种类型：**编译时类型**和**运行时类型**，而很多时候对象的编译时类型和运行时类型**不一致**。
 
-例如：某些变量或形参的声明类型是Object类型，但是程序却需要调用该对象运行时类型的方法，该方法不是Object中的方法，那么如何解决呢？
+例如：某些变量或形参的声明类型是 Object 类型，但是程序却需要调用该对象运行时类型的方法，该方法不是 Object 中的方法，那么如何解决呢？
 
 > Object obj = new String("hello");
 >
@@ -14,15 +14,15 @@ Java程序中，所有的对象都有两种类型：`编译时类型`和`运行�
 
 解决这个问题，有两种方案：
 
-方案1：在编译和运行时都完全知道类型的具体信息，在这种情况下，我们可以直接先使用`instanceof`运算符进行判断，再利用强制类型转换符将其转换成运行时类型的变量即可。
+方案1：在编译和运行时都完全知道类型的具体信息，在这种情况下，我们可以直接先使用 **instanceof** 运算符进行判断，再利用强制类型转换符将其转换成运行时类型的变量即可。
 
-方案2：编译时根本无法预知该对象和类的真实信息，程序只能依靠`运行时信息`来发现该对象和类的真实信息，这就必须使用反射。
+方案2：编译时根本无法预知该对象和类的真实信息，程序只能依靠**运行时信息**来发现该对象和类的真实信息，这就必须使用反射。
 
 ### 1.2 反射概述
 
-Reflection（反射）是被视为`动态语言`的关键，反射机制允许程序在`运行期间`借助于 Reflection API 取得任何类的内部信息，并能直接操作任意对象的内部属性及方法。
+Reflection（反射）是被视为**动态语言**的关键，反射机制允许程序在**运行期间**借助于 Reflection API 取得任何类的内部信息，并能直接操作任意对象的内部属性及方法。
 
-加载完类之后，在堆内存的方法区中就产生了一个Class类型的对象（一个类只有一个Class对象），这个对象就包含了完整的类的结构信息。我们可以通过这个对象看到类的结构。`这个对象就像一面镜子，透过这个镜子看到类的结构，所以，我们形象的称之为：反射。`
+加载完类之后，在堆内存的方法区中就产生了一个 Class 类型的对象（一个类只有一个 Class 对象），这个对象就包含了完整的类的结构信息。我们可以通过这个对象看到类的结构。**这个对象就像一面镜子，透过这个镜子看到类的结构，所以，我们形象的称之为：反射。**
 
 ![reflection_1.2_1](./images/reflection_1.2_1.png)
 
@@ -30,9 +30,9 @@ Reflection（反射）是被视为`动态语言`的关键，反射机制允许�
 
 ![reflection_1.2_2](./images/reflection_1.2_2.png)
 
-### 1.3  Java反射机制研究及应用
+### 1.3 反射机制研究及应用
 
-Java反射机制提供的功能：
+Java 反射机制提供的功能：
 
 - 在运行时判断任意一个对象所属的类
 - 在运行时构造任意类的对象
@@ -44,32 +44,32 @@ Java反射机制提供的功能：
 
 ### 1.4 反射相关的主要API
 
-java.lang.Class：代表一个类
-java.lang.reflect.Method：代表类的方法
-java.lang.reflect.Field：代表类的成员变量
-java.lang.reflect.Constructor：代表类的构造器
+`java.lang.Class`：代表一个类
+`java.lang.reflect.Method`：代表类的方法
+`java.lang.reflect.Field`：代表类的成员变量
+`java.lang.reflect.Constructor`：代表类的构造器
 
 ### 1.5 反射的优缺点
 
 **优点：**
 
-- 提高了Java程序的灵活性和扩展性，`降低了耦合性`，提高`自适应`能力
-- 允许程序创建和控制任何类的对象，无需提前`硬编码`目标类
+- 提高了 Java 程序的灵活性和扩展性，**降低了耦合性**，提高**自适应**能力
+- 允许程序创建和控制任何类的对象，无需提前**硬编码**目标类
 
 **缺点：**
 
-- 反射的`性能较低`。
+- 反射的**性能较低**。
   - 反射机制主要应用在对灵活性和扩展性要求很高的系统框架上
-- 反射会`模糊`程序内部逻辑，`可读性较差`
+- 反射会**模糊**程序内部逻辑，**可读性较差**
 
 ## 2 理解 Class 类并获取实例
 
-想要解剖一个类，必须先要获取到该类的`class对象`。而剖析一个类或用反射解决具体的问题就是使用相关API:
+想要解剖一个类，必须先要获取到该类的 **class 对象**。而剖析一个类或用反射解决具体的问题就是使用相关 API:
 
-- java.lang.Class
-- java.lang.reflect.*
+- `java.lang.Class`
+- `java.lang.reflect.*`
 
-所以，Class对象是反射的根源。
+所以，Class 对象是反射的根源。
 
 ### 2.1 Class 类
 
@@ -101,7 +101,7 @@ public final Class getClass()
 
 ![reflection_2.1_2](./images/reflection_2.1_2.png)
 
-说明：上图中字符串常量池在JDK6中存储在方法区；JDK7及以后，存储在堆空间。
+说明：上图中字符串常量池在 JDK6 中存储在方法区；JDK7 及以后，存储在堆空间。
 
 ### 2.2 获取 Class 实例
 
@@ -162,32 +162,32 @@ Class clazz4 = cl.loadClass("类的全类名");
 Class clazz = Class.forName("java.lang.String");
 ```
 
-### 2.3 哪些类型可以有Class对象
+### 2.3 哪些类型可以有 Class 对象
 
-简言之，所有Java类型！
+简言之，所有 Java 类型！
 
 1. class：外部类，成员(成员内部类，静态内部类)，局部内部类，匿名内部类
 2. interface：接口
 3. []：数组
 4. enum：枚举
-5. annotation：注解@interface
+5. annotation：注解 @interface
 6. primitive type：基本数据类型
 7. void
 
-### 2.4 Class类的常用方法
+### 2.4 Class 类的常用方法
 
-| **方法名**                                         | **功能说明**                                                 |
-| -------------------------------------------------- | ------------------------------------------------------------ |
-| static  Class forName(String  name)                | 返回指定类名  name  的  Class  对象                          |
-| Object  newInstance()                              | 调用缺省构造函数，返回该Class对象的一个实例                  |
-| getName()                                          | 返回此Class对象所表示的实体（类、接口、数组类、基本类型或void）名称 |
-| Class  getSuperClass()                             | 返回当前Class对象的父类的Class对象                           |
-| Class  [] getInterfaces()                          | 获取当前Class对象的接口                                      |
-| ClassLoader  getClassLoader()                      | 返回该类的类加载器                                           |
-| Class  getSuperclass()                             | 返回表示此Class所表示的实体的超类的Class                     |
-| Constructor[]  getConstructors()                   | 返回一个包含某些Constructor对象的数组                        |
-| Field[]  getDeclaredFields()                       | 返回Field对象的一个数组                                      |
-| Method  getMethod(String  name,Class … paramTypes) | 返回一个Method对象，此对象的形参类型为paramType              |
+| 方法名                                            | 功能说明                                                     |
+| ------------------------------------------------- | ------------------------------------------------------------ |
+| static Class forName(String  name)                | 返回指定类名 name 的 Class 对象                              |
+| Object newInstance()                              | 调用缺省构造函数，返回该 Class 对象的一个实例                |
+| getName()                                         | 返回此 Class 对象所表示的实体（类、接口、数组类、基本类型或void）名称 |
+| Class getSuperClass()                             | 返回当前 Class 对象的父类的 Class 对象                       |
+| Class [] getInterfaces()                          | 获取当前 Class 对象的接口                                    |
+| ClassLoader getClassLoader()                      | 返回该类的类加载器                                           |
+| Class getSuperclass()                             | 返回表示此 Class 所表示的实体的超类的 Class                  |
+| Constructor[] getConstructors()                   | 返回一个包含某些 Constructor 对象的数组                      |
+| Field[] getDeclaredFields()                       | 返回 Field 对象的一个数组                                    |
+| Method getMethod(String  name,Class … paramTypes) | 返回一个 Method 对象，此对象的形参类型为 paramType           |
 
 ## 3. 类的加载与加载器的理解
 
@@ -199,7 +199,7 @@ Class clazz = Class.forName("java.lang.String");
 
 ### 3.2 类的加载过程
 
-当程序主动使用某个类时，如果该类还未被加载到内存中，系统会通过加载、链接、初始化三个步骤来对该类进行初始化。如果没有意外，JVM将会连续完成这三个步骤，所以有时也把这三个步骤统称为类加载。
+当程序主动使用某个类时，如果该类还未被加载到内存中，系统会通过加载、链接、初始化三个步骤来对该类进行初始化。如果没有意外，JVM 将会连续完成这三个步骤，所以有时也把这三个步骤统称为类加载。
 
 ![reflection_3.2_1](./images/reflection_3.2_1.png)
 
@@ -211,12 +211,12 @@ Class clazz = Class.forName("java.lang.String");
 
 2. 链接（Linking）
    1. 验证 (Verify)：确保加载的类信息符合JVM规范，例如：以cafebabe开头，没有安全方面的问题。
-   2. 准备 (Prepare)：正式为类变量 (static) 分配内存并`设置类变量默认初始值`的阶段，这些内存都将在方法区中进行分配。
+   2. 准备 (Prepare)：正式为类变量 (static) 分配内存并**设置类变量默认初始值**的阶段，这些内存都将在方法区中进行分配。
    3. 解析 (Resolve)：虚拟机常量池内的符号引用（常量名）替换为直接引用（地址）的过程。
 3. 初始化（Initialization）
-   1. 执行`类构造器 <clinit>() 方法`的过程。`类构造器 <clinit>() 方法`是由编译期自动收集类中所有类变量的赋值动作和静态代码块中的语句合并产生的。（类构造器是构造类信息的，不是构造该类对象的构造器）。
+   1. 执行类构造器 `<clinit>()` 方法的过程。类构造器`<clinit>()` 方法是由编译期自动收集类中所有类变量的赋值动作和静态代码块中的语句合并产生的。（类构造器是构造类信息的，不是构造该类对象的构造器）。
    2. 当初始化一个类的时候，如果发现其父类还没有进行初始化，则需要先触发其父类的初始化。
-   3. 虚拟机会保证一个`类的<clinit>()方法`在多线程环境中被正确加锁和同步。
+   3. 虚拟机会保证一个类的`<clinit>()`方法在多线程环境中被正确加锁和同步。
 
 ### 3.3 类加载器（classloader)
 
@@ -230,14 +230,14 @@ Class clazz = Class.forName("java.lang.String");
 
 #### 3.3.2 类加载器的分类(JDK8为例)
 
-JVM支持两种类型的类加载器，分别为`引导类加载器（Bootstrap ClassLoader）`和`自定义类加载器（User-Defined ClassLoader）`。
+JVM支持两种类型的类加载器，分别为**引导类加载器（Bootstrap ClassLoader）**和**自定义类加载器（User-Defined ClassLoader）**。
 
 从概念上来讲，自定义类加载器一般指的是程序中由开发人员自定义的一类类加载器，但是Java虚拟机规范却没有这么定义，而是将所有派生于抽象类ClassLoader的类加载器都划分为自定义类加载器。无论类加载器的类型如何划分，在程序中我们最常见的类加载器结构主要是如下情况：
 
 ![reflectioin_3.3.2_1](./images/reflectioin_3.3.2_1.png)
 
 1. 启动类加载器（引导类加载器，Bootstrap ClassLoader）
-   - 这个类加载使用`C/C++语言`实现的，嵌套在 JVM 内部。获取它的对象时往往返回 null
+   - 这个类加载使用 C/C++ 语言实现的，嵌套在 JVM 内部。获取它的对象时往往返回 null
    - 它用来加载 Java 的核心库（JAVA_HOME/jre/lib/rt.jar 或sun.boot.class.path 路径下的内容），用于提供 JVM 自身需要的类
    - 并不继承自 java.lang.ClassLoader，没有父加载器
    - 出于安全考虑，Bootstrap 启动类加载器只加载包名为 java、javax、sun等开头的类
@@ -258,7 +258,7 @@ JVM支持两种类型的类加载器，分别为`引导类加载器（Bootstrap 
 4. 用户自定义类加载器（了解）
    - 在 Java 的日常应用程序开发中，类的加载几乎是由上述3种类加载器相互配合执行的。在必要时，我们还可以自定义类加载器，来定制类的加载方式。
    - 体现 Java 语言强大生命力和巨大魅力的关键因素之一便是，Java 开发者可以自定义类加载器来实现类库的动态加载，加载源可以是本地的 JAR 包，也可以是网络上的远程资源。
-   - 同时，自定义加载器能够实现`应用隔离`，例如 Tomcat，Spring 等中间件和组件框架都在内部实现了自定义的加载器，并通过自定义加载器隔离不同的组件模块。这种机制比 C/C++ 程序要好太多，想不修改 C/C++ 程序就能为其新增功能，几乎是不可能的，仅仅一个兼容性便能阻挡住所有美好的设想。
+   - 同时，自定义加载器能够实现**应用隔离**，例如 Tomcat，Spring 等中间件和组件框架都在内部实现了自定义的加载器，并通过自定义加载器隔离不同的组件模块。这种机制比 C/C++ 程序要好太多，想不修改 C/C++ 程序就能为其新增功能，几乎是不可能的，仅仅一个兼容性便能阻挡住所有美好的设想。
    - 自定义类加载器通常需要继承于ClassLoader。
 
 #### 3.3.3 查看某个类的类加载器对象
@@ -318,29 +318,29 @@ System.out.println(in);
 
 ```java
 public class ApiApplyTest {
-   /**
-     * 调用 Class 对象的 newInstance() 方法
-     */
-    @Test
-    public void test2() throws InstantiationException, IllegalAccessException, NoSuchFieldException, NoSuchMethodException, InvocationTargetException {
+  /**
+   * 调用 Class 对象的 newInstance() 方法
+   */
+  @Test
+  public void test2() throws InstantiationException, IllegalAccessException, NoSuchFieldException, NoSuchMethodException, InvocationTargetException {
 
-        Class<Employee> employeeClass = Employee.class;
-        Employee employeeDeprecated  = employeeClass.newInstance();
-        System.out.println(employeeDeprecated);
-    }
-  
-   /**
-     * 通过获取构造器对象来进行实例化
-     */
-    @Test
-    public void test3() throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchFieldException {
+    Class<Employee> employeeClass = Employee.class;
+    Employee employeeDeprecated  = employeeClass.newInstance();
+    System.out.println(employeeDeprecated);
+  }
 
-        Class<Employee> employeeClass = Employee.class;
-        Constructor<Employee> declaredConstructor = employeeClass.getDeclaredConstructor(int.class, String.class);
-        declaredConstructor.setAccessible(true);
-        Employee employee = declaredConstructor.newInstance(1, "ref");
-        System.out.println(employee);
-    }
+  /**
+   * 通过获取构造器对象来进行实例化
+   */
+  @Test
+  public void test3() throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchFieldException {
+
+    Class<Employee> employeeClass = Employee.class;
+    Constructor<Employee> declaredConstructor = employeeClass.getDeclaredConstructor(int.class, String.class);
+    declaredConstructor.setAccessible(true);
+    Employee employee = declaredConstructor.newInstance(1, "ref");
+    System.out.println(employee);
+  }
 }
 ```
 
@@ -424,34 +424,34 @@ setAccessible 参数值为 true 则指示反射的对象在使用时应该取消
 
 ```java
 public class ApiApplyTest {
-   @Test
-    public void test3() throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchFieldException {
+  @Test
+  public void test3() throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchFieldException {
 
-        // 1. 获取实例，调用私有构造器
-        Class<Employee> employeeClass = Employee.class;
-        Constructor<Employee> declaredConstructor = employeeClass.getDeclaredConstructor(int.class, String.class);
-        declaredConstructor.setAccessible(true);
-        Employee employee = declaredConstructor.newInstance(1, "ref");
-        System.out.println(employee);
+    // 1. 获取实例，调用私有构造器
+    Class<Employee> employeeClass = Employee.class;
+    Constructor<Employee> declaredConstructor = employeeClass.getDeclaredConstructor(int.class, String.class);
+    declaredConstructor.setAccessible(true);
+    Employee employee = declaredConstructor.newInstance(1, "ref");
+    System.out.println(employee);
 
-        // 2. 调用私有属性
-        Field nameField = employeeClass.getDeclaredField("name");
-        nameField.setAccessible(true);
-        nameField.set(employee, "reflect");
-        System.out.println(nameField.get(employee));
+    // 2. 调用私有属性
+    Field nameField = employeeClass.getDeclaredField("name");
+    nameField.setAccessible(true);
+    nameField.set(employee, "reflect");
+    System.out.println(nameField.get(employee));
 
-        // 3. 调用私有方法
-        Method priMethod = employeeClass.getDeclaredMethod("priMethod", String.class);
-        priMethod.setAccessible(true);
-        priMethod.invoke(employee, "reflection");
-        System.out.println(employee);
+    // 3. 调用私有方法
+    Method priMethod = employeeClass.getDeclaredMethod("priMethod", String.class);
+    priMethod.setAccessible(true);
+    priMethod.invoke(employee, "reflection");
+    System.out.println(employee);
 
-        // 3.1. 静态方法
-        Method staMethod = employeeClass.getDeclaredMethod("staMethod", String.class);
-        staMethod.setAccessible(true);
-        staMethod.invoke(null, "reflection");
-        System.out.println(employee);
-    }
+    // 3.1. 静态方法
+    Method staMethod = employeeClass.getDeclaredMethod("staMethod", String.class);
+    staMethod.setAccessible(true);
+    staMethod.invoke(null, "reflection");
+    System.out.println(employee);
+  }
 }
 ```
 
@@ -470,41 +470,41 @@ public class ApiApplyTest {
 
 ```java
 public class ApiApplyTest {
-   /**
+  /**
      * 获取注解信息及应用
      */
-    @Test
-    public void test5() {
+  @Test
+  public void test5() {
 
-        // 获取类注解信息
-        Class<Employee> employeeClass = Employee.class;
-        TableTest annotation = employeeClass.getAnnotation(TableTest.class);
-        String tableName = "";
-        if (annotation != null) {
-            tableName = annotation.value();
-        }
-        System.out.println(tableName);
-
-        Field[] declaredFields = employeeClass.getDeclaredFields();
-        String[] columns = new String[declaredFields.length];
-        int index = 0;
-        for (Field declaredField : declaredFields) {
-            ColumnTest columnTest = declaredField.getAnnotation(ColumnTest.class);
-            if (columnTest != null) {
-                columns[index++] = columnTest.columnName();
-            }
-        }
-
-        String sql = "select ";
-        for (int i = 0; i < index; i++) {
-            sql += columns[i];
-            if (i < index - 1) {
-                sql += ",";
-            }
-        }
-        sql += " from " + tableName;
-        System.out.println("sql = " + sql);
+    // 获取类注解信息
+    Class<Employee> employeeClass = Employee.class;
+    TableTest annotation = employeeClass.getAnnotation(TableTest.class);
+    String tableName = "";
+    if (annotation != null) {
+      tableName = annotation.value();
     }
+    System.out.println(tableName);
+
+    Field[] declaredFields = employeeClass.getDeclaredFields();
+    String[] columns = new String[declaredFields.length];
+    int index = 0;
+    for (Field declaredField : declaredFields) {
+      ColumnTest columnTest = declaredField.getAnnotation(ColumnTest.class);
+      if (columnTest != null) {
+        columns[index++] = columnTest.columnName();
+      }
+    }
+
+    String sql = "select ";
+    for (int i = 0; i < index; i++) {
+      sql += columns[i];
+      if (i < index - 1) {
+        sql += ",";
+      }
+    }
+    sql += " from " + tableName;
+    System.out.println("sql = " + sql);
+  }
 }
 ```
 
@@ -513,62 +513,62 @@ public class ApiApplyTest {
 ```java
 public class DynamicApplyTest {
 
-    /**
-     * 动态获取实例
-     */
-    @Test
-    public void test1() throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
-        Employee employee = getInstanceTest("common.Employee");
-        System.out.println(employee);
-    }
+  /**
+   * 动态获取实例
+   */
+  @Test
+  public void test1() throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+    Employee employee = getInstanceTest("common.Employee");
+    System.out.println(employee);
+  }
 
-    public <T> T getInstanceTest(String className) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
-        Class<?> clazz = Class.forName(className);
-        Constructor<?> declaredConstructor = clazz.getDeclaredConstructor();
-        declaredConstructor.setAccessible(true);
-        return (T) declaredConstructor.newInstance();
-    }
+  public <T> T getInstanceTest(String className) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+    Class<?> clazz = Class.forName(className);
+    Constructor<?> declaredConstructor = clazz.getDeclaredConstructor();
+    declaredConstructor.setAccessible(true);
+    return (T) declaredConstructor.newInstance();
+  }
 
-    /**
-     * 动态调用方法
-     */
-    @Test
-    public void test2() throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
-        String info = (String) invoke("common.Employee", "showSomething");
-        System.out.println("返回值为：" + info);
-    }
+  /**
+   * 动态调用方法
+   */
+  @Test
+  public void test2() throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+    String info = (String) invoke("common.Employee", "showSomething");
+    System.out.println("返回值为：" + info);
+  }
 
-    public Object invoke(String className, String methodName) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
-        Class<?> clazz = Class.forName(className);
-        Constructor<?> constructor = clazz.getDeclaredConstructor();
-        constructor.setAccessible(true);
-        Object obj = constructor.newInstance();
+  public Object invoke(String className, String methodName) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+    Class<?> clazz = Class.forName(className);
+    Constructor<?> constructor = clazz.getDeclaredConstructor();
+    constructor.setAccessible(true);
+    Object obj = constructor.newInstance();
 
-        Method method = clazz.getDeclaredMethod(methodName);
-        method.setAccessible(true);
-        return method.invoke(obj);
-    }
+    Method method = clazz.getDeclaredMethod(methodName);
+    method.setAccessible(true);
+    return method.invoke(obj);
+  }
 
-    /**
-     * 通过配置文件，实现不同功能
-     */
-    @Test
-    public void test3() throws IOException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+  /**
+   * 通过配置文件，实现不同功能
+   */
+  @Test
+  public void test3() throws IOException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
 
-        // 1 通过配置文件获取配置信息
-        Properties properties = new Properties();
-        InputStream resourceAsStream = ClassLoader.getSystemClassLoader().getResourceAsStream("config.properties");
-        properties.load(resourceAsStream);
-        String fruitName = properties.getProperty("fruitName");
+    // 1 通过配置文件获取配置信息
+    Properties properties = new Properties();
+    InputStream resourceAsStream = ClassLoader.getSystemClassLoader().getResourceAsStream("config.properties");
+    properties.load(resourceAsStream);
+    String fruitName = properties.getProperty("fruitName");
 
-        // 2 通过配置信息加载对应的类
-        Class<?> clazz = Class.forName(fruitName);
-        Constructor<?> constructor = clazz.getDeclaredConstructor();
-        Fruit fruit = (Fruit) constructor.newInstance();
+    // 2 通过配置信息加载对应的类
+    Class<?> clazz = Class.forName(fruitName);
+    Constructor<?> constructor = clazz.getDeclaredConstructor();
+    Fruit fruit = (Fruit) constructor.newInstance();
 
-        // 3 调用类中的目标方法
-        Juicer juicer = new Juicer();
-        juicer.run(fruit);
-    }
+    // 3 调用类中的目标方法
+    Juicer juicer = new Juicer();
+    juicer.run(fruit);
+  }
 }
 ```

@@ -2,13 +2,15 @@
 
 ## 概念
 
-1. Servlet 是 JavaEE 规范之一。
-2. Servlet 是 JavaWeb 三大组件之一。三大组件分别是：Servlet 程序、Filter 过滤器、Listener 监听器。
-3. Servlet 是运行在服务器上的一个 java 小程序，它可以接收客户端发送过来的请求，并响应数据给客户端。
+Servlet 是 JavaEE 规范之一。
+
+Servlet 是 JavaWeb 三大组件之一。三大组件分别是：Servlet 程序、Filter 过滤器、Listener 监听器。
+
+Servlet 是运行在服务器上的一个 java 小程序，它可以接收客户端发送过来的请求，并响应数据给客户端。
 
 ## 编码
 
-tomcat8之前，设置编码：
+tomcat8 之前，设置编码：
 
 - get请求方式：
 

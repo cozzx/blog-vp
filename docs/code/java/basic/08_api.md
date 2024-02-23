@@ -1,4 +1,4 @@
-# java api
+# Java API
 
 ## 1 字符串相关类之不可变字符序列：String
 

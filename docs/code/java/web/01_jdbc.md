@@ -59,44 +59,44 @@
 
 #### 2.1.1 Driver 接口介绍
 
-- java.sql.Driver 接口是所有 JDBC 驱动程序需要实现的接口。这个接口是提供给数据库厂商使用的，不同数据库厂商提供不同的实现。
+- `java.sql.Driver` 接口是所有 JDBC 驱动程序需要实现的接口。这个接口是提供给数据库厂商使用的，不同数据库厂商提供不同的实现。
   
-- 在程序中不需要直接去访问实现了 Driver 接口的类，而是由驱动程序管理器类 (java.sql.DriverManager) 去调用这些 Driver 实现。
+- 在程序中不需要直接去访问实现了 Driver 接口的类，而是由驱动程序管理器类 (`java.sql.DriverManager`) 去调用这些 Driver 实现。
   
-  - Oracle的驱动：**oracle.jdbc.driver.OracleDriver**
-  - MySQL的驱动 **com.mysql.jdbc.Driver** | **com.mysql.cj.jdbc.Driver**
+  - Oracle的驱动：`oracle.jdbc.driver.OracleDriver`
+  - MySQL的驱动：`com.mysql.jdbc.Driver` | `com.mysql.cj.jdbc.Driver`
 
 #### 2.1.2 加载与注册 JDBC 驱动
 
 - 加载驱动：加载 JDBC 驱动需调用 Class 类的静态方法 forName()，向其传递要加载的 JDBC 驱动的类名
 
-  - **Class.forName(“com.mysql.cj.jdbc.Driver”);**
+  - `Class.forName(“com.mysql.cj.jdbc.Driver”);`
 
 - 注册驱动：DriverManager 类是驱动程序管理器类，负责管理驱动程序
 
-  - **使用 DriverManager.registerDriver(com.mysql.cj.jdbc.Driver) 来注册驱动**
+  - 使用 `DriverManager.registerDriver(com.mysql.cj.jdbc.Driver)` 来注册驱动
 
   - 通常不用显式调用 DriverManager 类的 registerDriver() 方法来注册驱动程序类的实例，因为 Driver 接口的驱动程序类都包含了静态代码块，在这个静态代码块中，会调用 DriverManager.registerDriver() 方法来注册自身的一个实例。下图 是MySQL 的 Driver 实现类的源码：
 
-        ```java
-        package com.mysql.cj.jdbc;
-        
-        import java.sql.DriverManager;
-        import java.sql.SQLException;
-        
-        public class Driver extends NonRegisteringDriver implements java.sql.Driver {
-            public Driver() throws SQLException {
-            }
-        
-            static {
-                try {
-                    DriverManager.registerDriver(new Driver());
-                } catch (SQLException var1) {
-                    throw new RuntimeException("Can't register driver!");
-                }
+    ```java
+    package com.mysql.cj.jdbc;
+    
+    import java.sql.DriverManager;
+    import java.sql.SQLException;
+    
+    public class Driver extends NonRegisteringDriver implements java.sql.Driver {
+        public Driver() throws SQLException {
+        }
+    
+        static {
+            try {
+                DriverManager.registerDriver(new Driver());
+            } catch (SQLException var1) {
+                throw new RuntimeException("Can't register driver!");
             }
         }
-        ```
+    }
+    ```
 
 ### 2.2 要素二：URL
 
@@ -332,11 +332,11 @@ driverClass=com.mysql.cj.jdbc.Driver
   
 - Statement 接口中定义了下列方法用于执行 SQL 语句：
   
-  - int excuteUpdate(String sql)
+  - `int excuteUpdate(String sql)`
 
-        执行更新操作 INSERT、UPDATE、DELETE
+    执行更新操作 INSERT、UPDATE、DELETE
 
-  - ResultSet executeQuery(String sql)
+  - `ResultSet executeQuery(String sql)`
 
       执行查询操作 SELECT
 
@@ -470,7 +470,7 @@ public class StatementTest {
 
 #### 3.3.1 PreparedStatement 介绍
 
-- 可以通过调用 Connection 对象的 **preparedStatement(String sql)** 方法获取 PreparedStatement 对象
+- 可以通过调用 Connection 对象的 `preparedStatement(String sql)` 方法获取 PreparedStatement 对象
   
 - **PreparedStatement 接口是 Statement 的子接口，它表示一条预编译过的 SQL 语句**
   
@@ -689,6 +689,7 @@ public class StatementTest {
   
 - MySQL 的四种 BLOB 类型（除了在存储的最大信息量上不同外，他们是等同的）。
   
+
 ![jdbc_4.1_1](./images/jdbc_4.1_1.png)
 
 - 实际使用中根据需要存入的数据大小定义不同的 BLOB 类型。
@@ -1012,16 +1013,16 @@ public void update(Connection conn ,String sql, Object... args) {
 
 ### 6.3 事务的 ACID 属性
 
-1. **原子性（Atomicity）**  
+1. **原子性（Atomicity）**
     原子性是指事务是一个不可分割的工作单位，事务中的操作要么都发生，要么都不发生。
 
-2. **一致性（Consistency）**  
+2. **一致性（Consistency）**
     事务必须使数据库从一个一致性状态变换到另外一个一致性状态。
 
-3. **隔离性（Isolation）**  
+3. **隔离性（Isolation）**
     事务的隔离性是指一个事务的执行不能被其他事务干扰，即一个事务内部的操作及使用的数据对并发的其他事务是隔离的，并发执行的各个事务之间不能互相干扰。
 
-4. **持久性（Durability）**  
+4. **持久性（Durability）**
     持久性是指一个事务一旦被提交，它对数据库中数据的改变就是永久性的，接下来的其他操作和数据库故障不应该对其有任何影响。
 
 #### 6.3.1 数据库的并发问题
@@ -1066,25 +1067,6 @@ public void update(Connection conn ,String sql, Object... args) {
     ```mysql
     set global transaction isolation level read committed;
     ```
-
-- 补充操作：
-  
-  - 创建mysql数据库用户：
-
-        ```mysql
-        create user tom identified by 'abc123';
-        ```
-
-  - 授予权限
-
-        ```mysql
-        #授予通过网络方式登录的tom用户，对所有库所有表的全部权限，密码设为abc123.
-        grant all privileges on *.* to tom@'%'  identified by 'abc123'; 
-        
-         #给tom用户使用本地命令行方式，授予atguigudb这个库下的所有表的插删改查的权限。
-        grant select,insert,delete,update on atguigudb.* to tom@localhost identified by 'abc123'; 
-        
-        ```
 
 ## 7 DAO 及相关实现类
 
@@ -1547,6 +1529,7 @@ public class User {
   
 - 数据库连接池在初始化时将创建一定数量的数据库连接放到连接池中，这些数据库连接的数量是由**最小数据库连接数来设定**的。无论这些数据库连接是否被使用，连接池都将一直保证至少拥有这么多的连接数量。连接池的**最大数据库连接数量**限定了这个连接池能占有的最大连接数，当应用程序向连接池请求的连接数超过最大连接数量时，这些请求将被加入到等待队列中。
   
+
 ![jdbc_8.2_1](./images/jdbc_8.2_1.png)
 
 - **工作原理：**
@@ -1883,19 +1866,19 @@ public void testDelete() throws Exception {
 
   - ArrayListHandler：把结果集中的每一行数据都转成一个数组，再存放到List中。
 
-  - \*\*BeanHandler：\*\*将结果集中的第一行数据封装到一个对应的JavaBean实例中。
+  - BeanHandler：将结果集中的第一行数据封装到一个对应的JavaBean实例中。
 
-  - \*\*BeanListHandler：\*\*将结果集中的每一行数据都封装到一个对应的JavaBean实例中，存放到List里。
+  - BeanListHandler：将结果集中的每一行数据都封装到一个对应的JavaBean实例中，存放到List里。
 
   - ColumnListHandler：将结果集中某一列的数据存放到List中。
 
   - KeyedHandler(name)：将结果集中的每一行数据都封装到一个Map里，再把这些map再存到一个map里，其key为指定的key。
 
-  - \*\*MapHandler：\*\*将结果集中的第一行数据封装到一个Map里，key是列名，value就是对应的值。
+  - MapHandler：将结果集中的第一行数据封装到一个Map里，key是列名，value就是对应的值。
 
-  - \*\*MapListHandler：\*\*将结果集中的每一行数据都封装到一个Map里，然后再存放到List
+  - MapListHandler：将结果集中的每一行数据都封装到一个Map里，然后再存放到List
 
-  - \*\*ScalarHandler：\*\*查询单个值对象
+  - ScalarHandler：查询单个值对象
 
 - 测试
   

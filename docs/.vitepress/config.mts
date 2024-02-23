@@ -88,11 +88,11 @@ export default defineConfig({
       '/command/win': set_sidebar('/command/win'),
       '/code/java': [
         {
-          text: '🍎 java 基础', 
+          text: '🍎 Java 基础', 
           items: set_sidebar('/code/java/basic', false)
         },
         {
-          text: '🧀 java web',
+          text: '🧀 Java Web',
           items: set_sidebar('/code/java/web', false)
         },
         {
@@ -107,7 +107,7 @@ export default defineConfig({
       '/code/py': set_sidebar('/code/py', false),
       '/code/go': [
         {
-          text: '🪤 golang 基础', 
+          text: '🪤 Golang 基础', 
           items: set_sidebar('/code/go/basic', false)
         },
       ],
