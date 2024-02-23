@@ -3980,7 +3980,7 @@ Endpoint
            include: '*'
    ```
 
-   访问： <http://localhost:8001/actuator/prometheus>  验证，返回 prometheus 格式的所有指标
+   访问： `http://localhost:8001/actuator/prometheus`  验证，返回 prometheus 格式的所有指标
 
    ```shell
    #安装上传工具
