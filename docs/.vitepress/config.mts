@@ -49,16 +49,18 @@ export default defineConfig({
           { text: 'Java', link: '/code/java/basic/01_var' },
           { text: 'Python', link: '/code/py/1_basic' },
           { text: 'Golang', link: '/code/go/basic/01_var' },
-          // {
-          //   items: [
-          //     { text: 'MySQL', link: '/code/mysql/' },
-          //     { text: 'MongoDB', link: '/code/mongodb/' },
-          //     { text: 'Nginx', link: '/code/nginx/' },
-          //   ]
-          // },
+          { text: 'C', link: '/code/c/01_basic' },
           {
             items: [
-              { text: 'other', link: '/code/other/' }
+              { text: 'MySQL', link: '/code/mysql/basic' },
+              { text: 'MongoDB', link: '/code/mongo/mongodb' },
+              { text: 'Redis', link: '/code/redis/01_datatype' },
+              { text: 'Nginx', link: '/code/nginx/1_var' },
+            ]
+          },
+          {
+            items: [
+              { text: 'other', link: '/code/other/os' }
             ]
           }
         ]
@@ -87,20 +89,29 @@ export default defineConfig({
       '/command/mac': set_sidebar('/command/mac'),
       '/command/win': set_sidebar('/command/win'),
       '/code/java': [
+        { text: '✨ 索引', link: '/code/java/read' },
         {
-          text: '🍎 Java 基础', 
+          text: '🍎 Java 基础',
+          collapsible: true,
+          collapsed: true,
           items: set_sidebar('/code/java/basic', false)
         },
         {
           text: '🧀 Java Web',
+          collapsible: true,
+          collapsed: true,
           items: set_sidebar('/code/java/web', false)
         },
         {
           text: '🍔 JVM',
+          collapsible: true,
+          collapsed: true,
           items: set_sidebar('/code/java/jvm', false)
         },
         {
           text: '🍟 JUC',
+          collapsible: true,
+          collapsed: true,
           items: set_sidebar('/code/java/juc', false)
         }
       ],
@@ -110,7 +121,14 @@ export default defineConfig({
           text: '🪤 Golang 基础', 
           items: set_sidebar('/code/go/basic', false)
         },
+        {
+          text: '🕹 Golang 模块', 
+          items: set_sidebar('/code/go/mod', false)
+        },
       ],
+      '/code/c': set_sidebar('/code/c', false),
+      '/code/mysql': set_sidebar('/code/mysql', false),
+      '/code/nginx': set_sidebar('/code/nginx', false),
       '/code/other': set_sidebar('/code/other', false),
       '/toolbox': [
         { text: '✨ 阅读须知', link: '/toolbox/read' },
