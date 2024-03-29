@@ -49,7 +49,6 @@ export default defineConfig({
           { text: 'Java', link: '/code/java/basic/01_var' },
           { text: 'Python', link: '/code/py/1_basic' },
           { text: 'Golang', link: '/code/go/basic/01_var' },
-          { text: 'C', link: '/code/c/01_basic' },
           {
             items: [
               { text: 'MySQL', link: '/code/mysql/basic' },
@@ -126,7 +125,6 @@ export default defineConfig({
           items: set_sidebar('/code/go/mod', false)
         },
       ],
-      '/code/c': set_sidebar('/code/c', false),
       '/code/mysql': set_sidebar('/code/mysql', false),
       '/code/nginx': set_sidebar('/code/nginx', false),
       '/code/other': set_sidebar('/code/other', false),
