@@ -45,6 +45,8 @@ jobs:
         run: pnpm install # or npm ci / yarn install / bun install
       - name: Build with VitePress
         run: |
+          echo 609
+          sed -n '609p' /home/runner/work/blog-vp/blog-vp/docs/code/c/04_array.md
           pnpm run docs:build
           touch docs/.vitepress/dist/.nojekyll
       - name: Upload artifact
