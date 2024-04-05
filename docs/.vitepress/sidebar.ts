@@ -77,7 +77,7 @@ function get_title(file: string): string {
       return ''
 }
 
-export const set_sidebar = (pathname: string, isFilename: boolean = true) => {
+export const set_sidebar = (pathname: string, isFilename: boolean = false) => {
     // 获取pathname的路径
     const dirPath = path.join(DIR_PATH, "docs", pathname)
     // 读取pathname下的所有文件或者文件夹

@@ -34,7 +34,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Posts', link: '/posts/index' },
-      { text: 'Interview', link: '/interview/read' },
+      { text: 'Model', link: '/model/read' },
       { 
         text: 'Command',
         items: [
@@ -46,15 +46,16 @@ export default defineConfig({
       { 
         text: 'Code',
         items: [
-          { text: 'Java', link: '/code/java/basic/01_var' },
-          { text: 'Python', link: '/code/py/1_basic' },
+          { text: 'Java', link: '/code/java/read.md' },
+          { text: 'Python', link: '/code/python/01_basic' },
           { text: 'Golang', link: '/code/go/basic/01_var' },
           {
             items: [
-              { text: 'MySQL', link: '/code/mysql/basic' },
-              { text: 'MongoDB', link: '/code/mongo/mongodb' },
+              { text: 'MySQL', link: '/code/mysql/00_command' },
+              { text: 'MongoDB', link: '/code/mongo/00_command' },
               { text: 'Redis', link: '/code/redis/01_datatype' },
-              { text: 'Nginx', link: '/code/nginx/1_var' },
+              { text: 'Nginx', link: '/code/nginx/01_var' },
+              { text: 'Docker', link: '/code/docker/01_basic' },
             ]
           },
           {
@@ -69,65 +70,106 @@ export default defineConfig({
 
     sidebar: {
       '/posts': [
-        { text: '✨ 阅读须知', link: '/posts/read' },
-        {
-          text: '🏭 模型',
-          items: set_sidebar('/posts/mode', false)
-        },
         {
           text: '📕 开发笔记',
-          items: set_sidebar('/posts/code', false)
+          items: set_sidebar('/posts/code')
         },
         {
           text: '🖥 macos笔记',
-          items: set_sidebar('/posts/mac', false)
+          items: set_sidebar('/posts/mac')
         }
       ],
-      '/interview': set_sidebar('/interview', false),
-      '/command/linux': set_sidebar('/command/linux'),
-      '/command/mac': set_sidebar('/command/mac'),
-      '/command/win': set_sidebar('/command/win'),
+      '/model': [
+        { text: '✨ 阅读须知', link: '/model/read' },
+        {
+          text: '🏭 认知模型',
+          items: set_sidebar('/model/cognitive'),
+        },
+        {
+          text: '🏭 学习模型',
+          items: set_sidebar('/model/learning'),
+        }
+      ],
+      '/command/linux': set_sidebar('/command/linux', true),
+      '/command/mac': set_sidebar('/command/mac', true),
+      '/command/win': set_sidebar('/command/win', true),
       '/code/java': [
         { text: '✨ 索引', link: '/code/java/read' },
         {
           text: '🍎 Java 基础',
           collapsible: true,
           collapsed: true,
-          items: set_sidebar('/code/java/basic', false)
+          items: set_sidebar('/code/java/basic')
         },
         {
           text: '🧀 Java Web',
           collapsible: true,
           collapsed: true,
-          items: set_sidebar('/code/java/web', false)
+          items: set_sidebar('/code/java/web')
         },
         {
           text: '🍔 JVM',
           collapsible: true,
           collapsed: true,
-          items: set_sidebar('/code/java/jvm', false)
+          items: set_sidebar('/code/java/jvm')
         },
         {
           text: '🍟 JUC',
           collapsible: true,
           collapsed: true,
-          items: set_sidebar('/code/java/juc', false)
+          items: set_sidebar('/code/java/juc')
+        },
+        {
+          text: '🥔 Spring',
+          collapsible: true,
+          collapsed: true,
+          items: set_sidebar('/code/java/spring')
+        },
+        {
+          text: '🍲 SpringBoot',
+          collapsible: true,
+          collapsed: true,
+          items: set_sidebar('/code/java/springboot')
+        },
+        {
+          text: '🍱 SpringCloud',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            { text: 'springcloud01', link: '/code/java/springcloud/sc01/SpringCloud01.md' },
+            { text: 'springcloud02', link: '/code/java/springcloud/sc02/SpringCloud02.md' },
+            { text: '异步通信', link: '/code/java/springcloud/sc03/RabbitMQ.md' },
+            { text: '分布式搜索01', link: '/code/java/springcloud/sc04/es01/elasticsearch01.md' },
+            { text: '分布式搜索02', link: '/code/java/springcloud/sc04/es02/elasticsearch02.md' },
+            { text: '分布式搜索03', link: '/code/java/springcloud/sc04/es03/elasticsearch03.md' },
+            { text: '微服务保护', link: '/code/java/springcloud/sc05/sentinel.md' },
+            { text: '分布式事务', link: '/code/java/springcloud/sc06/seata.md' },
+            { text: '多级缓存', link: '/code/java/springcloud/sc07/multi_level_cache.md' },
+            { text: 'RabbitMQ高级', link: '/code/java/springcloud/sc08/RabbitMQ-adv.md' },
+            { text: '微服务面试题', link: '/code/java/springcloud/sc09/interview.md' },
+          ]
+        },
+        {
+          text: '🍩 SpringSecurity',
+          collapsible: true,
+          collapsed: true,
+          items: set_sidebar('/code/java/springsecurity')
         }
       ],
-      '/code/py': set_sidebar('/code/py', false),
+      '/code/python': set_sidebar('/code/python'),
       '/code/go': [
         {
           text: '🪤 Golang 基础', 
-          items: set_sidebar('/code/go/basic', false)
+          items: set_sidebar('/code/go/basic')
         },
         {
           text: '🕹 Golang 模块', 
-          items: set_sidebar('/code/go/mod', false)
+          items: set_sidebar('/code/go/mod')
         },
       ],
-      '/code/mysql': set_sidebar('/code/mysql', false),
-      '/code/nginx': set_sidebar('/code/nginx', false),
-      '/code/other': set_sidebar('/code/other', false),
+      '/code/mysql': set_sidebar('/code/mysql'),
+      '/code/nginx': set_sidebar('/code/nginx'),
+      '/code/other': set_sidebar('/code/other'),
       '/toolbox': [
         { text: '✨ 阅读须知', link: '/toolbox/read' },
         {
