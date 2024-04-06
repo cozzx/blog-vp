@@ -65,7 +65,7 @@
 
 ### 1.4.SpringCloud
 
-SpringCloud是目前国内使用最广泛的微服务框架。官网地址：<https://spring.io/projects/spring-cloud。>
+SpringCloud是目前国内使用最广泛的微服务框架。官网地址：`https://spring.io/projects/spring-cloud。`
 
 SpringCloud集成了各种微服务功能组件，并基于SpringBoot实现了这些组件的自动装配，从而提供了良好的开箱即用体验。
 
@@ -192,7 +192,7 @@ cloud-order表中持有cloud-user表中的id字段。
 
 ![image-20210713213312278](assets/image-20210713213312278.png)
 
-因此，我们需要在order-service中 向user-service发起一个http的请求，调用<http://localhost:8081/user/{userId}这个接口。>
+因此，我们需要在order-service中 向user-service发起一个http的请求，调用 `http://localhost:8081/user/{userId}` 这个接口。
 
 大概的步骤是这样的：
 
@@ -365,7 +365,7 @@ eureka:
 
 #### 3.2.5.启动服务
 
-启动微服务，然后在浏览器访问：<http://127.0.0.1:10086>
+启动微服务，然后在浏览器访问：`http://127.0.0.1:10086`
 
 看到下面结果应该是成功了：
 
@@ -485,7 +485,7 @@ SpringCloud底层其实是利用了一个名为Ribbon的组件，来实现负载
 
 ![image-20210713224517686](assets/image-20210713224517686.png)
 
-那么我们发出的请求明明是<http://userservice/user/1，怎么变成了http://localhost:8081的呢？>
+那么我们发出的请求明明是 `http://userservice/user/1，怎么变成了http://localhost:8081的呢？`
 
 ### 4.2.源码跟踪
 
@@ -501,7 +501,7 @@ SpringCloud底层其实是利用了一个名为Ribbon的组件，来实现负载
 
 可以看到这里的intercept方法，拦截了用户的HttpRequest请求，然后做了几件事：
 
-- `request.getURI()`：获取请求uri，本例中就是 <http://user-service/user/8>
+- `request.getURI()`：获取请求uri，本例中就是 `http://user-service/user/8`
 - `originalUri.getHost()`：获取uri路径的主机名，其实就是服务id，`user-service`
 - `this.loadBalancer.execute()`：处理服务id，和用户请求。
 
@@ -558,12 +558,12 @@ SpringCloudRibbon的底层采用了一个拦截器，拦截了RestTemplate发出
 
 基本流程如下：
 
-- 拦截我们的RestTemplate请求<http://userservice/user/1>
+- 拦截我们的RestTemplate请求 `http://userservice/user/1`
 - RibbonLoadBalancerClient会从请求url中获取服务名称，也就是user-service
 - DynamicServerListLoadBalancer根据user-service到eureka拉取服务列表
 - eureka返回列表，localhost:8081、localhost:8082
 - IRule利用内置负载均衡规则，从列表中选择一个，例如localhost:8081
-- RibbonLoadBalancerClient修改请求地址，用localhost:8081替代userservice，得到<http://localhost:8081/user/1，发起真实请求>
+- RibbonLoadBalancerClient修改请求地址，用localhost:8081替代userservice，得到 `http://localhost:8081/user/1，发起真实请求`
 
 ### 4.3.负载均衡策略
 
@@ -578,7 +578,7 @@ SpringCloudRibbon的底层采用了一个拦截器，拦截了RestTemplate发出
 | **内置负载均衡规则类**    | **规则描述**                                                 |
 | ------------------------- | ------------------------------------------------------------ |
 | RoundRobinRule            | 简单轮询服务列表来选择服务器。它是Ribbon默认的负载均衡规则。 |
-| AvailabilityFilteringRule | 对以下两种服务器进行忽略：   （1）在默认情况下，这台服务器如果3次连接失败，这台服务器就会被设置为“短路”状态。短路状态将持续30秒，如果再次连接失败，短路的持续时间就会几何级地增加。  （2）并发数过高的服务器。如果一个服务器的并发连接数过高，配置了AvailabilityFilteringRule规则的客户端也会将其忽略。并发连接数的上限，可以由客户端的<clientName>.<clientConfigNameSpace>.ActiveConnectionsLimit属性进行配置。 |
+| AvailabilityFilteringRule | 对以下两种服务器进行忽略：   （1）在默认情况下，这台服务器如果3次连接失败，这台服务器就会被设置为“短路”状态。短路状态将持续30秒，如果再次连接失败，短路的持续时间就会几何级地增加。  （2）并发数过高的服务器。如果一个服务器的并发连接数过高，配置了AvailabilityFilteringRule规则的客户端也会将其忽略。并发连接数的上限，可以由客户端的clientName.clientConfigNameSpace.ActiveConnectionsLimit属性进行配置。 |
 | WeightedResponseTimeRule  | 为每一个服务器赋予一个权重值。服务器响应时间越长，这个服务器的权重就越小。这个规则会随机选择服务器，这个权重值会影响服务器的选择。 |
 | **ZoneAvoidanceRule**     | 以区域可用的服务器为基础进行服务器的选择。使用Zone对服务器进行分类，这个Zone可以理解为一个机房、一个机架等。而后再对Zone内的多个服务做轮询。 |
 | BestAvailableRule         | 忽略那些短路的服务器，并选择并发数较低的服务器。             |

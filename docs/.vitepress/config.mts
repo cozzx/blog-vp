@@ -14,6 +14,7 @@ export default defineConfig({
           lang: 'zh-CN',
       },
   },
+  ignoreDeadLinks: true,
   markdown: {
     lineNumbers: true,
     container: {
