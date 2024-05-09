@@ -2,6 +2,8 @@
 
 MySQL 尚硅谷 PDF 课件
 
+[第00章_init](pdf/L00_init.pdf)
+
 [第00章_写在前面](./assets/pdf/basic/第00章_写在前面.pdf)
 
 [第01章_数据库概述](./assets/pdf/basic/第01章_数据库概述.pdf)
