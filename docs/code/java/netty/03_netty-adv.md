@@ -232,7 +232,7 @@ serverBootstrap.option(ChannelOption.SO_RCVBUF, 10);
 > * TCP 在传递大量数据时，会按照 MSS 大小将数据进行分割发送
 > * MSS 的值在三次握手时通知对方自己 MSS 的值，然后在两者之间选择一个小值作为 MSS
 >
-> ![0031](./img/0031.png)
+> ![0031](./img/0031.jpg)
 >
 > Nagle 算法
 >
