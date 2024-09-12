@@ -1005,7 +1005,7 @@ public class Client {
 
  外观（Facade）模式是“迪米特法则”的典型应用
 
-![外观模式引入](./assets/images/外观模式引入.png)
+![外观模式引入](./assets/images/外观模式引入.jpg)
 
 ### 5.5.2 结构
 
