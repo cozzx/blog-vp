@@ -505,7 +505,7 @@ GET /_analyze
 奥力给
 ```
 
-4）重启elasticsearch 
+4）重启elasticsearch
 
 ```sh
 docker restart es
@@ -1029,9 +1029,7 @@ ES官方提供了各种不同语言的客户端，用来操作ES。这些客户�
 
 #### 4.0.1.导入数据
 
-首先导入课前资料提供的数据库数据：
-
-![tb_hotel.sql](assets/tb_hotel.sql)
+首先导入课前资料提供的数据库数据：tb_hotel.sql
 
 数据结构如下：
 
