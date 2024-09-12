@@ -1,5 +1,4 @@
-unalias
-===
+# unalias
 
 删除由alias设置的别名
 
@@ -45,7 +44,6 @@ unalias ls grep
 
 - 不使用-a选项时没有传递name参数。
 
-
 ### 注意
 
 1. **执行脚本时请注意：**
@@ -57,5 +55,3 @@ unalias ls grep
 2. 查看及设置别名，请查看`alias`命令。
 
 3. 该命令是bash内建命令，相关的帮助信息请查看`help`命令。
-
-

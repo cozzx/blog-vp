@@ -927,7 +927,7 @@ java代码的修改，如果`devtools`热启动了，可能会引起一些bug，
 
 **实现步骤**：
 
-1. Spring Boot 在类路径根下查找messages资源绑定文件。文件名为：messages.properties
+1. Spring     Boot 在类路径根下查找messages资源绑定文件。文件名为：messages.properties
 2. 多语言可以定义多个消息文件，命名为 `messages_区域代码.properties`。如：
 
     1. `messages.properties`：默认

@@ -1,5 +1,4 @@
-telinit
-===
+# telinit
 
 切换当前正在运行系统的运行等级
 
@@ -17,14 +16,14 @@ _RUNLEVEL_ 也可能是 S 或 s ，这会将系统直接置于单用户模式，
 
 **telinit** 会将新的运行级别写入 `/var/run/utmp` 并将新条目附加到 `/var/log/wtmp`。
 
-###  语法
+### 语法
 
 ```shell
 telint(选项)(参数)
 telinit [OPTION]... RUNLEVEL
 ```
 
-###  选项
+### 选项
 
 ```shell
 -t：指定等待的秒数。
@@ -33,7 +32,7 @@ telinit [OPTION]... RUNLEVEL
 
 这指定了与 _RUNLEVEL_ 和 _PREVLEVEL_ 一起包含在事件中的附加环境变量。
 
-###  参数
+### 参数
 
 运行等级：指定要切换的运行等级。
 
@@ -47,4 +46,3 @@ RUNLEVEL
 
 - `/var/run/utmp` 将从哪里读取当前运行级别； 此文件也将使用新的运行级别进行更新。
 - `/var/log/wtmp` 新的运行级别记录将附加到此文件中以获取新的运行级别。
-

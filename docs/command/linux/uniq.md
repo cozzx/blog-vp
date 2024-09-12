@@ -1,5 +1,4 @@
-uniq
-===
+# uniq
 
 显示或忽略重复的行。
 
@@ -13,7 +12,6 @@ uniq [OPTION]... [INPUT [OUTPUT]]
 
 - 将输入文件（或标准输入）中邻近的重复行写入到输出文件（或标准输出）中。
 - 当没有选项时，邻近的重复行将合并为一个。
-
 
 ## 选项
 
@@ -72,11 +70,8 @@ sort file.txt | uniq -c
 sort file.txt | uniq -d
 ```
 
-
 ### 注意
 
-1. `uniq`只检测邻近的行是否重复，`sort -u`将输入文件先排序然后再处理重复行。 
+1. `uniq`只检测邻近的行是否重复，`sort -u`将输入文件先排序然后再处理重复行。
 
 2. 该命令是`GNU coreutils`包中的命令，相关的帮助信息请查看`man -s 1 uniq`，`info coreutils 'uniq invocation'`。
-
-

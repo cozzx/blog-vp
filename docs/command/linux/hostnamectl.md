@@ -1,5 +1,4 @@
-hostnamectl
-===
+# hostnamectl
 
 查询或更改系统主机名
 

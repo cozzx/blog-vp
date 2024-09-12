@@ -1,5 +1,4 @@
-locate
-===
+# locate
 
 比 find 好用的文件查找工具
 
@@ -97,4 +96,3 @@ root ~ # locate /etc/m
 ```shell
 locate -i ~/r
 ```
-

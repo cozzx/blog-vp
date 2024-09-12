@@ -1,5 +1,4 @@
-dmidecode
-===
+#
 
 在Linux系统下获取有关硬件方面的信息
 
@@ -11,13 +10,13 @@ DMI（Desktop Management Interface,DMI）就是帮助收集电脑系统信息的
 
 DMI充当了管理工具和系统层之间接口的角色。它建立了标准的可管理系统更加方便了电脑厂商和用户对系统的了解。DMI的主要组成部分是Management Information Format(MIF)数据库。这个数据库包括了所有有关电脑系统和配件的信息。通过DMI，用户可以获取序列号、电脑厂商、串口信息以及其它系统配件信息。
 
-###  语法 
+### 语法
 
 ```shell
 dmidecode [选项]
 ```
 
-###  选项 
+### 选项
 
 ```shell
 -d：(default:/dev/mem)从设备文件读取信息，输出内容与不加参数标准输出相同。
@@ -30,91 +29,91 @@ dmidecode [选项]
 -V：显示版本信息。
 ```
 
- **dmidecode参数string及type列表：** 
+ **dmidecode参数string及type列表：**
 
 （1）Valid string keywords are：
 
-*   bios-vendor
-*   bios-version
-*   bios-release-date
-*   system-manufacturer
-*   system-product-name
-*   system-version
-*   system-serial-number
-*   system-uuid
-*   baseboard-manufacturer
-*   baseboard-product-name
-*   baseboard-version
-*   baseboard-serial-number
-*   baseboard-asset-tag
-*   chassis-manufacturer
-*   chassis-type
-*   chassis-version
-*   chassis-serial-number
-*   chassis-asset-tag
-*   processor-family
-*   processor-manufacturer
-*   processor-version
-*   processor-frequency
+* bios-vendor
+* bios-version
+* bios-release-date
+* system-manufacturer
+* system-product-name
+* system-version
+* system-serial-number
+* system-uuid
+* baseboard-manufacturer
+* baseboard-product-name
+* baseboard-version
+* baseboard-serial-number
+* baseboard-asset-tag
+* chassis-manufacturer
+* chassis-type
+* chassis-version
+* chassis-serial-number
+* chassis-asset-tag
+* processor-family
+* processor-manufacturer
+* processor-version
+* processor-frequency
 
 （2）Valid type keywords are：
 
-*   bios
-*   system
-*   baseboard
-*   chassis
-*   processor
-*   memory
-*   Cache
-*   connector
-*   slot
+* bios
+* system
+* baseboard
+* chassis
+* processor
+* memory
+* Cache
+* connector
+* slot
 
 （3）type全部编码列表：
 
-*   BIOS
-*   System
-*   Base Board
-*   Chassis
-*   Processor
-*   Memory Controller
-*   Memory Module
-*   Cache
-*   Port Connector
-*   System Slots
-*   On Board Devices
-*   OEM Strings
-*   System Configuration Options
-*   BIOS Language
-*   Group Associations
-*   System Event Log
-*   Physical Memory Array
-*   Memory Device
-*   32-bit Memory Error
-*   Memory Array Mapped Address
-*   Memory Device Mapped Address
-*   Built-in Pointing Device
-*   Portable Battery
-*   System Reset
-*   Hardware Security
-*   System Power Controls
-*   Voltage Probe
-*   Cooling Device
-*   Temperature Probe
-*   Electrical Current Probe
-*   Out-of-band Remote Access
-*   Boot Integrity Services
-*   System Boot
-*   64-bit Memory Error
-*   Management Device
-*   Management Device Component
-*   Management Device Threshold Data
-*   Memory Channel
-*   IPMI Device
-*   Power Supply
-*   Additional Information
-*   Onboard Device
+* BIOS
+* System
+* Base Board
+* Chassis
+* Processor
+* Memory Controller
+* Memory Module
+* Cache
+* Port Connector
+* System Slots
+* On Board Devices
+* OEM Strings
+* System Configuration Options
+* BIOS Language
+* Group Associations
+* System Event Log
+* Physical Memory Array
+* Memory Device
+* 32-bit Memory Error
+* Memory Array Mapped Address
+* Memory Device Mapped Address
+* Built-in Pointing Device
+* Portable Battery
+* System Reset
+* Hardware Security
+* System Power Controls
+* Voltage Probe
+* Cooling Device
+* Temperature Probe
+* Electrical Current Probe
+* Out-of-band Remote Access
+* Boot Integrity Services
+* System Boot
+* 64-bit Memory Error
+* Management Device
+* Management Device Component
+* Management Device Threshold Data
+* Memory Channel
+* IPMI Device
+* Power Supply
+* Additional Information
+* Onboard Device
 
-###  实例 
+### 实例
 
 ```shell
 dmidecode -t 1  # 查看服务器信息

@@ -1,5 +1,4 @@
-who
-===
+# who
 
 显示当前所有登陆用户的信息。
 
@@ -72,5 +71,3 @@ root     + pts/1        2013-12-20 10:37 (180.111.155.40)
 ### 注意
 
 1. 该命令是`GNU coreutils`包中的命令，相关的帮助信息请查看`man -s 1 who`，`info coreutils 'who invocation'`。
-
-

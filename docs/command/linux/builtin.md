@@ -1,5 +1,4 @@
-builtin
-===
+# builtin
 
 执行bash内建命令。
 
@@ -65,6 +64,3 @@ alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-ti
 1. 该命令是bash内建命令，相关的帮助信息请查看`help`命令。
 
 2. 如果要调用的内建命令被禁用了（包括`builtin`），那么执行会报错；关于禁用和启用内建命令请参考`enable`命令。
-
-
-

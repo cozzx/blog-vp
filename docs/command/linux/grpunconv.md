@@ -1,5 +1,4 @@
-grpunconv
-===
+# grpunconv
 
 用来关闭群组的投影密码
 
@@ -7,13 +6,13 @@ grpunconv
 
 **grpunconv命令** 用来关闭群组的投影密码。它会把密码从gshadow文件内，回存到group文件里。
 
-###  语法
+### 语法
 
 ```shell
 grpunconv
 ```
 
-###  实例
+### 实例
 
 未关闭的情况
 
@@ -35,5 +34,3 @@ cat: /etc/gshadow: 没有那个文件或目录
 cat /etc/group | grep cdy
 cdy:123456:1000:
 ```
-
-

@@ -1,5 +1,4 @@
-passwd
-===
+# passwd
 
 用于让用户可以更改自己的密码
 
@@ -7,13 +6,13 @@ passwd
 
 **passwd命令** 用于设置用户的认证信息，包括用户密码、密码过期时间等。系统管理者则能用它管理系统用户的密码。只有管理者可以指定用户名称，一般用户只能变更自己的密码。
 
-###  语法
+### 语法
 
 ```shell
 passwd(选项)(参数)
 ```
 
-###  选项
+### 选项
 
 ```shell
 -d：删除密码，仅有系统管理者才能使用；
@@ -24,11 +23,11 @@ passwd(选项)(参数)
 -u：解开已上锁的帐号。
 ```
 
-###  参数
+### 参数
 
 用户名：需要设置密码的用户名。
 
-###  知识扩展
+### 知识扩展
 
 与用户、组账户信息相关的文件
 
@@ -73,7 +72,7 @@ $!$　　# 被加密的口令
 *　　# 过期天数
 ```
 
-###  实例
+### 实例
 
 如果是普通用户执行passwd只能修改自己的密码。如果新建用户后，要为新用户创建密码，则用passwd用户名，注意要以root用户的权限来创建。
 
@@ -83,6 +82,15 @@ Changing password for user linuxde.
 New UNIX password:           # 请输入新密码；
 Retype new UNIX password:    # 再输入一次；
 passwd: all authentication tokens updated successfully.  # 成功；
+```
+
+或通过管道符把`echo`命令和`passwd`命令的`--stdin`参数相结合，用一条命令来完成密码修改，无序交互。
+以 linuxde 用户的密码改成 123456 为例：
+
+```shell
+[root@localhost ~]# echo "123456" | passwd --stdin linuxde
+Changing password for user linuxde.                        # 正在更改 linuxde 用户的密码。
+passwd: all authentication tokens updated successfully.    # passwd：所有身份验证令牌都已成功更新
 ```
 
 普通用户如果想更改自己的密码，直接运行passwd即可，比如当前操作的用户是linuxde。

@@ -1,5 +1,4 @@
-useradd
-===
+# useradd
 
 创建的新的系统用户
 
@@ -9,13 +8,13 @@ useradd
 
 在Slackware中，adduser指令是个script程序，利用交谈的方式取得输入的用户帐号资料，然后再交由真正建立帐号的useradd命令建立新用户，如此可方便管理员建立用户帐号。在Red Hat Linux中， **adduser命令** 则是useradd命令的符号连接，两者实际上是同一个指令。
 
-###  语法
+### 语法
 
 ```shell
 useradd(选项)(参数)
 ```
 
-###  选项
+### 选项
 
 ```shell
 -b, --base-dir BASE_DIR  # 如果未指定 -d HOME_DIR，则系统的默认基本目录。如果未指定此选项，useradd 将使用 /etc/default/useradd 中的 HOME 变量指定的基本目录，或默认使用 /home。
@@ -45,7 +44,7 @@ useradd(选项)(参数)
 # 当仅使用 -D 选项调用时，useradd 将显示当前默认值。 当使用 -D 和其他选项调用时，useradd 将更新指定选项的默认值。 有效的默认更改选项是：
 ```
 
-###  参数
+### 参数
 
 用户名：要创建的用户名。
 
@@ -79,7 +78,7 @@ useradd(选项)(参数)
 /etc/login.defs # 影子密码套件配置。
 ```
 
-###  实例
+### 实例
 
 新建用户加入组：
 

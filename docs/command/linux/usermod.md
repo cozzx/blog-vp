@@ -1,5 +1,4 @@
-usermod
-===
+# usermod
 
 用于修改用户的基本信息
 
@@ -70,6 +69,7 @@ usermod -aG group user # 添加用户到用户组中
 `-a` 参数表示附加，只和 `-G` 参数一同使用，表示将用户增加到组中。
 
 修改用户家目录：
+
 ```
 [root@node-1 ~]# useradd lutixiaya
 [root@node-1 ~]# ls /home
@@ -79,5 +79,3 @@ lutixiaya
 [root@node-1 ~]# ls /data/
 new_home
 ```
-
-

@@ -1,5 +1,4 @@
-dpkg-deb
-===
+# dpkg-deb
 
 Debian Linux下的软件包管理工具
 
@@ -7,13 +6,13 @@ Debian Linux下的软件包管理工具
 
 **dpkg-deb命令** 是Debian Linux下的软件包管理工具，它可以对软件包执行打包和解包操作以及提供软件包信息。
 
-###  语法
+### 语法
 
 ```shell
 dpkg-deb(选项)(参数)
 ```
 
-###  选项
+### 选项
 
 ```shell
 -c：显示软件包中的文件列表；
@@ -27,11 +26,11 @@ dpkg-deb(选项)(参数)
 -b：创建debian软件包。
 ```
 
-###  参数
+### 参数
 
 文件：指定要操作的“.deb”软件包的全名或软件名。
 
-###  实例
+### 实例
 
 解压程序文件：
 
@@ -56,5 +55,3 @@ dpkg-deb -b drcom drcom_1.4.8.2_i386.deb
 ```shell
 dpkg-deb -c demo.deb
 ```
-
-

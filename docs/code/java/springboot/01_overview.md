@@ -221,7 +221,7 @@ public static void main(String[]args){
     6. SpringBoot 默认扫描不到 `spring-boot-autoconfigure` 下写好的所有**配置类**。（这些**配置类**给我们做了整合操作），**默认只扫描主程序所在的包**。
 
 2. **主程序**：`@SpringBootApplication`
-    1. `@SpringBootApplication` 由三个注解组成 `@SpringBootConfiguration`、`@EnableAutoConfiguratio`、`@ComponentScan`。
+    1. `@SpringBootApplication` 由三个注解组成 `@SpringBootConfiguration`、`@EnableAutoConfiguration`、`@ComponentScan`。
     2. SpringBoot 默认只能扫描自己主程序所在的包及其下面的子包，扫描不到 `spring-boot-autoconfigure` 包中官方写好的**配置类**。
     3. `@EnableAutoConfiguration`：SpringBoot **开启自动配置的核心**。
         - 是由 `@Import(AutoConfigurationImportSelector.class)` 提供功能：批量给容器中导入组件。
@@ -231,7 +231,7 @@ public static void main(String[]args){
         - 项目启动的时候利用 @Import 批量导入组件机制把 `autoconfigure` 包下的142 `xxxxAutoConfiguration`类导入进来（**自动配置类**）。
         - 虽然导入了152个自动配置类，并不是都能生效，每一个自动配置类，都有条件注解 `@ConditionalOnxxx`，只有条件成立，才能生效。
 
-3. `xxxxAutoConfiguratio`**自动配置类**
+3. `xxxxAutoConfiguration`**自动配置类**
     1. 给容器中使用 @Bean 放一堆组件。
     2. 每个**自动配置类**都可能有这个注解 `@EnableConfigurationProperties(ServerProperties.class)`，用来把配置文件中配的指定前缀的属性值封装到 `xxxProperties` **属性类**中。
     3. 以Tomcat为例：把服务器的所有配置都是以 `server` 开头的，配置都封装到了属性类中。

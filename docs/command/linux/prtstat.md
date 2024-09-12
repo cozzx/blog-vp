@@ -1,5 +1,4 @@
-prtstat
-===
+# prtstat
 
 显示进程信息
 

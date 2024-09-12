@@ -1,5 +1,4 @@
-quotacheck
-===
+# quotacheck
 
 检查磁盘的使用空间与限制
 
@@ -15,13 +14,13 @@ quotacheck: Your kernel probably supports journaled quota but you are not using 
 
 可以考虑将之前在文件系统的配置文件中添加的quota相关字段修改为：`usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv1`，然后重新挂载文件系统：`mount -vo remount 挂载目录`（注意，如果这一步操作出现了任何问题，千万不要试图通过重启解决！将配置文件恢复原状是一个好的选择）
 
-###  语法
+### 语法
 
 ```shell
 quotacheck(选项)(参数)
 ```
 
-###  选项
+### 选项
 
 ```shell
 -a：扫描在/etc/fstab文件里，有加入quota设置的分区；
@@ -33,11 +32,11 @@ quotacheck(选项)(参数)
 -v：显示指令执行过程。
 ```
 
-###  参数
+### 参数
 
 文件系统：指定要扫描的文件系统。
 
-###  实例
+### 实例
 
 将所有的在`/etc/mtab`内，含有quota支持的partition进行扫描：
 
@@ -58,6 +57,3 @@ quotacheck: Checked 3 directories and 4 files
 ```shell
 [root@linux ~]# quotacheck -cvug /disk2
 ```
-
-
-

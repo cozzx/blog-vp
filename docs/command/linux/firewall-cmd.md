@@ -1,5 +1,4 @@
-firewall-cmd
-===
+# firewall-cmd
 
 Linux上新用的防火墙软件，跟iptables差不多的工具
 
@@ -47,7 +46,7 @@ firewall-cmd [选项 ... ]
 --set-log-denied=<value> # 设置记录被拒绝的日志，只能为 'all','unicast','broadcast','multicast','off' 其中的一个；
 ```
 
-###  实例
+### 实例
 
 ```shell
 # 安装firewalld

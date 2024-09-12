@@ -1,5 +1,4 @@
-smartmontools
-===
+# smartmontools
 
 Smartmontools 是一种硬盘检测工具，通过控制和管理硬盘的SMART（Self Monitoring Analysis and Reporting Technology，自动检测分析及报告技术）技术来实现的
 
@@ -39,8 +38,7 @@ smartctl (选项) (参数)
 （PASSED 表示健康；FAILED 表示即将出现故障所以需要开始备份这块磁盘上的重要数据）
 ```shell
 ~ sudo smartctl -s on -H /dev/sda1   
-
-=== START OF READ SMART DATA SECTION ===
+#  START OF READ SMART DATA SECTION ===
 SMART overall-health self-assessment test result: PASSED
 ```
 
@@ -48,8 +46,7 @@ SMART overall-health self-assessment test result: PASSED
 (Power_On_Hours: 表示通电时长 18195 小时)
 ```shell
 ~ sudo smartctl -A /dev/sda1
-
-=== START OF READ SMART DATA SECTION ===
+#  START OF READ SMART DATA SECTION ===
 SMART Attributes Data Structure revision number: 16
 Vendor Specific SMART Attributes with Thresholds:
 ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE

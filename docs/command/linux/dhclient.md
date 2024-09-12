@@ -1,5 +1,4 @@
-dhclient
-===
+# dhclient
 
 动态获取或释放IP地址
 
@@ -7,13 +6,13 @@ dhclient
 
 **dhclient命令** 使用动态主机配置协议动态的配置网络接口的网络参数。
 
-###  语法
+### 语法
 
 ```shell
 dhclient(选项)(参数)
 ```
 
-###  选项
+### 选项
 
 ```shell
 0：指定dhcp客户端监听的端口号；
@@ -22,15 +21,13 @@ dhclient(选项)(参数)
 -r：释放ip地址。
 ```
 
-###  参数
+### 参数
 
 网络接口：操作的网络接口。
 
-###  实例
+### 实例
 
 ```shell
 dhclient -r     #释放IP
 dhclient        #获取IP
 ```
-
-

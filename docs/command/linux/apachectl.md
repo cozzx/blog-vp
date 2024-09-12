@@ -1,5 +1,4 @@
-apachectl
-===
+# apachectl
 
 Apache服务器前端控制工具
 
@@ -7,13 +6,13 @@ Apache服务器前端控制工具
 
 **apachectl命令** 是Apache的Web服务器前端控制工具，用以启动、关闭和重新启动Web服务器进程。
 
-###  语法
+### 语法
 
 ```
 apachectl(参数)
 ```
 
-###  参数
+### 参数
 
 * configtest：检查设置文件中的语法是否正确；
 * fullstatus：显示服务器完整的状态信息；
@@ -23,5 +22,3 @@ apachectl(参数)
 * start：启动Apache服务器；
 * status：显示服务器摘要的状态信息；
 * stop：停止Apache服务器。
-
-

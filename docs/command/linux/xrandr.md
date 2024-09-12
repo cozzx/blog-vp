@@ -1,5 +1,4 @@
-xrandr
-===
+# xrandr
 
 X 窗口系统配置管理工具
 

@@ -1,5 +1,4 @@
-source
-===
+# source
 
 在当前Shell环境中从指定文件读取和执行命令。
 

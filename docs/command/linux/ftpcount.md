@@ -1,5 +1,4 @@
-ftpcount
-===
+# ftpcount
 
 显示目前已FTP登入的用户人数
 

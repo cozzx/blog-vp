@@ -1,5 +1,4 @@
-tar
-===
+#
 
 将许多文件一起保存至一个单独的磁带或磁盘归档，并能从归档中单独还原所需文件。
 
@@ -294,7 +293,7 @@ tar [选项...] [FILE]...
 设置备份后缀，否则备份后缀就是“~”。
 可以用 --backup 或 VERSION_CONTROL 设置版本控制，可能的值为：
 
-  none, off	   从不做备份
+  none, off    从不做备份
   t, numbered     进行编号备份
   nil, existing
 如果编号备份存在则进行编号备份，否则进行简单备份
@@ -341,7 +340,6 @@ tar -cf archive.tar foo bar  # 从文件 foo 和 bar 创建归档文件 archive.
 tar -tvf archive.tar         # 详细列举归档文件 archive.tar 中的所有文件。
 tar -xf archive.tar          # 展开归档文件 archive.tar 中的所有文件。
 ```
-
 
 下面的参数-f是必须的
 
@@ -466,7 +464,6 @@ tar -jcvf log.tar.bz2 log2012.log  打包后，以 bzip2 压缩
 
 在选项`f`之后的文件档名是自己取的，我们习惯上都用 .tar 来作为辨识。 如果加`z`选项，则以.tar.gz或.tgz来代表gzip压缩过的tar包；如果加`j`选项，则以.tar.bz2来作为tar包名。
 
-
 **解压目录**
 
 参数--strip-components NUMBER，在提取时从文件名中删除NUMBER个前导组件，如要去除前二层，参数为--strip-components 2
@@ -544,6 +541,3 @@ tar -cvf test.tar test --remove-files
 查　询：tar -jtv -f filename.tar.bz2
 解压缩：tar -jxv -f filename.tar.bz2 -C 欲解压缩的目录
 ```
-
-
-

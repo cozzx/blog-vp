@@ -1,5 +1,4 @@
-users
-===
+# users
 
 打印当前主机所有登陆用户的名称。
 
@@ -38,5 +37,3 @@ root root
 ### 注意
 
 1. 该命令是`GNU coreutils`包中的命令，相关的帮助信息请查看`man -s 1 users`，`info coreutils 'users invocation'`。
-
-

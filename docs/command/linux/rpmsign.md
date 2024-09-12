@@ -1,5 +1,4 @@
-rpmsign
-===
+# rpmsign
 
 使用RPM软件包的签名管理工具
 
@@ -7,13 +6,13 @@ rpmsign
 
 **rpmsign命令** 使用rpm软件包的签名管理工具。
 
-###  语法
+### 语法
 
 ```shell
 rpmsign(选项)
 ```
 
-###  选项
+### 选项
 
 ```shell
 --addsign：为自动软件包添加签名；
@@ -24,5 +23,3 @@ rpmsign(选项)
 --nodigest：不验证软件包摘要；
 --nosignature：不验证软件包签名。
 ```
-
-

@@ -1,5 +1,4 @@
-dos2unix
-===
+# dos2unix
 
 将DOS格式文本文件转换成Unix格式
 
@@ -63,4 +62,3 @@ dos2unix -k -n oldfile newfile
 ```shell
 find -type f | xargs dos2unix
 ```
-

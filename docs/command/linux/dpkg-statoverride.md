@@ -1,5 +1,4 @@
-dpkg-statoverride
-===
+# dpkg-statoverride
 
 Debian Linux中覆盖文件的所有权和模式
 
@@ -7,13 +6,13 @@ Debian Linux中覆盖文件的所有权和模式
 
 **dpkg-statoverride命令** 用于Debian Linux中覆盖文件的所有权和模式，让dpkg于包安装时使得文件所有权与模式失效。
 
-###  语法
+### 语法
 
 ```shell
 dpkg-statoverride(选项)
 ```
 
-###  选项
+### 选项
 
 ```shell
 -add：为文件添加一个改写；
@@ -22,7 +21,7 @@ dpkg-statoverride(选项)
 --update：如果文件存在，则立刻执行改写操作。
 ```
 
-###  实例
+### 实例
 
 修改文件夹的权限属性：
 
@@ -41,5 +40,3 @@ sudo dpkg-statoverride --force --update --add root sasl 755 /var/spool/postfix/v
 ```shell
 sudo dpkg-statoverride --remove /usr/bin/wall
 ```
-
-

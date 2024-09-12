@@ -76,7 +76,6 @@ javap -c(v附加信息) .class 文件反编译
 
   ![juc_lock_bytecode3](./images/juc_lock_bytecode3.png)
 
-
 每个对象都存在着一个监视器 (Monitor)，当一个 monitor 被某个线程持有后，它便处于锁定状态。在 HotSpot 中，monitor 是由 ObjectMonitor 实现的，其主要的数据结构如下（位于 HotSpot 虚拟机源码 ObjectMonitor.hpp 文件，C++ 实现）：
 
 ![juc_monitor](./images/juc_monitor.png)
@@ -301,4 +300,3 @@ public class DeadLockTest {
 ![juc_deadlock_check](./images/juc_deadlock_check.png)
 
 ![juc_deadlock_check](./images/juc_deadlock_check2.png)
-

@@ -1,5 +1,4 @@
-htop
-===
+# htop
 
 [非内部命令]一个互动的进程查看器，可以动态观察系统进程状况
 
@@ -22,7 +21,7 @@ top缺点：
 - 只支持键盘操作。
 - 显示也单调。
 
-htop 官网：http://htop.sourceforge.net/
+htop 官网：<http://htop.sourceforge.net/>
 
 ### htop 安装
 
@@ -45,6 +44,7 @@ sudo dnf install htop
 ```shell
 sudo yum install htop
 ```
+
 如果你想避免从源代码构建包，还有一个 Snap 包可用：
 
 ```shell
@@ -72,7 +72,7 @@ make install
 
 **说明**：htop源码安装方式默认安装到 `/usr/local` 目录下，如果想安装到其它路径，在执行 configure 时通过 `—prefix` 指定，格式为：`./configure --prefix=/some/path`
 
-###  语法
+### 语法
 
 ```shell
 htop
@@ -100,7 +100,7 @@ htop
 
 - -u 选项 : 显示指定的用户的进程信息。如，htop -u test命令会只显示出用户名为test的相关进程。
 
-###  选项
+### 选项
 
 ```shell
 h,?     F1：查看htop使用说明
@@ -136,7 +136,6 @@ Space(空格) : 标记/取消标记一个进程。命令可以作用于多个进
 
 ```
 
-
 ### Htop设定
 
 鼠标点击Setup或者按下F2 之后进入htop 设定的页面
@@ -167,7 +166,6 @@ Space(空格) : 标记/取消标记一个进程。命令可以作用于多个进
 
 **F5:以树形方式显示**
 
-
 **F6：排序方式**
 
 按下F6后会跳转至以树形方式显示界面，让您选择以什么方式进行排序，在Sort by下选择您要以什么来排序
@@ -176,11 +174,8 @@ Space(空格) : 标记/取消标记一个进程。命令可以作用于多个进
 
 F7表示减小nice值(增大优先级)，F8增大nice值(减小优先级)，选择某一进程，按F7或F8来增大或减小nice值，nice值范围为-20-19
 
-
 **F9：杀死进程**
 
 选择某一进程按F9即可杀死此进程，很方便
 
 **F10:退出htop**
-
-

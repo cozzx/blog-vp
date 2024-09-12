@@ -1,5 +1,4 @@
-xargs
-===
+#
 
 给其他命令传递参数的一个过滤器
 
@@ -32,6 +31,7 @@ a b c d e f g h i j k l m n o p q r s t u v w x y z
 ```
 
 #### 使用 -n 进行多行输出
+
 **-n 选项** 多行输出：
 
 ```shell
@@ -49,6 +49,7 @@ y z
 ```
 
 #### 使用 -d 分割输入
+
 **-d 选项** 可以自定义一个定界符：
 
 ```shell
@@ -67,6 +68,7 @@ name name
 ```
 
 #### 读取 stdin
+
 **读取 stdin，将格式化后的参数传递给命令**
 
 假设一个命令为 sk.sh 和一个保存参数的文件 arg.txt：
@@ -89,6 +91,7 @@ ccc
 ```
 
 #### 结合 -I 选项
+
 xargs 的一个 **选项 -I** ，使用 -I 指定一个替换字符串{}，这个字符串在 xargs 扩展时会被替换掉，当 -I 与 xargs 结合使用，每一个参数命令都会被执行一次：
 
 ```shell
@@ -106,6 +109,7 @@ ls *.jpg | xargs -n1 -I{} cp {} /data/images
 ```
 
 #### 结合 find 命令使用
+
 **xargs 结合 find 使用**
 
 用 rm 删除太多的文件时候，可能得到一个错误信息：`/bin/rm Argument list too long`. 用 `xargs` 去避免这个问题：
@@ -129,6 +133,7 @@ find . -type f -name "*.jpg" -print | xargs tar -czvf images.tar.gz
 ```
 
 #### 打印出执行的命令
+
 结合 `-t` 选项可以打印出 `xargs` 执行的命令
 
     ls | xargs -t -I{} echo {}
@@ -136,11 +141,13 @@ find . -type f -name "*.jpg" -print | xargs tar -czvf images.tar.gz
 会输出当前目录下的文件列表和执行的 echo 命令
 
 #### 使用 -p 选项确认执行的命令
+
 `-p` 选项会在执行每一个命令时弹出确认，当你需要非常准确的确认每一次操作时可以使用 `-p` 参数，比如，查找当前目录下 `.log` 文件，每一次删除都需要确认：
 
     find . -maxdepth 1 -name "*.log" | xargs -p -I{} rm {}
 
 #### 执行多个命令
+
 使用 `-I` 选项可以让 `xargs` 执行多个命令
 
     cat foo.txt
@@ -156,8 +163,8 @@ find . -type f -name "*.jpg" -print | xargs tar -czvf images.tar.gz
     ls
     one two three
 
-
 #### 其他应用
+
 **xargs 其他应用**
 
 假如你有一个文件包含了很多你希望下载的 URL，你能够使用 xargs 下载所有链接：

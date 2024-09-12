@@ -1,5 +1,4 @@
-tty
-===
+# tty
 
 显示连接到当前标准输入的终端设备文件名
 
@@ -44,5 +43,3 @@ ps -ef | egrep "pts/2 " | grep -v grep
 ### 注意
 
 1. 该命令是`GNU coreutils`包中的命令，相关的帮助信息请查看`man -s 1 tty`，`info coreutils 'tty invocation'`。
-
-

@@ -1,5 +1,4 @@
-export
-===
+# export
 
 为shell变量或函数设置导出属性。
 
@@ -69,7 +68,6 @@ a=5;b=7
 export -n a b
 ```
 
-
 ```shell
 # 首先删除要演示的函数名
 unset func_1 func_2
@@ -135,14 +133,13 @@ A：因为`declare`也能够设置变量或函数的导出属性，详见`declar
 
 那么第一句话中的参数又和变量有什么关系呢？在`3.4`节第一段中提到：
 
->  A variable is a parameter denoted by a name.
+> A variable is a parameter denoted by a name.
 
 变量是有名字的参数。
 
 那么子shell确实继承了父shell中带有导出属性的变量或函数。
 
 可参考链接： [执行脚本方式的区别](https://blog.csdn.net/soaringlee_fighting/article/details/78759448)
-
 
 ### 参考链接
 
@@ -183,5 +180,3 @@ declare -x USER="root"
 [2]: https://stackoverflow.com/questions/5564418/exporting-an-array-in-bash-script
 [3]: https://unix.stackexchange.com/questions/22796/can-i-export-functions-in-bash
 [4]: https://askubuntu.com/questions/26318/environment-variable-vs-shell-variable-whats-the-difference
-
-

@@ -1,5 +1,4 @@
-hping3
-===
+# hping3
 
 测试网络及主机的安全
 
@@ -7,7 +6,7 @@ hping3
 
 **hping** 是用于生成和解析TCPIP协议数据包的开源工具。创作者是Salvatore Sanfilippo。目前最新版是hping3，支持使用tcl脚本自动化地调用其API。hping是安全审计、防火墙测试等工作的标配工具。hping优势在于能够定制数据包的各个部分，因此用户可以灵活对目标机进行细致地探测。
 
-###  安装
+### 安装
 
 ```shell
 yum install libpcap-devel tc-devel
@@ -20,7 +19,7 @@ make
 make install
 ```
 
-###  选项
+### 选项
 
 ```shell
 -H --help 显示帮助。
@@ -69,13 +68,13 @@ make install
 -Q --seqnum 搜集序列号的，这对于你分析TCP序列号有很大作用。
 ```
 
-###  Hping3功能
+### Hping3功能
 
 Hping3主要有以下典型功能应用：
 
 ### #  防火墙测试
 
-使用Hping3指定各种数据包字段，依次对防火墙进行详细测试。请参考：http://0daysecurity.com/articles/hping3_examples.html
+使用Hping3指定各种数据包字段，依次对防火墙进行详细测试。请参考：<http://0daysecurity.com/articles/hping3_examples.html>
 
 测试防火墙对ICMP包的反应、是否支持traceroute、是否开放某个端口、对防火墙进行拒绝服务攻击（DoS attack）。例如，以LandAttack方式测试目标防火墙（Land Attack是将发送源地址设置为与目标地址相同，诱使目标机与自己不停地建立连接）。
 
@@ -151,5 +150,3 @@ hping3 192.168.10.44 -p53 -d 100 --udp --sign siganature --file ./test.cmd
 将包含ls命令的文件加上签名signature发送到192.168.10.44主机的53号UDP端口，包数据长度为100字节。
 
 当然这里只是简单的演示程序，真实的场景，控制端可以利益shell执行很多的高级复杂的操作。
-
-

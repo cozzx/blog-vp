@@ -1,5 +1,4 @@
-break
-===
+# break
 
 结束for，while或until循环。
 
@@ -12,7 +11,6 @@ break [n]
 ## 主要用途
 
 - 结束for，while或until循环，可指定退出几层循环。
-
 
 ## 参数
 
@@ -60,6 +58,3 @@ done
 ### 注意
 
 1. 该命令是bash内建命令，相关的帮助信息请查看`help`命令。
-
-
-

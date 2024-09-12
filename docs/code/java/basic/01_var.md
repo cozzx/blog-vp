@@ -11,8 +11,8 @@
 
 > 说明：
 >
->  1. 关键字一共 50个，其中 `const` 和 `goto` 是保留字 (reserved word)。
->  2. `true`，`false`，`null` 不在其中，它们看起来像关键字，其实是字面量，表示特殊的布尔值和空值。
+> 1. 关键字一共 50个，其中 `const` 和 `goto` 是保留字 (reserved word)。
+> 2. `true`，`false`，`null` 不在其中，它们看起来像关键字，其实是字面量，表示特殊的布尔值和空值。
 
 <img src="./images/overview_2.1_2.png" alt="overview_2.1_2" style="zoom:50%;" />
 

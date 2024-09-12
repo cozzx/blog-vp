@@ -1,42 +1,41 @@
-readelf
-===
+# readelf
 
 用于显示elf格式文件的信息
 
 ## 补充说明
 
-**readelf命令** 用来显示一个或者多个elf格式的目标文件的信息，可以通过它的选项来控制显示哪些信息。这里的elf-file(s)就表示那些被检查的文件。可以支持32位，64位的elf格式文件，也支持包含elf文件的文档（这里一般指的是使用ar命令将一些elf文件打包之后生成的例如lib*.a之类的“静态库”文件）。 
+**readelf命令** 用来显示一个或者多个elf格式的目标文件的信息，可以通过它的选项来控制显示哪些信息。这里的elf-file(s)就表示那些被检查的文件。可以支持32位，64位的elf格式文件，也支持包含elf文件的文档（这里一般指的是使用ar命令将一些elf文件打包之后生成的例如lib*.a之类的“静态库”文件）。
 
-这个程序和objdump提供的功能类似，但是它显示的信息更为具体，并且它不依赖BFD库(BFD库是一个GNU项目，它的目标就是希望通过一种统一的接口来处理不同的目标文件)，所以即使BFD库有什么bug存在的话也不会影响到readelf程序。 
+这个程序和objdump提供的功能类似，但是它显示的信息更为具体，并且它不依赖BFD库(BFD库是一个GNU项目，它的目标就是希望通过一种统一的接口来处理不同的目标文件)，所以即使BFD库有什么bug存在的话也不会影响到readelf程序。
 
-运行readelf的时候，除了-v和-H之外，其它的选项必须有一个被指定。 
+运行readelf的时候，除了-v和-H之外，其它的选项必须有一个被指定。
 
-###  ELF文件类型
+### ELF文件类型
 
- **种类型的ELF文件：** 
+ **种类型的ELF文件：**
 
-1.  可重定位文件:用户和其他目标文件一起创建可执行文件或者共享目标文件,例如lib*.a文件。 
-2.  可执行文件：用于生成进程映像，载入内存执行,例如编译好的可执行文件a.out。 
-3.  共享目标文件：用于和其他共享目标文件或者可重定位文件一起生成elf目标文件或者和执行文件一起创建进程映像，例如lib*.so文件。 
+1. 可重定位文件:用户和其他目标文件一起创建可执行文件或者共享目标文件,例如lib*.a文件。
+2. 可执行文件：用于生成进程映像，载入内存执行,例如编译好的可执行文件a.out。
+3. 共享目标文件：用于和其他共享目标文件或者可重定位文件一起生成elf目标文件或者和执行文件一起创建进程映像，例如lib*.so文件。
 
- **ELF文件作用：** 
+ **ELF文件作用：**
 
-ELF文件参与程序的连接(建立一个程序)和程序的执行(运行一个程序)，所以可以从不同的角度来看待elf格式的文件： 
+ELF文件参与程序的连接(建立一个程序)和程序的执行(运行一个程序)，所以可以从不同的角度来看待elf格式的文件：
 
-1.  如果用于编译和链接（可重定位文件），则编译器和链接器将把elf文件看作是节头表描述的节的集合,程序头表可选。 
-2.  如果用于加载执行（可执行文件），则加载器则将把elf文件看作是程序头表描述的段的集合，一个段可能包含多个节，节头表可选。 
-3.  如果是共享文件，则两者都含有。 
+1. 如果用于编译和链接（可重定位文件），则编译器和链接器将把elf文件看作是节头表描述的节的集合,程序头表可选。
+2. 如果用于加载执行（可执行文件），则加载器则将把elf文件看作是程序头表描述的段的集合，一个段可能包含多个节，节头表可选。
+3. 如果是共享文件，则两者都含有。
 
  **ELF文件总体组成：**  
 
-elf文件头描述elf文件的总体信息。包括：系统相关，类型相关，加载相关，链接相关。 
+elf文件头描述elf文件的总体信息。包括：系统相关，类型相关，加载相关，链接相关。
 
-*   系统相关表示：elf文件标识的魔术数，以及硬件和平台等相关信息，增加了elf文件的移植性,使交叉编译成为可能。 
-*   类型相关就是前面说的那个类型。 
-*   加载相关：包括程序头表相关信息。 
-*   链接相关：节头表相关信息。 
+* 系统相关表示：elf文件标识的魔术数，以及硬件和平台等相关信息，增加了elf文件的移植性,使交叉编译成为可能。
+* 类型相关就是前面说的那个类型。
+* 加载相关：包括程序头表相关信息。
+* 链接相关：节头表相关信息。
 
-###  选项
+### 选项
 
 ```shell
 -a 
@@ -108,13 +107,13 @@ elf文件头描述elf文件的总体信息。包括：系统相关，类型相�
 @file 可以将选项集中到一个文件中，然后使用这个@file选项载入。 
 ```
 
-###  实例
+### 实例
 
 先给出如下例子：
 
- **1.对于可执行文件形式的elf格式文件：** 
+ **1.对于可执行文件形式的elf格式文件：**
 
-1)查看可执行程序的源代码如下： 
+1)查看可执行程序的源代码如下：
 
 ```shell
 root@localhost [test]$ cat main.cpp 
@@ -136,14 +135,14 @@ void  my_print()
 } 
 ```
 
-2)编译如下： 
+2)编译如下：
 
 ```shell
 [root@localhost test]$ g++ main.cpp -o main 
 [root@localhost test]$ g++ -g main.cpp -o main.debug 
 ```
 
-3)编译之后，查看生成的文件： 
+3)编译之后，查看生成的文件：
 
 ```shell
 [root@localhost test]$ ls -l 
@@ -153,11 +152,11 @@ void  my_print()
 -rwxr-xr-x 1 quietheart quietheart 38932 07-07 18:04 main.debug 
 ```
 
-这里，main.debug是带有调试信息的可执行文件，main是一般的可执行文件。 
+这里，main.debug是带有调试信息的可执行文件，main是一般的可执行文件。
 
- **2.对于库文件形式的elf格式文件：** 
+ **2.对于库文件形式的elf格式文件：**
 
-1)查看库的源代码如下： 
+1)查看库的源代码如下：
 
 ```shell
 //myfile.h 
@@ -177,7 +176,7 @@ void printInfo()
 } 
 ```
 
-2)编译如下： 
+2)编译如下：
 
 ```shell
 [root@localhost test]$ g++ -c myfile.cpp 
@@ -186,11 +185,11 @@ void printInfo()
 ar: creating libmy.a 
 ```
 
-3)编译之后，查看生成的文件： 
+3)编译之后，查看生成的文件：
 
-[root@localhost test]$ ls -l 
+[root@localhost test]$ ls -l
 
-总计 44 
+总计 44
 
 ```shell
 -rw-r--r-- 1 quietheart quietheart 2154 07-08 16:14 libmy.a 
@@ -201,11 +200,11 @@ ar: creating libmy.a
 libmy.a  libmy.so  myfile.cpp  myfile.h  myfile.o 
 ```
 
-这里，分别生成目标文件myfile.o，共享库文件libmy.so，和静态库文件libmy.a。 
+这里，分别生成目标文件myfile.o，共享库文件libmy.so，和静态库文件libmy.a。
 
-基于以上可执行文件和库，这里给出一些常用的命令。 
+基于以上可执行文件和库，这里给出一些常用的命令。
 
- **读取可执行文件形式的elf文件头信息：** 
+ **读取可执行文件形式的elf文件头信息：**
 
 ```shell
 [root@localhost test]$ readelf -h main 
@@ -231,9 +230,9 @@ ELF Header:
   Section header string table index: 26 
 ```
 
-这里，可见可执行文件的elf文件，其类型为EXEC(可执行文件)。另外，含调试信息的"main.debug"和不含调试信息的"main"除了一些大小信息之外，其内容是一样的。并且由此可见文件的体系结构为Intel 80386。 
+这里，可见可执行文件的elf文件，其类型为EXEC(可执行文件)。另外，含调试信息的"main.debug"和不含调试信息的"main"除了一些大小信息之外，其内容是一样的。并且由此可见文件的体系结构为Intel 80386。
 
- **读取目标文件形式的elf文件头信息：** 
+ **读取目标文件形式的elf文件头信息：**
 
 ```shell
 [root@localhost test]$ readelf -h myfile.o 
@@ -259,9 +258,9 @@ ELF Header:
   Section header string table index: 12 
 ```
 
-这里，可见目标文件的elf文件，其类型为REL(可重定位文件)。 
+这里，可见目标文件的elf文件，其类型为REL(可重定位文件)。
 
- **读取静态库文件形式的elf文件头信息：** 
+ **读取静态库文件形式的elf文件头信息：**
 
 ```shell
 [root@localhost test]$ readelf -h libmy.a 
@@ -288,9 +287,9 @@ ELF Header:
   Section header string table index: 12 
 ```
 
-这里，可见静态库文件的elf文件，其类型为REL(可重定位文件)。 
+这里，可见静态库文件的elf文件，其类型为REL(可重定位文件)。
 
- **读取动态库文件形式的elf文件头信息：** 
+ **读取动态库文件形式的elf文件头信息：**
 
 ```shell
 [root@localhost test]$ readelf -h libmy.so 
@@ -316,9 +315,9 @@ ELF Header:
   Section header string table index: 24 
 ```
 
-这里，可见动态库文件的elf文件，其类型为DYN(共享目标文件)。 
+这里，可见动态库文件的elf文件，其类型为DYN(共享目标文件)。
 
- **查看可执行的elf文件程序头表信息：** 
+ **查看可执行的elf文件程序头表信息：**
 
 ```shell
 [root@localhost test]$ readelf -l main 
@@ -350,18 +349,18 @@ Section to Segment mapping:
    07     
 ```
 
-这里，含调试信息的"main.debug"和不含调试信息的"main"其内容是一样的。 
+这里，含调试信息的"main.debug"和不含调试信息的"main"其内容是一样的。
 
- **查看目标文件的elf文件程序头表信息： ** 
+ **查看目标文件的elf文件程序头表信息：**
 
 ```shell
 [root@localhost test]$ readelf -l myfile.o 
 There are no program headers in this file. 
 ```
 
-这里可知，可重定位的目标文件，它没程序头表。 
+这里可知，可重定位的目标文件，它没程序头表。
 
- **查看静态库文件的elf文件程序头表信息：** 
+ **查看静态库文件的elf文件程序头表信息：**
 
 ```shell
 [root@localhost test]$ readelf -l libmy.a 
@@ -369,9 +368,9 @@ File: libmy.a(myfile.o)
 There are no program headers in this file. 
 ```
 
-这里可知，可重定位的静态库文件，它没程序头表。 
+这里可知，可重定位的静态库文件，它没程序头表。
 
- **查看动态库文件的elf文件程序头表信息：** 
+ **查看动态库文件的elf文件程序头表信息：**
 
 ```shell
 [root@localhost test]$ readelf -l libmy.so 
@@ -396,9 +395,9 @@ Section to Segment mapping:
    04     
 ```
 
-这里可知，做为共享目标文件的动态库，它程序头表。 
+这里可知，做为共享目标文件的动态库，它程序头表。
 
- **查看一个可执行的elf文件的节信息：** 
+ **查看一个可执行的elf文件的节信息：**
 
 ```shell
 [root@localhost test]$ readelf -S main 
@@ -440,9 +439,9 @@ Key to Flags:
   O (extra OS processing required) o (OS specific), p (processor specific) 
 ```
 
-这里，main是可执行文件，不含调试信息。 
+这里，main是可执行文件，不含调试信息。
 
- **查看一个包含调试信息的可执行的elf文件的节信息：** 
+ **查看一个包含调试信息的可执行的elf文件的节信息：**
 
 ```shell
 [root@localhost test]$ readelf -S main.debug 
@@ -493,9 +492,9 @@ Key to Flags:
   O (extra OS processing required) o (OS specific), p (processor specific) 
 ```
 
-可见，相对非调试版本的可执行文件，多了".debug*"段的信息。 
+可见，相对非调试版本的可执行文件，多了".debug*"段的信息。
 
- **查看一个目标文件的elf文件的节信息：** 
+ **查看一个目标文件的elf文件的节信息：**
 
 ```shell
 [root@localhost test]$ readelf -S myfile.o 
@@ -556,7 +555,7 @@ Key to Flags:
   O (extra OS processing required) o (OS specific), p (processor specific) 
 ```
 
- **查看一个动态库文件的elf文件的节信息：** 
+ **查看一个动态库文件的elf文件的节信息：**
 
 ```shell
 [root@localhost test]$ readelf -S libmy.so 
@@ -596,5 +595,3 @@ Key to Flags:
   I (info), L (link order), G (group), x (unknown) 
   O (extra OS processing required) o (OS specific), p (processor specific) 
 ```
-
-

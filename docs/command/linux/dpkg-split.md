@@ -1,5 +1,4 @@
-dpkg-split
-===
+# dpkg-split
 
 Debian Linux中将大软件包分割成小包
 
@@ -7,13 +6,13 @@ Debian Linux中将大软件包分割成小包
 
 **dpkg-split命令** 用来将Debian Linux中的大软件包分割成小软件包，它还能够将已分割的文件进行合并。
 
-###  语法
+### 语法
 
 ```shell
 dpkg-split(选项)(参数)
 ```
 
-###  选项
+### 选项
 
 ```shell
 -S：设置分割后的每个小文件最大尺寸（以字节为单位）；
@@ -24,11 +23,11 @@ dpkg-split(选项)(参数)
 -dscard<文件名>：忽略不匹配的部分。
 ```
 
-###  参数
+### 参数
 
 软件包：指定需要分割的“.deb”软件包。
 
-###  实例
+### 实例
 
 把foo.deb分割出N个大小为460KB的文件：
 
@@ -41,5 +40,3 @@ dpkg-split -s foo.deb
 ```shell
 dpkg-split -j "foo*"
 ```
-
-

@@ -1,5 +1,4 @@
-emacs
-===
+# emacs
 
 功能强大的全屏文本编辑器
 
@@ -7,13 +6,13 @@ emacs
 
 **emacs命令** 是由GNU组织的创始人Richard Stallman开发的一个功能强大的全屏文本编辑器，它支持多种编程语言，具有很多优良的特性。有众多的系统管理员和软件开发者使用emacs。
 
-###  语法
+### 语法
 
 ```shell
 emacs(选项)(参数)
 ```
 
-###  选项
+### 选项
 
 ```shell
 +<行号>：启动emacs编辑器，并将光标移动到制定行号的行；
@@ -25,7 +24,7 @@ emacs(选项)(参数)
 -batch：以批处理模式运行emacs编辑器。
 ```
 
-###  参数
+### 参数
 
 文件：指定要编辑的文本文件。
 
@@ -156,5 +155,3 @@ M-x shell : 模拟shell的buffer
 M-x term : 模拟terminal, C-c k 关闭terminal
 C-x C-q : 修改buffer的只读属性
 ```
-
-

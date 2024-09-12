@@ -1,5 +1,4 @@
-ftpshut
-===
+# ftpshut
 
 在指定的时间关闭FTP服务器
 

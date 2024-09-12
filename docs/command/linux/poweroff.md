@@ -1,5 +1,4 @@
-poweroff
-===
+# poweroff
 
 关闭Linux系统，关闭记录会被写入到/var/log/wtmp日志文件中
 
@@ -7,13 +6,13 @@ poweroff
 
 **grename命令** 可以重命名卷组的名称。
 
-###  语法
+### 语法
 
 ```shell
 poweroff [选项]
 ```
 
-###  选项
+### 选项
 
 ```shell
 -n 关闭之前不同步
@@ -31,5 +30,3 @@ poweroff [选项]
 ```shell
 [root@localhost ~]# poweroff
 ```
-
-

@@ -1,5 +1,4 @@
-sshpass
-===
+# sshpass
 
 免交互 SSH 登录工具。
 
@@ -21,13 +20,13 @@ yum install sshpass
 apt-get install sshpass
 ```
 
-###  语法
+### 语法
 
 ```shell
 sshpass (选项)
 ```
 
-###  选项
+### 选项
 
 ```shell
 用法: sshpass [-f|-d|-p|-e] [-hV] 命令 参数

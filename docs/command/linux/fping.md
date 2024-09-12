@@ -1,5 +1,4 @@
-fping
-===
+# fping
 
 fping检测主机是否存在
 

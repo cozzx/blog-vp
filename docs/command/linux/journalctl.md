@@ -1,5 +1,4 @@
-journalctl
-===
+# journalctl
 
 检索 systemd 日志，是 CentOS 7 才有的工具。
 

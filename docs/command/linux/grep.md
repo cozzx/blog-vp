@@ -1,5 +1,4 @@
-grep
-===
+#
 
 强大的文本搜索工具
 
@@ -7,7 +6,7 @@ grep
 
 **grep** （global search regular expression(RE) and print out the line，全面搜索正则表达式并把行打印出来）是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹配的行打印出来。用于过滤/搜索的特定字符。可使用正则表达式能配合多种命令使用，使用上十分灵活。
 
-###  选项 
+### 选项
 
 ```shell
 -a --text  # 不要忽略二进制数据。
@@ -96,12 +95,12 @@ grep -E "[1-9]+"
 # 或
 egrep "[1-9]+"
 ```
+
 使用正则表达式  **-P**  选项：
 
 ```shell
 grep -P "(\d{3}\-){2}\d{4}" file_name
 ```
-
 
 只输出文件中匹配到的部分  **-o**  选项：
 
@@ -150,7 +149,7 @@ echo gun is not unix | grep -b -o "not"
 grep -l "text" file1 file2 file3...
 ```
 
-###  grep递归搜索文件 
+### grep递归搜索文件
 
 在多级目录中对文本进行递归搜索：
 
@@ -251,6 +250,3 @@ b
 a
 b
 ```
-
-
-

@@ -1,5 +1,4 @@
-bg
-===
+# bg
 
 将前台终端作业移动到后台运行
 
@@ -43,6 +42,3 @@ bg %1
 1. `bash`的作业控制命令包括`bg fg kill wait disown suspend`。
 2. 该命令需要`set`选项`monitor`处于开启状态时才能执行；查看作业控制状态：输入`set -o`查看`monitor`行；执行`set -o monitor`或`set -m`开启该选项。
 3. 该命令是bash内建命令，相关的帮助信息请查看`help`命令。
-
-
-

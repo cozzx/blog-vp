@@ -1,5 +1,4 @@
-ag
-===
+# ag
 
 ack 的升级版，C语言编写，更快更人性化
 
@@ -97,4 +96,3 @@ README.md
 22:npm run dev
 28:npm run build
 ```
-

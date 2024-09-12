@@ -1,5 +1,4 @@
-ipcrm
-===
+# ipcrm
 
 删除消息队列、信号集、或者共享内存标识
 
@@ -7,13 +6,13 @@ ipcrm
 
 **ipcrm命令** 用来删除一个或更多的消息队列、信号量集或者共享内存标识。
 
-###  语法
+### 语法
 
 ```shell
 ipcrm [ -m SharedMemoryID ] [ -M SharedMemoryKey ] [ -q MessageID ] [ -Q MessageKey ] [ -s SemaphoreID ] [ -S SemaphoreKey ]
 ```
 
-###  选项
+### 选项
 
 ```shell
 -m SharedMemory id 删除共享内存标识 SharedMemoryID。与 SharedMemoryID 有关联的共享内存段以及数据结构都会在最后一次拆离操作后删除。
@@ -26,12 +25,10 @@ ipcrm [ -m SharedMemoryID ] [ -M SharedMemoryKey ] [ -q MessageID ] [ -Q Message
 
 msgctl、shmctl 和 semctl 子例程提供了删除操作的细节。标识和关键字可以用 ipcs 命令找到。
 
-###  示例
+### 示例
 
 如果要删除和 SharedMemoryID 18602 相关的共享内存段，请输入：
 
 ```shell
 ipcrm -m 18602
 ```
-
-

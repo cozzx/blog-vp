@@ -1,5 +1,4 @@
-sh
-===
+# sh
 
 shell命令解释器
 
@@ -22,7 +21,7 @@ bash [options] [file]
 -x：实现shell脚本逐条语句的跟踪。
 ```
 
-###  实例
+### 实例
 
 使用-x选项跟踪脚本调试shell脚本，能打印出所执行的每一行命令以及当前状态：
 
@@ -57,5 +56,3 @@ bash [options] [file]
 + echo sshd:121.42.0.72
 + echo vsftpd:121.42.0.72
 ```
-
-

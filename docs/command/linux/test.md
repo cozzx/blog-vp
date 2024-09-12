@@ -1,5 +1,4 @@
-test
-===
+# test
 
 执行条件表达式。
 
@@ -15,7 +14,7 @@ test [expr]
 
 ## 参数
 
-### 文件操作符：
+### 文件操作符
 
 ```shell
 -a FILE    如果文件存在，则为true。
@@ -43,8 +42,9 @@ test [expr]
 FILE1 -nt FILE2    根据修改日期，如果 file1 比 file2 新，则为true。
 FILE1 -ot FILE2    根据修改日期，如果 file1 比 file2 旧，则为true。
 FILE1 -ef FILE2    如果 file1 为 file2 的硬链接，则为true。
-```    
-### 字符串运算符：
+```
+
+### 字符串运算符
 
 ```shell
 -z STRING              如果字符串为空，则为true。
@@ -56,7 +56,7 @@ STRING1 < STRING2      如果 STRING1 的字典排序在 STRING2 之前，则为
 STRING1 > STRING2      如果 STRING1 在字典排序在 STRING2 之后，则为true。
 ```
 
-### 其他运算符：
+### 其他运算符
 
 ```shell
 -o OPTION         如果启用了shell选项OPTION，则为true。
@@ -87,15 +87,13 @@ arg1 OP arg2      算术表达式测试； OP是 -eq，-ne，-lt，-le，-gt，-
 0
 ```
 
-
 ### 注意
 
 1. 该命令等价于 `[`。
 2. 编写 bash 条件表达式可用内建命令 `test`， `[` ，组合命令 `[[`；
+  >
   > - 关于条件表达式可以查看[这里](http://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html#Bash-Conditional-Expressions)；
   > - 关于内建命令的索引可以查看[这里](http://www.gnu.org/software/bash/manual/html_node/Builtin-Index.html#Builtin-Index)；
   > - 关于组合命令的索引可以查看[这里](http://www.gnu.org/software/bash/manual/html_node/Reserved-Word-Index.html#Reserved-Word-Index)
+  >
 3. 该命令是bash内建命令，相关的帮助信息请查看`help`命令。
-
-
-

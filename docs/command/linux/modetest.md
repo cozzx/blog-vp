@@ -1,5 +1,4 @@
-modetest
-===
+# modetest
 
 DRM/KMS驱动程序libdrm中的模式测试工具
 

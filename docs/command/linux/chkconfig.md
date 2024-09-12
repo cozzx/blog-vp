@@ -1,5 +1,4 @@
-chkconfig
-===
+#
 
 检查或设置系统的各种服务
 
@@ -7,19 +6,20 @@ chkconfig
 
 **chkconfig命令** 检查、设置系统的各种服务。这是Red Hat公司遵循GPL规则所开发的程序，它可查询操作系统在每一个执行等级中会执行哪些系统服务，其中包括各类常驻服务。谨记chkconfig不是立即自动禁止或激活一个服务，它只是简单的改变了符号连接。
 
-###  语法 
+### 语法
 
 ```shell
 chkconfig(选项)
 ```
 
-###  选项 
+### 选项
 
 ```shell
 --add：增加所指定的系统服务，让chkconfig指令得以管理它，并同时在系统启动的叙述文件内增加相关数据；
 --del：删除所指定的系统服务，不再由chkconfig指令管理，并同时在系统启动的叙述文件内删除相关数据；
 --level<等级代号>：指定读系统服务要在哪一个执行等级中开启或关毕。
 ```
+
 缺省的运行级，RHS用到的级别如下：
 
 * 0：关机
@@ -34,7 +34,7 @@ chkconfig(选项)
 
 * 0 为停机，机器关闭。
 * 1 为单用户模式，就像Win9x下的安全模式类似。
-* 2  为多用户模式，但是没有NFS支持。 
+* 2  为多用户模式，但是没有NFS支持。
 * 3  为完整的多用户模式，是标准的运行级。
 * 4 一般不用，在一些特殊情况下可以用它来做一些事情。例如在笔记本 电脑的电池用尽时，可以切换到这个模式来做一些设置。
 * 5  就是X11，进到X Window系统了。
@@ -54,7 +54,7 @@ chkconfig(选项)
 # higher quality random number generation.
 ```
 
-###  实例 
+### 实例
 
 ```shell
 chkconfig --list             #列出所有的系统服务。
@@ -71,9 +71,6 @@ chkconfig –level redis 2345 on # 把redis在运行级别为2、3、4、5的情
 
 如何增加一个服务：
 
-1.  服务脚本必须存放在`/etc/ini.d/`目录下；
-2.  `chkconfig --add servicename`在chkconfig工具服务列表中增加此服务，此时服务会被在`/etc/rc.d/rcN.d`中赋予K/S入口了；
-3.  `chkconfig --level 35 mysqld on`修改服务的默认启动等级。
-
-
-
+1. 服务脚本必须存放在`/etc/ini.d/`目录下；
+2. `chkconfig --add servicename`在chkconfig工具服务列表中增加此服务，此时服务会被在`/etc/rc.d/rcN.d`中赋予K/S入口了；
+3. `chkconfig --level 35 mysqld on`修改服务的默认启动等级。

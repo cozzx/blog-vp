@@ -1,5 +1,4 @@
-mount
-===
+# mount
 
 用于挂载Linux系统外的文件
 
@@ -9,7 +8,7 @@ mount
 
 如果通过webdav协议挂载网络磁盘，需要运行指令`apt install davfs2`安装必要的组件
 
-###  语法
+### 语法
 
 ```shell
 mount [-hV]
@@ -18,7 +17,7 @@ mount [-fnrsvw] [-o options [,...]] device | dir
 mount [-fnrsvw] [-t vfstype] [-o options] device dir
 ```
 
-###  选项
+### 选项
 
 ```shell
 -V：显示程序版本
@@ -47,7 +46,7 @@ mount [-fnrsvw] [-t vfstype] [-o options] device dir
 -o loop=：使用 loop 模式用来将一个档案当成硬盘分割挂上系统。
 ```
 
-###  实例1
+### 实例1
 
 将 `/dev/hda1` 挂在 `/mnt` 之下。
 

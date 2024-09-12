@@ -1,5 +1,4 @@
-objdump
-===
+# objdump
 
 显示二进制文件信息
 
@@ -7,7 +6,7 @@ objdump
 
 **objdump命令** 是用查看目标文件或者可执行的目标文件的构成的gcc工具。
 
-###  选项
+### 选项
 
 ```shell
 -a --archive-headers 
@@ -122,9 +121,9 @@ objdump -b oasys -m vax -h fu.o
 @file 可以将选项集中到一个文件中，然后使用这个@file选项载入。
 ```
 
-###  实例
+### 实例
 
-首先，在给出后面大部分测试所基于的源代码以及编译指令。 源代码如下： 
+首先，在给出后面大部分测试所基于的源代码以及编译指令。 源代码如下：
 
 ```shell
 root@localhost [test]# nl mytest.cpp 
@@ -142,15 +141,15 @@ a+=2;
 } 
 ```
 
-对以上源代码进行编译，如下： 
+对以上源代码进行编译，如下：
 
 ```shell
 [root@localhost test]# g++ -c -g mytest.cpp 
 ```
 
-这里，生成的文件是mytest.o，为了方便测试包含了调试的信息，对可执行文件的测试，显示的结果类似。 
+这里，生成的文件是mytest.o，为了方便测试包含了调试的信息，对可执行文件的测试，显示的结果类似。
 
- **查看当前使用的objdump的版本号： ** 
+ **查看当前使用的objdump的版本号：**
 
 ```shell
 [root@localhost test]# objdump -V 
@@ -160,7 +159,7 @@ This program is free software; you may redistribute it under the terms of
 the GNU General Public License.  This program has absolutely no warranty. 
 ```
 
- **查看档案库文件中的信息： ** 
+ **查看档案库文件中的信息：**
 
 ```shell
 [root@localhost test]# objdump -a libmy2.a 
@@ -171,7 +170,7 @@ mytest.o:     file format elf32-i386
 rw-r--r-- 0/0    727 Jul 13 15:32 2011 mytest.o 
 ```
 
- **这里，libmy2.a是一个使用ar命令将多个*.o目标文件打包而生成的静态库。命令的输出类似`ar -tv`，相比较`ar -tv`输出如下： ** 
+ **这里，libmy2.a是一个使用ar命令将多个*.o目标文件打包而生成的静态库。命令的输出类似`ar -tv`，相比较`ar -tv`输出如下： **
 
 ```shell
 [root@localhost test]# ar -tv libmy2.a 
@@ -179,7 +178,7 @@ rwxrwxrwx 0/0   2724 Nov 16 16:06 2009 myfile.o
 rw-r--r-- 0/0    727 Jul 13 15:32 2011 mytest.o 
 ```
 
-显示可用的架构和目标结构列表： 
+显示可用的架构和目标结构列表：
 
 ```shell
 [root@localhost test]# objdump -i 
@@ -236,9 +235,9 @@ trad-core
           i386 tekhex binary ihex --------- 
 ```
 
-这里，显示的信息是相对于 -b 或者 -m 选项可用的架构和目标格式列表。 
+这里，显示的信息是相对于 -b 或者 -m 选项可用的架构和目标格式列表。
 
- **显示mytest.o文件中的text段的内容： ** 
+ **显示mytest.o文件中的text段的内容：**
 
 ```shell
 [root@localhost test]# objdump --section=.text -s mytest.o 
@@ -248,9 +247,9 @@ Contents of section .text:
 0010 ec10c745 fc020000 008345fc 02c9c3    ...E......E.... 
 ```
 
-这里注意，不能单独使用-j或者--section，例如`objdump --section=.text mytest.o`是不会运行成功的。 
+这里注意，不能单独使用-j或者--section，例如`objdump --section=.text mytest.o`是不会运行成功的。
 
- **反汇编mytest.o中的text段内容，并尽可能用源代码形式表示： ** 
+ **反汇编mytest.o中的text段内容，并尽可能用源代码形式表示：**
 
 ```shell
 [root@localhost test]# objdump -j .text -S mytest.o 
@@ -284,9 +283,9 @@ void printTest2()
   1e:   c3                      ret    
 ```
 
-这里注意，不能单独使用-j或者--section，例如`objdump -j .text mytest.o是不会运行成功的`。另外-S命令对于包含调试信息的目标文件，显示的效果比较好，如果编译时没有指定g++的-g选项，那么目标文件就不包含调试信息，那么显示效果就差多了。 
+这里注意，不能单独使用-j或者--section，例如`objdump -j .text mytest.o是不会运行成功的`。另外-S命令对于包含调试信息的目标文件，显示的效果比较好，如果编译时没有指定g++的-g选项，那么目标文件就不包含调试信息，那么显示效果就差多了。
 
- **反汇编出mytest.o的源代码: ** 
+ **反汇编出mytest.o的源代码:**
 
 ```shell
 [root@localhost test]# objdump -S mytest.o 
@@ -322,9 +321,9 @@ void printTest2()
   1e:   c3                      ret    
 ```
 
-这里，尤其当编译的时候指定了-g这种调试参数时，反汇编的效果比较明显。隐含了-d参数。 
+这里，尤其当编译的时候指定了-g这种调试参数时，反汇编的效果比较明显。隐含了-d参数。
 
- **显示文件的符号表入口: ** 
+ **显示文件的符号表入口:**
 
 ```shell
 [root@localhost test]# objdump -t mytest.o 
@@ -349,7 +348,7 @@ SYMBOL TABLE:
 0000000c g     F .text  00000013 _Z10printTest2v 
 ```
 
-这里，输出的信息类似`nm -s`命令的输出，相比较之下，nm命令的输出如下： 
+这里，输出的信息类似`nm -s`命令的输出，相比较之下，nm命令的输出如下：
 
 ```shell
 [root@localhost test]# nm -s mytest.o 
@@ -358,7 +357,7 @@ SYMBOL TABLE:
          U __gxx_personality_v0 
 ```
 
- **显示文件的符号表入口，将底层符号解码并表示成用户级别: ** 
+ **显示文件的符号表入口，将底层符号解码并表示成用户级别:**
 
 ```shell
 [root@localhost test]# objdump -t -C mytest.o 
@@ -382,9 +381,9 @@ SYMBOL TABLE:
 0000000c g     F .text  00000013 printTest2() 
 ```
 
-这里，和没-C相比，printTest2函数可读性增加了。 
+这里，和没-C相比，printTest2函数可读性增加了。
 
- **反汇编目标文件的特定机器码段： ** 
+ **反汇编目标文件的特定机器码段：**
 
 ```shell
 [root@localhost test]# objdump -d mytest.o 
@@ -409,9 +408,9 @@ Disassembly of section .text:
   1e:   c3                      ret    
 ```
 
-这里，对text段的内容进行了反汇编。 
+这里，对text段的内容进行了反汇编。
 
- **反汇编特定段，并将汇编代码对应的文件名称和行号对应上： ** 
+ **反汇编特定段，并将汇编代码对应的文件名称和行号对应上：**
 
 ```shell
 [root@localhost test]# objdump -d -l mytest.o
@@ -445,9 +444,9 @@ _Z10printTest2v():
   1e:   c3                      ret    
 ```
 
-这里，项"-d"从objfile中反汇编那些特定指令机器码的section，而使用"-l"指定用文件名和行号标注相应的目标代码，仅仅和-d、-D或者-r一起使用，使用-ld和使用-d的区别不是很大，在源码级调试的时候有用，要求编译时使用了-g之类的调试编译选项。 
+这里，项"-d"从objfile中反汇编那些特定指令机器码的section，而使用"-l"指定用文件名和行号标注相应的目标代码，仅仅和-d、-D或者-r一起使用，使用-ld和使用-d的区别不是很大，在源码级调试的时候有用，要求编译时使用了-g之类的调试编译选项。
 
- **显示目标文件各个段的头部摘要信息： ** 
+ **显示目标文件各个段的头部摘要信息：**
 
 ```shell
 [root@localhost test]# objdump -h mytest.o 
@@ -482,5 +481,3 @@ Idx Name          Size      VMA       LMA       File off  Algn
 ```
 
 这里，更多的内容参见`man objdump`中的这个选项。
-
-

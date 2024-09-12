@@ -1,5 +1,4 @@
-pstack
-===
+# pstack
 
 显示每个进程的栈跟踪
 
@@ -9,7 +8,7 @@ pstack
 
 命令软件包下载地址：https://packages.debian.org/sid/pstack
 
-###  实例
+### 实例
 
 pstree以树结构显示进程
 

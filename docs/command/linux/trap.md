@@ -1,5 +1,4 @@
-trap
-===
+# trap
 
 捕捉信号和其他事件并执行命令。
 
@@ -24,7 +23,7 @@ trap [-lp] [[arg] signal_spec ...]
 ## 参数
 
 arg：接收到信号时执行的命令。
- 
+
 signal_spec：信号名称或信号名称对应的数字。
 
 ## 返回值
@@ -70,7 +69,7 @@ trap "rm -f $WORKDIR/work1 $WORKDIR/dataout; exit" 2
 添加信号1 `SIGHUP`：
 
 ```shell
-$ trap "rm $WORKDIR/work1 $WORKDIR/dataout; exit" 1 2
+trap "rm $WORKDIR/work1 $WORKDIR/dataout; exit" 1 2
 ```
 
 ### 2 忽略信号
@@ -78,24 +77,22 @@ $ trap "rm $WORKDIR/work1 $WORKDIR/dataout; exit" 1 2
 如果陷阱列出的命令是空的，指定的信号接收时，将被忽略：
 
 ```shell
-$ trap '' 2
+trap '' 2
 ```
 
 忽略多个信号：
 
 ```shell
-$ trap '' 1 2 3 15
+trap '' 1 2 3 15
 ```
-
 
 ### 3 重置陷阱
 
 当你改变了收到信号后采取的动作，你可以省略第一个参数来重置到默认行为。
 
 ```shell
-$ trap 1 2
+trap 1 2
 ```
-
 
 ### 注意
 
@@ -108,5 +105,3 @@ $ trap 1 2
 - [Linux Shell的信号trap功能你必须知道的细节](https://blog.csdn.net/elbort/article/details/8525599)
 - [阮一峰： Bash 脚本如何创建临时文件：mktemp 命令和 trap 命令教程](http://www.ruanyifeng.com/blog/2019/12/mktemp.html)
 - [【Bash百宝箱】shell内建命令之trap](https://blog.csdn.net/iEearth/article/details/52612557)
-
-

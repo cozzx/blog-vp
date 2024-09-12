@@ -1,5 +1,4 @@
-suspend
-===
+# suspend
 
 挂起shell的执行。
 
@@ -14,7 +13,6 @@ suspend [-f]
 - 挂起shell的执行，直到收到`SIGCONT`信号。
 
 - 除非使用`-f`选项，否则无法对`login shell`使用。
-
 
 ## 选项
 
@@ -46,6 +44,3 @@ kill -s SIGCONT PID
 1. `bash`的作业控制命令包括`bg fg kill wait disown suspend`。
 2. 该命令需要`set`选项`monitor`处于开启状态时才能执行；查看作业控制状态：输入`set -o`查看`monitor`行；执行`set -o monitor`或`set -m`开启该选项。
 3. 该命令是bash内建命令，相关的帮助信息请查看`help`命令。
-
-
-

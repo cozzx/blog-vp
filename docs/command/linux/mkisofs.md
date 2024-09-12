@@ -1,5 +1,4 @@
-mkisofs
-===
+# mkisofs
 
 建立ISO 9660映像文件
 
@@ -7,13 +6,13 @@ mkisofs
 
 **mkisofs命令** 用来将指定的目录与文件做成ISO 9660格式的映像文件，以供刻录光盘。
 
-###  语法
+### 语法
 
 ```shell
 mkisofs(选项)(参数)
 ```
 
-###  选项
+### 选项
 
 ```shell
 -a或--all：mkisofs通常不处理备份文件。使用此参数可以把备份文件加到映像文件中；
@@ -53,11 +52,11 @@ mkisofs(选项)(参数)
 -z：建立通透性压缩文件的SUSP记录，此记录目前只在Alpha机器上的Linux有效。
 ```
 
-###  参数
+### 参数
 
 路径：需要添加到映像文件中的路径。
 
-###  实例
+### 实例
 
 linux中用mkisofs命令把文件制作成ISO步骤：
 
@@ -96,5 +95,3 @@ cp /usr/share/comps/i386/.discinfo rhel4.0/
 ```shell
 mkisofs -R -J -T -v -no-emul-boot -boot-load-size 4 -boot-info-table -V RHEL4ASDVD -b isolinux/isolinux.bin -c isolinux/boot.cat -o /RHEL4AS.iso rhel4.0/
 ```
-
-

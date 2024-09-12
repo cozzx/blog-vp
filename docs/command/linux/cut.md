@@ -1,5 +1,4 @@
-cut
-===
+# cut
 
 连接文件并打印到标准输出设备上
 
@@ -157,9 +156,9 @@ efghijklmnopqrstuvwxyz
 efghijklmnopqrstuvwxyz
 ```
 
-打印最后5个字符: 
+打印最后5个字符:
 
-遗憾的是, `cut`并没有提供最后字符的支持. 不过我们可以通过字符串反转来实现. 
+遗憾的是, `cut`并没有提供最后字符的支持. 不过我们可以通过字符串反转来实现.
 
 ```shell
 [root@localhost text]# cat test.txt| rev | cut -c -5 | rev

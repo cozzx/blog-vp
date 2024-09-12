@@ -1,5 +1,4 @@
-lsb_release
-===
+# lsb_release
 
 显示发行版本信息
 

@@ -1,5 +1,4 @@
-partprobe
-===
+# partprobe
 
 不重启的情况下重读分区
 
@@ -7,13 +6,13 @@ partprobe
 
 **partprobe命令** 用于重读分区表，当出现删除文件后，出现仍然占用空间。可以partprobe在不重启的情况下重读分区。
 
-###  语法
+### 语法
 
 ```shell
 partprobe(选项)(参数)
 ```
 
-###  选项
+### 选项
 
 ```shell
 -d：不更新内核；
@@ -22,11 +21,11 @@ partprobe(选项)(参数)
 -v：显示版本信息。
 ```
 
-###  参数
+### 参数
 
 设备：指定需要确认分区表改变的硬盘对应的设备文件。
 
-###  实例
+### 实例
 
 使用partprobe不重启系统添加新的磁盘分区，主机自带硬盘超过300GB，目前只划分使用了3个主分区，不到70GB，如下：
 
@@ -98,7 +97,7 @@ The new table will be used at the next reboot.
 Syncing disks.
 ```
 
- **第2步 使用工具partprobe让kernel读取分区信息：** 
+ **第2步 使用工具partprobe让kernel读取分区信息：**
 
 ```shell
 [root@localhost ~]# partprobe
@@ -106,7 +105,7 @@ Syncing disks.
 
 使用fdisk工具只是将分区信息写到磁盘，如果需要mkfs磁盘分区则需要重启系统，而使用partprobe则可以使kernel重新读取分区信息，从而避免重启系统。
 
- **第3步 格式化文件系统：** 
+ **第3步 格式化文件系统：**
 
 ```shell
 [root@localhost ~]# mkfs.ext3 /dev/sda4
@@ -137,7 +136,7 @@ This filesystem will be automatically checked every 26 mounts or
 [root@localhost ~]#
 ```
 
- **第4步 mount新的分区`/dev/sda4`：** 
+ **第4步 mount新的分区`/dev/sda4`：**
 
 ```shell
 [root@localhost ~]# e2label  /dev/sda4 /data
@@ -152,5 +151,3 @@ tmpfs                  2023936         0   2023936   0% /dev/shm
 ```
 
 使用partprobe可以不用重启系统即可配合fdisk工具创建新的分区。
-
-

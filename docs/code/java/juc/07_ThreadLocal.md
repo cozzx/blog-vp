@@ -293,5 +293,3 @@ public class ReferenceTest {
 - `ThreadLocalMap` 的 `Entry` 对 `ThreadLocal` 的引用为弱引用。避免了 `ThreadLocal` 对象无法被回收的问题
 
 - 都会通过 `expungeStaleEntry`，`cleanSomeSlots`，`replaceStaleEntry` 这三个方法回收键为 null 的 `Entry` 对象的值（即为具体实例）以及 `Entry` 对象本身从而防止内存泄漏，属于安全加固的方法
-
-  

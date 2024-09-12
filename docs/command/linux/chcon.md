@@ -1,5 +1,4 @@
-chcon
-===
+# chcon
 
 修改对象（文件）的安全上下文
 
@@ -70,5 +69,3 @@ chcon -t samba_share_t /directory
 ```shell
 chcon -t public_content_t /directories
 ```
-
-

@@ -1,5 +1,4 @@
-ppp-off
-===
+# ppp-off
 
 关闭ppp连线
 
@@ -7,10 +6,8 @@ ppp-off
 
 这是Slackware发行版内附的程序，让用户切断PPP的网络连线。
 
-###  语法
+### 语法
 
 ```shell
 ppp-off
 ```
-
-

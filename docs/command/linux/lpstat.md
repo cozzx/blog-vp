@@ -1,5 +1,4 @@
-lpstat
-===
+# lpstat
 
 显示CUPS中打印机的状态信息
 

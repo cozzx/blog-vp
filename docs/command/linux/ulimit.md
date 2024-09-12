@@ -1,5 +1,4 @@
-ulimit
-===
+# ulimit
 
 控制shell程序的资源
 
@@ -61,6 +60,3 @@ max user processes              (-u) 98304       #当前用户同时打开的进
 virtual memory          (kbytes, -v) unlimited   #没有限制进程的最大地址空间。
 file locks                      (-x) unlimited   #所能锁住的文件的最大个数没有限制。
 ```
-
-
-

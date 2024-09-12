@@ -1,5 +1,4 @@
-yum
-===
+#
 
 基于RPM的软件包管理器
 
@@ -52,9 +51,9 @@ provides：查询某个程序所在安装包。
 
 部分常用的命令包括：
 
-*   自动搜索最快镜像插件：`yum install yum-fastestmirror`
-*   安装yum图形窗口插件：`yum install yumex`
-*   查看可能批量安装的列表：`yum grouplist`
+* 自动搜索最快镜像插件：`yum install yum-fastestmirror`
+* 安装yum图形窗口插件：`yum install yumex`
+* 查看可能批量安装的列表：`yum grouplist`
 
 **安装**
 
@@ -125,6 +124,3 @@ LANG=C # 原始语言
 LANG=zh_CN.utf8 # 切换到中文
 yum groupinstall "Chinese Support" # 添加中文语言支持
 ```
-
-
-

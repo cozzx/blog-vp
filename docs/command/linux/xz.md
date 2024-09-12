@@ -1,5 +1,4 @@
-xz
-===
+# xz
 
 POSIX 平台开发具有高压缩率的工具
 
@@ -75,14 +74,14 @@ xz -l index.txt.xz
 使用参数 -0, -1, -2, … -6, … -9 或参数 --fast, --best 设定压缩率。xz 命令的默认为 -6 ，对于大多数系统来说，甚至是一些较旧的系统，-4 … -6 压缩率预设值都不错的表现。
 
 ```shell
-$ xz -k7 xz_pipe_decomp_mini.c
-$ xz -k --fast xz_pipe_decomp_mini.c
+xz -k7 xz_pipe_decomp_mini.c
+xz -k --fast xz_pipe_decomp_mini.c
 ```
 
 使用参数 -H 显示 xz 命令所有 options. 参数 -H 比使用参数 --help 显示的内容更详细。
 
 ```shell
-$ xz -H  | more
+xz -H  | more
 ```
 
 借助 xargs 命令并行压缩多文件。下面的命令行可以将 /var/log 目录下所有的扩展名为 .log 的文件压缩。通过 xargs 命令同时运行多个 xz 进行压缩。

@@ -1,5 +1,4 @@
-protoize
-===
+# protoize
 
 GNU-C代码转换为ANSI-C代码
 

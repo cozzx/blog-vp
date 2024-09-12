@@ -1,5 +1,4 @@
-hostname
-===
+# hostname
 
 显示和设置系统的主机名
 

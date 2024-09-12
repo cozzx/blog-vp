@@ -61,6 +61,7 @@ export default defineConfig({
           },
           {
             items: [
+              { text: 'designPattern', link: '/code/designPattern/01_basic' },
               { text: 'other', link: '/code/other/os' }
             ]
           }
@@ -121,6 +122,12 @@ export default defineConfig({
           items: set_sidebar('/code/java/juc')
         },
         {
+          text: '🍟 Netty',
+          collapsible: true,
+          collapsed: true,
+          items: set_sidebar('/code/java/netty')
+        },
+        {
           text: '🥔 Spring',
           collapsible: true,
           collapsed: true,
@@ -170,6 +177,7 @@ export default defineConfig({
       ],
       '/code/mysql': set_sidebar('/code/mysql'),
       '/code/nginx': set_sidebar('/code/nginx'),
+      '/code/designPattern': set_sidebar('/code/designPattern'),
       '/code/other': set_sidebar('/code/other'),
       '/toolbox': [
         { text: '✨ 阅读须知', link: '/toolbox/read' },

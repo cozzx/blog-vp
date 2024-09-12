@@ -1,5 +1,4 @@
-sendmail
-===
+# sendmail
 
 著名电子邮件服务器
 

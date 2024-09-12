@@ -1,5 +1,4 @@
-bmodinfo
-===
+# bmodinfo
 
 显示给定模块的详细信息
 
@@ -7,13 +6,13 @@ bmodinfo
 
 **bmodinfo命令** 用于显示给定模块的详细信息。
 
-###  语法
+### 语法
 
 ```shell
 bmodinfo(选项)(参数)
 ```
 
-###  选项
+### 选项
 
 ```shell
 -a：显示模块作者；
@@ -24,11 +23,11 @@ bmodinfo(选项)(参数)
 -0：用ASCII码的0字符分割字段值，而不使用新行。
 ```
 
-###  参数
+### 参数
 
 模块名：要显示详细信息的模块名称。
 
-###  实例
+### 实例
 
 显示sg模块的信息：
 
@@ -45,5 +44,3 @@ alias:     char-major-21-*
 vermagic:    2.6.9-42.ELsmp SMP 686 REGPARM 4KSTACKS gcc-3.4
 depends:    scsi_mod
 ```
-
-

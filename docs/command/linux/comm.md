@@ -1,5 +1,4 @@
-comm
-===
+# comm
 
 按行比较两个已排序的文件。
 
@@ -15,7 +14,6 @@ comm [OPTION]... FILE1 FILE2
 - 当`FILE1`或`FILE2`为`-`时，读取标准输入。
 - 无选项时输出三列，第一列为`FILE1`独有的行，第二列为`FILE2`独有的行，第三列为`FILE1`，`FILE2`共有的行。
 
-
 ## 选项
 
 ```shell
@@ -30,7 +28,6 @@ comm [OPTION]... FILE1 FILE2
 --help                    显示帮助信息并退出。
 --version                 显示版本信息并退出。
 ```
-
 
 ## 返回值
 
@@ -62,7 +59,6 @@ hhh
 ttt
 jjj
 ```
-
 
 比较结果
 
@@ -98,14 +94,14 @@ eee
 [root@localhost ~]# comm aaa1.txt bbb1.txt
 111
 222
-		aaa
-		bbb
-		ccc
+  aaa
+  bbb
+  ccc
 ddd
 eee
-	hhh
-	jjj
-	ttt
+ hhh
+ jjj
+ ttt
 ```
 
 ### 交集
@@ -143,9 +139,6 @@ ttt
 jjj
 ```
 
-
 ### 注意
 
 1. 该命令是`GNU coreutils`包中的命令，相关的帮助信息请查看`man -s 1 comm`，`info coreutils 'comm invocation'`。
-
-

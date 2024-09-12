@@ -1,5 +1,4 @@
-apt-get
-===
+# apt-get
 
 Debian Linux发行版中的APT软件包管理工具
 
@@ -7,13 +6,13 @@ Debian Linux发行版中的APT软件包管理工具
 
 **apt-get命令** 是Debian Linux发行版中的APT软件包管理工具。所有基于Debian的发行都使用这个包管理系统。deb包可以把一个应用的文件包在一起，大体就如同Windows上的安装文件。
 
-###  语法
+### 语法
 
 ```shell
 apt-get [OPTION] PACKAGE
 ```
 
-###  选项
+### 选项
 
 ```shell
 apt-get install  # 安装新包
@@ -29,12 +28,12 @@ apt-get clean        # 删除软件包的安装包
 -c：指定配置文件。
 ```
 
-###  参数
+### 参数
 
 * 管理指令：对APT软件包的管理操作；
 * 软件包：指定要操纵的软件包。
 
-###  实例
+### 实例
 
 使用apt-get命令的第一步就是引入必需的软件库，Debian的软件库也就是所有Debian软件包的集合，它们存在互联网上的一些公共站点上。把它们的地址加入，apt-get就能搜索到我们想要的软件。/etc/apt/sources.list是存放这些地址列表的配置文件，其格式如下：
 
@@ -97,6 +96,3 @@ apt-get dist-upgrade
 ```shell
 apt-get autoclean
 ```
-
-
-

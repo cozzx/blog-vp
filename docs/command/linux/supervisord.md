@@ -1,5 +1,4 @@
-supervisord
-===
+# supervisord
 
 配置后台服务/常驻进程的进程管家工具
 
@@ -31,5 +30,5 @@ supervisorctl reload # 修改/添加配置文件需要执行这个
 
 ## 下载地址
 
-https://pypi.python.org/pypi/meld3  
-https://pypi.python.org/pypi/supervisor  
+<https://pypi.python.org/pypi/meld3>  
+<https://pypi.python.org/pypi/supervisor>  

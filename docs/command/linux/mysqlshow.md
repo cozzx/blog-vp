@@ -1,5 +1,4 @@
-mysqlshow
-===
+# mysqlshow
 
 显示MySQL中数据库相关信息
 

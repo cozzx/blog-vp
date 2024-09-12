@@ -1,5 +1,4 @@
-dig
-===
+# dig
 
 域名查询工具
 
@@ -7,13 +6,13 @@ dig
 
 **dig命令** 是常用的域名查询工具，可以用来测试域名系统工作是否正常。
 
-###  语法
+### 语法
 
 ```shell
 dig(选项)(参数)
 ```
 
-###  选项
+### 选项
 
 ```shell
 @<服务器地址>：指定进行域名解析的域名服务器；
@@ -27,14 +26,14 @@ dig(选项)(参数)
 -h：显示指令帮助信息。
 ```
 
-###  参数
+### 参数
 
-*   主机：指定要查询域名主机；
-*   查询类型：指定DNS查询的类型；
-*   查询类：指定查询DNS的class；
-*   查询选项：指定查询选项。
+* 主机：指定要查询域名主机；
+* 查询类型：指定DNS查询的类型；
+* 查询类：指定查询DNS的class；
+* 查询选项：指定查询选项。
 
-###  实例
+### 实例
 
 ```shell
 [root@localhost ~]# dig www.baidu.com
@@ -48,17 +47,15 @@ dig(选项)(参数)
 ;; OPT PSEUDOSECTION:
 ; EDNS: version: 0, flags:; udp: 4096
 ;; QUESTION SECTION:
-;www.baidu.com.			IN	A
+;www.baidu.com.   IN A
 
 ;; ANSWER SECTION:
-www.baidu.com.		963	IN	CNAME	www.a.shifen.com.
-www.a.shifen.com.	63	IN	A	180.101.50.242
-www.a.shifen.com.	63	IN	A	180.101.50.188
+www.baidu.com.  963 IN CNAME www.a.shifen.com.
+www.a.shifen.com. 63 IN A 180.101.50.242
+www.a.shifen.com. 63 IN A 180.101.50.188
 
 ;; Query time: 14 msec
 ;; SERVER: 119.29.29.29#53(119.29.29.29)
 ;; WHEN: Wed May 10 16:16:36 CST 2023
 ;; MSG SIZE  rcvd: 101
 ```
-
-

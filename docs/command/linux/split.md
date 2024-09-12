@@ -1,5 +1,4 @@
-split
-===
+# split
 
 分割任意大小的文件
 
@@ -7,7 +6,7 @@ split
 
 **split命令** 可以将一个大文件分割成很多个小文件，有时需要将文件分割成更小的片段，比如为提高可读性，生成日志等。
 
-###  选项
+### 选项
 
 ```shell
 -b：值为每一输出档案的大小，单位为 byte。
@@ -17,7 +16,7 @@ split
 -a：指定后缀长度(默认为2)。
 ```
 
-###  实例
+### 实例
 
 生成一个大小为100KB的测试文件：
 
@@ -57,6 +56,3 @@ date.file  split_file000  split_file001  split_file002  split_file003  split_fil
 ```shell
 split -l 10 date.file
 ```
-
-
-

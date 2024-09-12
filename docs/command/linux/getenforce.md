@@ -1,5 +1,4 @@
-getenforce
-===
+# getenforce
 
 显示当前SELinux的应用模式，是强制、执行还是停用
 
@@ -7,7 +6,7 @@ getenforce
 
 **grename命令** 可以重命名卷组的名称。
 
-###  语法
+### 语法
 
 ```shell
 getenforce
@@ -21,5 +20,3 @@ getenforce
 [root@localhost ~]# getenforce
 Enforcing
 ```
-
-

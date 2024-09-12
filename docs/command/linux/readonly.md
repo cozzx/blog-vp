@@ -1,5 +1,4 @@
-readonly
-===
+# readonly
 
 标记shell变量或函数为只读
 

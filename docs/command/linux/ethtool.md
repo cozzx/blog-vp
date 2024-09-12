@@ -1,5 +1,4 @@
-ethtool
-===
+# ethtool
 
 显示或修改以太网卡的配置信息
 
@@ -7,7 +6,7 @@ ethtool
 
 ethtool命令用于获取以太网卡的配置信息，或者修改这些配置。这个命令比较复杂，功能特别多。
 
-###  语法
+### 语法
 
 ```shell
 ethtool [ -a | -c | -g | -i | -d | -k | -r | -S |] ethX
@@ -23,7 +22,7 @@ ethtool [-s] ethX [speed 10|100|1000] [duplex half|full] [autoneg on|off] [port 
 [wol p|u|m|b|a|g|s|d...] [sopass xx:yy:zz:aa:bb:cc] [msglvl N]
 ```
 
-###  选项
+### 选项
 
 ```shell
 -a 查看网卡中 接收模块RX、发送模块TX和Autonegotiate模块的状态：启动on 或 停用off。
@@ -45,7 +44,7 @@ ethtool [-s] ethX [speed 10|100|1000] [duplex half|full] [autoneg on|off] [port 
 -s 修改网卡的部分配置，包括网卡速度、单工/全双工模式、mac地址等。
 ```
 
-###  数据来源
+### 数据来源
 
 Ethtool命令显示的信息来源于网卡驱动层，即TCP/ip协议的链路层。该命令在Linux内核中实现的逻辑层次为：
 
@@ -68,15 +67,14 @@ Ethtool命令显示的信息来源于网卡驱动层，即TCP/ip协议的链路�
 | -t    | self\_test | 通过配置网卡寄存器，逐一测试网卡的硬件模块：registers，memory，loopback，Link stat，interrupt。 |
 | -S    | get\_ethtool\_stats  | 显示信息来源于网卡驱动中的结构体变量stats\_blk。（网卡通过DMA方式，将寄存器BNX2\_HC\_STATISTICS \_ADDR\_L和BNX2\_HC\_STATISTICS\_ADDR\_H中的数据实时地读取到结构体变量struct statistics\_block \*stats\_blk中。） —显示的数据都是从网卡寄存器中统计得到的，各项的含义需查询网卡（芯片）手册。 |
 
-
 由上可见，ethtool命令用于显示/配置网卡硬件（寄存器）。  
 
-###  实例
+### 实例
 
 查看机器上网卡的速度：百兆还是千兆，请输入：
 
 ```shell
-ethool eth0
+ethtool eth0
 ```
 
 操作完毕后，输出信息中`Speed:`这一项就指示了网卡的速度。停止网卡的发送模块TX，请输入：
@@ -114,5 +112,3 @@ ethtool –S eth0
 ```shell
 ethtool -s eth0 speed 100
 ```
-
-

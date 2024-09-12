@@ -102,3 +102,9 @@ Acme.sh 目前支持 cloudflare, dnspod, cloudxns, godaddy 以及 ovh 等数十�
 1. ~/.acme.sh/acme.sh \--upgrade \--auto\-upgrade
 
 之后, acme.sh 就会自动保持更新了.
+
+### 自制证书
+
+openssl genrsa -out myCA.key 2048
+
+openssl req -utf8 -new -x509 -key myCA.key -out myCA.cer -days 36500

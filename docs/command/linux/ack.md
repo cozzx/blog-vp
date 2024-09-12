@@ -1,5 +1,4 @@
-ack
-===
+# ack
 
 比grep好用的文本搜索工具
 
@@ -14,7 +13,7 @@ apk install ack
 
 ## 参数
 
-这些参数在linux上的适用频率是相当高的，尤其是你用vim做为IDE的话
+这些参数在linux上的使用频率是相当高的，尤其是你用vim做为IDE的话
 
 ```shell
 -c(统计)/ -i(忽略大小)/ -h(不显示名称)/
@@ -82,6 +81,7 @@ ack-grep hello --nocolor        # 不对匹配字符着色
 ```
 
 ### File finding
+
 没错，它可以查找文件，以省去你要不断的结合find和grep的麻烦，虽然在linux的思想是一个工具做好一件事。
 
 ```shell
@@ -90,9 +90,9 @@ ack-grep -g hello.py$    # 查找正则匹配文件
 ack-grep -g hello  --sort-files     # 查找然后排序
 ```
 
-### File Inclusion/Exclusion
+### File inclusion/exclusion
 
-文件过滤，个人觉得这是一个很不错的功能。如果你曾经在搜索项目源码是不小心命中日志中的某个关键字的话，你会觉得这个有用。
+文件过滤，个人觉得这是一个很不错的功能。如果你曾经在搜索项目源码时不小心命中日志中的某个关键字的话，你会觉得这个有用。
 
 ```shell
 ack-grep --python hello       # 查找所有python文件

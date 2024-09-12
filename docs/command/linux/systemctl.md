@@ -1,5 +1,4 @@
-systemctl
-===
+#
 
 系统服务管理器指令
 
@@ -23,7 +22,9 @@ systemctl
 ```shell
 systemctl start nfs-server.service . # 启动nfs服务
 systemctl enable nfs-server.service # 设置开机自启动
+systemctl enable nfs-server.service --now # 设置开机自启动，并立刻启动
 systemctl disable nfs-server.service # 停止开机自启动
+systemctl disable nfs-server.service --now # 停止开机自启动，并立刻停止
 systemctl status nfs-server.service # 查看服务当前状态
 systemctl restart nfs-server.service # 重新启动某服务
 systemctl list-units --type=service # 查看所有已启动的服务
@@ -48,6 +49,3 @@ sudo systemctl status firewalld.service
 sudo systemctl stop firewalld.service          
 sudo systemctl disable firewalld.service
 ```
-
-
-

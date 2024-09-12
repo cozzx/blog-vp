@@ -1,5 +1,4 @@
-watch
-===
+#
 
 可以将命令的输出结果输出到标准输出设备，多用于周期性执行命令/定时执行命令
 
@@ -44,6 +43,3 @@ watch -n 1 "df -i;df"       # 监测磁盘inode和block数目变化情况
 ```
 
 FreeBSD和Linux下watch命令的不同，在Linux下，watch是周期性的执行下个程序，并全屏显示执行结果，如：`watch -n 1 -d netstat -ant`，而在FreeBSD下的watch命令是查看其它用户的正在运行的操作，watch允许你偷看其它terminal正在做什么，该命令只能让超级用户使用。
-
-
-

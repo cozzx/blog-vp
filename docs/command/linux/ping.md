@@ -1,5 +1,4 @@
-ping
-===
+# ping
 
 测试主机之间网络的连通性(ipv4)
 
@@ -7,13 +6,13 @@ ping
 
 **ping命令** 用来测试主机之间网络的连通性。执行ping指令会使用ICMP传输协议，发出要求回应的信息，若远端主机的网络功能没有问题，就会回应该信息，因而得知该主机运作正常。
 
-###  语法
+### 语法
 
 ```shell
 ping (选项) (参数)
 ```
 
-###  选项
+### 选项
 
 ```shell
 -d：使用Socket的SO_DEBUG功能；
@@ -33,11 +32,11 @@ ping (选项) (参数)
 -w<超时秒数>：无论之前发送或接受了多少包，只要超过此秒数，程序退出；
 ```
 
-###  参数
+### 参数
 
 目的主机：指定发送ICMP报文的目的主机。
 
-###  实例
+### 实例
 
 ```shell
 [root@AY1307311912260196fcZ ~]# ping www.jsdig.com
@@ -52,5 +51,3 @@ PING host.1.jsdig.com (100.42.212.8) 56(84) bytes of data.
 4 packets transmitted, 4 received, 0% packet loss, time 2998ms
 rtt min/avg/max/mdev = 174.068/176.916/178.182/1.683 ms
 ```
-
-

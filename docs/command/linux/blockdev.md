@@ -1,5 +1,4 @@
-blockdev
-===
+# blockdev
 
 从命令行调用区块设备控制程序
 
@@ -7,7 +6,7 @@ blockdev
 
 **blockdev命令** 在命令调用“ioxtls”函数，以实现对设备的控制。
 
-###  语法
+### 语法
 
 ```shell
 blockdev(选项)(参数)
@@ -27,11 +26,11 @@ blockdev(选项)(参数)
 --rereadpt：重新读取分区表。
 ```
 
-###  参数
+### 参数
 
 设备文件名：指定要操作的磁盘的设备文件名。
 
-###  实例
+### 实例
 
 设置设备为只读：
 
@@ -50,5 +49,3 @@ blockdev --getro /dev/hda4
 ```shell
 blockdev --setrw /dev/hda4
 ```
-
-

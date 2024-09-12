@@ -1,5 +1,4 @@
-timedatectl
-===
+# timedatectl
 
 用于在 Linux 中设置或查询系统时间、日期和时区等配置。
 
@@ -30,10 +29,10 @@ Query or change system time and date settings.
   -H --host=[USER@]HOST    在远程主机上操作
   -M --machine=CONTAINER   在本地容器上操作。
      --adjust-system-clock 更改本地 RTC 模式时调整系统时钟。
-     --monitor		   监控systemd-timesyncd的状态
+     --monitor     监控systemd-timesyncd的状态
   -p --property=NAME       仅显示此名称的属性
-  -a --all		   显示所有属性，包括空属性
-     --value		   显示属性时，只打印值
+  -a --all     显示所有属性，包括空属性
+     --value     显示属性时，只打印值
 
 Commands:
   status                   显示当前的时间设置。
@@ -76,55 +75,55 @@ Africa/Addis_Ababa
 将本地时区从上海（Asia/Shanghai）设置为阿姆斯特丹（Europe/Amsterdam）
 
 ```shell
-$ timedatectl set-timezone "Europe/Amsterdam"
+timedatectl set-timezone "Europe/Amsterdam"
 ```
 
 将本地时区设置为协调世界时（UTC）
 
 ```shell
-$ timedatectl set-timezone UTC
+timedatectl set-timezone UTC
 ```
 
 设置系统时间（格式：HH:MM:SS）
 
 ```shell
-$ timedatectl set-time "07:25:46"
+timedatectl set-time "07:25:46"
 ```
 
 设置系统日期（格式：YYYY-MM-DD）
 
 ```shell
-$ timedatectl set-time "2021-12-12"
+timedatectl set-time "2021-12-12"
 ```
 
 如果只设置日期，那么时间将默认设置为 “00:00:00″（建议同时设置日期和时间）
 
 ```shell
-$ timedatectl set-time "2021-12-12 07:25:46"
+timedatectl set-time "2021-12-12 07:25:46"
 ```
 
 将硬件时钟（RTC）设置为本地时区（不建议，RTC 时钟统一使用 UTC 更恰当，避免在时区更改和夏令时调整方面产生各种问题）
 
 ```shell
-$ timedatectl set-local-rtc 1
+timedatectl set-local-rtc 1
 ```
 
 将硬件时钟（RTC）设置为协调世界时间（UTC）
 
 ```shell
-$ timedatectl set-local-rtc 0
+timedatectl set-local-rtc 0
 ```
 
 启用 NTP 自动时间同步
 
 ```shell
-$ timedatectl set-ntp true
+timedatectl set-ntp true
 ```
 
 禁用 NTP 自动时间同步
 
 ```shell
-$ timedatectl set-ntp false
+timedatectl set-ntp false
 ```
 
 查看 systemd-timesyncd 服务的状态

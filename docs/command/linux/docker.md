@@ -1,5 +1,4 @@
-docker
-===
+# docker
 
 容器化技术，可以将应用程序及其依赖项打包到一个可移植的容器中，使其可以在不同的环境中运行
 
@@ -46,46 +45,46 @@ docker create [options] IMAGE
 ## 选项参数
 
 ```shell
-attach	将本地标准输入、输出和错误流附加到正在运行的容器
-build	从 Dockerfile 构建镜像
-commit	从容器的更改创建新镜像
-cp	在容器和本地文件系统之间复制文件/文件夹
-create	创建一个新容器
-diff	检查容器文件系统上文件或目录的更改
-events	从服务器获取实时事件
-exec	在正在运行的容器中运行命令
-export	将容器的文件系统导出为 tar 存档
-history	显示镜像的历史
-images	列出镜像
-import	从 tarball 导入内容以创建文件系统映像
-info	显示系统范围的信息
-inspect	返回有关 Docker 对象的低级信息
-kill	杀死一个或多个正在运行的容器
-load	从 tar 存档或 STDIN 加载镜像
-login	登录到 Docker 注册表
-logout	从 Docker 注册表中注销
-logs	获取容器的日志
-pause	暂停一个或多个容器内的所有进程
-port	列出容器的端口映射或特定映射
-ps	列出容器
-pull	从注册表中提取镜像或存储库
-push	将镜像或存储库推送到注册表
-rename	重命名容器
-restart	重启一个或多个容器
-rm	移除一个或多个容器
-rmi	移除一张或多张镜像
-run	在新容器中运行命令
-save	将一个或多个镜像保存到 tar 存档（默认流式传输到 STDOUT）
-search	在 Docker Hub 中搜索镜像
-start	启动一个或多个停止的容器
-stats	显示容器资源使用统计的实时流
-stop	停止一个或多个正在运行的容器
-tag	创建一个引用 SOURCE_IMAGE 的标记 TARGET_IMAGE
-top	显示容器的运行进程
-unpause	取消暂停一个或多个容器中的所有进程
-update	更新一个或多个容器的配置
-version	显示 Docker 版本信息
-wait	阻塞直到一个或多个容器停止，然后打印它们的退出代码
+attach 将本地标准输入、输出和错误流附加到正在运行的容器
+build 从 Dockerfile 构建镜像
+commit 从容器的更改创建新镜像
+cp 在容器和本地文件系统之间复制文件/文件夹
+create 创建一个新容器
+diff 检查容器文件系统上文件或目录的更改
+events 从服务器获取实时事件
+exec 在正在运行的容器中运行命令
+export 将容器的文件系统导出为 tar 存档
+history 显示镜像的历史
+images 列出镜像
+import 从 tarball 导入内容以创建文件系统映像
+info 显示系统范围的信息
+inspect 返回有关 Docker 对象的低级信息
+kill 杀死一个或多个正在运行的容器
+load 从 tar 存档或 STDIN 加载镜像
+login 登录到 Docker 注册表
+logout 从 Docker 注册表中注销
+logs 获取容器的日志
+pause 暂停一个或多个容器内的所有进程
+port 列出容器的端口映射或特定映射
+ps 列出容器
+pull 从注册表中提取镜像或存储库
+push 将镜像或存储库推送到注册表
+rename 重命名容器
+restart 重启一个或多个容器
+rm 移除一个或多个容器
+rmi 移除一张或多张镜像
+run 在新容器中运行命令
+save 将一个或多个镜像保存到 tar 存档（默认流式传输到 STDOUT）
+search 在 Docker Hub 中搜索镜像
+start 启动一个或多个停止的容器
+stats 显示容器资源使用统计的实时流
+stop 停止一个或多个正在运行的容器
+tag 创建一个引用 SOURCE_IMAGE 的标记 TARGET_IMAGE
+top 显示容器的运行进程
+unpause 取消暂停一个或多个容器中的所有进程
+update 更新一个或多个容器的配置
+version 显示 Docker 版本信息
+wait 阻塞直到一个或多个容器停止，然后打印它们的退出代码
 
 <环境参数>
     --add-host list            # 添加自定义主机到 IP 映射 (host:ip)
@@ -216,8 +215,134 @@ docker login
 docker push user/image
 ```
 
+## docker network
+
+## 语法
+
+```
+docker network [COMMAND]
+```
+
+## COMMAND
+
+### docker network connect
+
+将容器连接到网络。您可以按名称或ID连接容器。连接后，容器可以与同一网络中的其他容器通信。
+
+```shell
+docker network connect [OPTIONS] NETWORK CONTAINER
+```
+
+#### 选项参数
+
+```shell
+--alias 为容器添加网络范围的别名
+--driver-opt 网络的驱动程序选项
+--ip IPv4地址（例如172.30.100.104）
+--ip6 IPv6地址（例如2001：db8 :: 33）
+--link 将链接添加到另一个容器(建议不用,后期应该会删除的)
+--link-local-ip 为容器添加本地链接地址
+```
+
+### docker network disconnect
+
+断开容器与网络的连接
+
+```shell
+docker network disconnect [OPTIONS] NETWORK CONTAINER
+```
+
+#### 选项参数
+
+```shell
+-f,--force 强制容器断开网络连接
+```
+
+### docker network create
+
+创建一个新的网络
+
+```shell
+docker network create [OPTIONS] NETWORK
+```
+
+#### 选项参数
+
+```shell
+--attachable  API 1.25+启用手动容器附件
+--aux-address  网络驱动程序使用的辅助IPv4或IPv6地址
+--config-from  API 1.30+从中复制配置的网络
+--config-only  API 1.30+创建仅配置网络
+-d,--driver bridge 驱动程序来管理网络
+--gateway  主子网的IPv4或IPv6网关
+--ingress  API 1.29+创建群集路由网状网络
+--internal  限制外部访问网络
+--ip-range  从子范围分配容器ip
+--ipam-driver  IP地址管理驱动程序
+--ipam-opt  设置IPAM驱动程序特定选项
+--ipv6  启用IPv6网络
+--label  在网络上设置元数据
+-o,--opt  设置驱动程序特定选项
+--scope  API 1.30+控制网络范围
+--subnet  代表网段的CIDR格式的子网
+```
+
+### docker network inspect
+
+返回有关一个或多个网络的信息。默认情况下，此命令将所有结果呈现在JSON对象中。
+
+```shell
+docker network inspect [OPTIONS] NETWORK [NETWORK...]
+```
+
+#### 选项参数
+
+```shell
+-f,--format 使用给定的Go模板格式化输出
+-v,--verbose 详细输出以进行诊断
+```
+
+### docker network ls
+
+列出引擎daemon知道的所有网络。这包括跨群集中多个主机的网络
+
+```shell
+docker network ls [OPTIONS]
+```
+
+#### 选项参数
+
+```shell
+-f,--filter 提供过滤器值（例如"driver = bridge"）
+--format 使用Go模板的精美印刷网络
+--no-trunc 不要截断输出
+-q,--quiet 仅显示网络ID
+```
+
+### docker network prune
+
+删除所有未使用的网络。未使用的网络是未被任何正在使用的容器引用的网络()。
+
+```shell
+docker network prune [OPTIONS]
+```
+
+#### 选项参数
+
+```shell
+--filter 提供过滤器值（例如'until ='）
+-f,--force 不提示确认
+```
+
+### docker network rm
+
+按名称或标识符删除一个或多个网络。要删除网络，必须首先断开连接到它的所有容器。
+
+```shell
+docker network rm NETWORKID [NETWORKID...]
+```
 
 ## 官网
 
-更多安装使用方法可以访问学习：https://wangchujiang.com/reference/docs/docker.html
+更多安装使用方法可以访问学习：<https://wangchujiang.com/reference/docs/docker.html>
 由上海 屠天煜编写

@@ -1,5 +1,4 @@
-neofetch
-===
+# neofetch
 
 显示带有发行徽标的系统信息的工具
 
@@ -7,7 +6,7 @@ neofetch
 
 **neofetch** 支持Linux/Unix、Windows、macOS。各发行版均已集成包可直接进行安装
 
-Neofetch是一个在终端上显示带有发行徽标的系统信息工具，neofetch命令将显示有关相应系统的简要信息。 
+Neofetch是一个在终端上显示带有发行徽标的系统信息工具，neofetch命令将显示有关相应系统的简要信息。
 显示的信息包括: 型号、操作系统、内核、CPU、GPU、内存、正常运行时间、程序包、shell、分辨率、DE、WM、WM主题、主题、图标和终端等
 
 Neofetch是一个开源工具，[项目地址](https://github.com/dylanaraps/neofetch)
@@ -28,17 +27,19 @@ sudo dnf install neofetch -y
 ```
 
 [更多系统安装](https://github.com/dylanaraps/neofetch/wiki/Installation)
-###  语法
+
+### 语法
 
 ```
 neofetach
 ```
 
-###  返回
+### 返回
 
 **回显**
 
 macOS:
+
 ```shell
                     'c.          mac@Mac-mini.local
                  ,xNMM.          --------------------------
@@ -83,5 +84,3 @@ ossyNMMMNyMMhsssssssssssssshmmmhssssssso   Theme: Arc-Darker [GTK3]
         `:+ssssssssssssssssss+:`
             .-/+oossssoo+/-.
 ```
-
-

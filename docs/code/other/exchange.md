@@ -20,13 +20,19 @@
   # 指定要在屏幕上显示行数，0默认是没有分页（全部显示）
   screen-length 0
   ```
-  
+
 * 查看当前配置
 
   ```sh
   dis cur
   ```
-  
+
+* 过滤配置
+
+  ```sh
+  include
+  ```
+
 * ARP查看和设置
 
   ```sh
@@ -37,7 +43,7 @@
   # 删除
   undo arp <ip>
   ```
-  
+
 * acl查看和设置
 
   ```sh
@@ -52,7 +58,7 @@
   # 删除规则
   undo rule <rule_id>
   ```
-  
+
 * acl关联/取消关联vlan
 
   ```sh

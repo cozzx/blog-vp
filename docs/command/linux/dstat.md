@@ -1,5 +1,4 @@
-dstat
-===
+# dstat
 
 通用的系统资源统计工具
 
@@ -7,24 +6,24 @@ dstat
 
 **dstat命令** 是一个用来替换vmstat、iostat、netstat、nfsstat和ifstat这些命令的工具，是一个全能系统信息统计工具。与sysstat相比，dstat拥有一个彩色的界面，在手动观察性能状况时，数据比较显眼容易观察；而且dstat支持即时刷新，譬如输入`dstat 3`即每三秒收集一次，但最新的数据都会每秒刷新显示。和sysstat相同的是，dstat也可以收集指定的性能资源，譬如`dstat -c`即显示CPU的使用情况。
 
-###  下载安装
+### 下载安装
 
- **方法一** 
+ **方法一**
 
 ```shell
 yum install -y dstat
 ```
 
- **方法二** 
+ **方法二**
 
-官网下载地址：http://dag.wieers.com/rpm/packages/dstat
+官网下载地址：<http://dag.wieers.com/rpm/packages/dstat>
 
 ```shell
 wget http://dag.wieers.com/rpm/packages/dstat/dstat-0.6.7-1.rh7.rf.noarch.rpm
 rpm -ivh dstat-0.6.7-1.rh7.rf.noarch.rpm
 ```
 
-###  使用说明
+### 使用说明
 
 安装完后就可以使用了，dstat非常强大，可以实时的监控cpu、磁盘、网络、IO、内存等使用情况。
 
@@ -44,18 +43,18 @@ usr sys idl wai hiq siq| read  writ| recv  send|  in   out | int   csw
 
 下面对显示出来的部分信息作一些说明：
 
-1.  cpu：hiq、siq分别为硬中断和软中断次数。
-2.  system：int、csw分别为系统的中断次数（interrupt）和上下文切换（context switch）。
+1. cpu：hiq、siq分别为硬中断和软中断次数。
+2. system：int、csw分别为系统的中断次数（interrupt）和上下文切换（context switch）。
 
 其他的都很好理解。
 
-###  语法
+### 语法
 
 ```shell
 dstat [-afv] [options..] [delay [count]]
 ```
 
-###  常用选项
+### 常用选项
 
 ```shell
 -c：显示CPU系统占用，用户占用，空闲，等待，中断，软件中断等信息。
@@ -81,7 +80,7 @@ dstat [-afv] [options..] [delay [count]]
 
 当然dstat还有很多更高级的用法，常用的基本这些选项，更高级的用法可以结合man文档。
 
-###  实例
+### 实例
 
 如想监控swap，process，sockets，filesystem并显示监控的时间：
 
@@ -128,5 +127,3 @@ internal:
 ```
 
 dstat命令的基本用法就说到这里，更多用法有待摸索，如果您需要补充内容请给我们发邮件，谢谢！
-
-

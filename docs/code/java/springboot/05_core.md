@@ -25,7 +25,8 @@
    3. `started` ：ioc容器刷新了（所有bean造好了），但是 runner 没调用。
    4. `ready` ：ioc容器刷新了（所有bean造好了），所有 runner 调用完了。
 3. 运行
-   1. 以前步骤都正确执行，代表容器running。
+
+   以上步骤都正确执行，代表容器running。
 
 ![springboot_5.1_2](images/springboot_5.1_2.png)
 
@@ -69,7 +70,7 @@
 4. `ApplicationPreparedEvent`： 容器刷新之前，bean定义信息加载
 5. `ApplicationStartedEvent`： 容器刷新完成， runner未调用
 6. `AvailabilityChangeEvent`： LivenessState.CORRECT 应用存活，存活探针，感知应用是否存活了（可能植物状态，虽然活着但是不能处理请求）
-7. `ApplicationReadyEvent`: 任何runner被调用
+7. `ApplicatioReadyEvent`: 任何runner被调用
 8. `AvailabilityChangeEvent` ：ReadinessState.ACCEPTING\_TRAFFIC 就绪探针，可以接请求
 9. `ApplicationFailedEvent` ：启动出错
 
@@ -98,7 +99,7 @@ public class EventPublisher implements ApplicationEventPublisherAware {
 
     /**
      * 底层发送事件用的组件，Springboot 会通过 ApplicationEventPublisherAware 接口自动注入
-     * 事件是广播出去的，所有监听这个时间的监听器都可以收到
+     * 事件是广播出去的，所有监听这个事件的监听器都可以收到
      */
     ApplicationEventPublisher applicationEventPublisher;
 
@@ -174,7 +175,7 @@ public class SystemService {
       1. 给容器中配置功能组件
       2. 组件参数绑定到属性类中 xxxProperties
       3. 属性类和配置文件前缀项绑定
-      4. @Contional 派生的条件注解 进行判断是否组件生效
+      4. @Conditional 派生的条件注解 进行判断是否组件生效
    5. 效果：
       1. 修改配置文件，修改底层参数
       2. 所有场景自动配置好直接使用

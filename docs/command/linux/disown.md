@@ -1,5 +1,4 @@
-disown
-===
+# disown
 
 从当前的shell中移除作业。
 
@@ -19,7 +18,6 @@ disown [-h] [-ar] [jobspec ... | pid ...]
 
 - 标记作业，使得它们在当前shell退出后也不会结束。
 
-
 ## 选项
 
 ```shell
@@ -33,7 +31,6 @@ disown [-h] [-ar] [jobspec ... | pid ...]
 jobspec（可选）：要移除的作业标识符，可以是一到多个。
 
 pid（可选）：要移除的作业对应的进程ID，可以是一到多个。
-
 
 ## 返回值
 
@@ -121,5 +118,3 @@ bash: warning: deleting stopped job 1 with process group 28756
 ### 参考链接
 
 - [disown的用法](https://www.cyberciti.biz/faq/unix-linux-disown-command-examples-usage-syntax/)
-
-

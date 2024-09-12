@@ -1,5 +1,4 @@
-grub2-mkconfig
-===
+# grub2-mkconfig
 
 生成 grub.cfg 配置文件。
 

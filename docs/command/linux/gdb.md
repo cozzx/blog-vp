@@ -1,5 +1,4 @@
-gdb
-===
+# gdb
 
 功能强大的程序调试器
 
@@ -290,7 +289,7 @@ Breakpoint 4, main () at gdb-sample.c:17
 1: x/i $pc 0x804835c <main+16>: movl $0x1,0xfffffffc(%ebp)
 ```
 
-此时可以使用“i r”命令显示寄存器中的当前值———“i r”即“Infomation Register”：
+此时可以使用“i r”命令显示寄存器中的当前值———“i r”即“Information Register”：
 
 ```shell
 (gdb) i r

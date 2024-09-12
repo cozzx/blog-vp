@@ -1,11 +1,10 @@
-rename
-===
+# rename
 
 用字符串替换的方式批量改变文件名
 
 ## 补充说明
 
-rename命令存在两个版本用法上有所区别 
+rename命令存在两个版本用法上有所区别
 
 ```bash
 C语言版本, 支持通配符
@@ -26,6 +25,7 @@ $    匹配输入的结尾
 区分方法: `rename --version`
 
 如果返回结果中包含 **util-linux** , 说明是C语言版本, 反之是Perl版本
+
 ```bash
 # Perl版本 | Ubuntu(18),Mint(20)默认的是Perl版本
 $ rename --version
@@ -36,8 +36,7 @@ $ rename --version
 rename，来自 util-linux 2.23.2
 ```
 
-
-###  语法
+### 语法
 
 ```bash
 # Perl版本
@@ -47,7 +46,7 @@ rename [ -h|-m|-V ] [ -v ] [ -0 ] [ -n ] [ -f ] [ -d ] [ -e|-E perlexpr]*|perlex
 rename [选项] 表达式 替换的字符 文件...
 ```
 
-###  参数
+### 参数
 
 ```bash
 # Perl版本
@@ -99,7 +98,7 @@ rename [选项] 表达式 替换的字符 文件...
         显示帮助文本并退出
 ```
 
-###  实例
+### 实例
 
 ---
 
@@ -135,7 +134,6 @@ rename "s//.txt//" *   # 把所有以.txt结尾的文件名的.txt删掉
 
 ##### C语言版本
 
-
 将1.txt 2.txt重命名为1.log 2.log
 
 ```bash
@@ -145,6 +143,7 @@ $ rename -v txt log 1.txt 2.txt
 ```
 
 文件夹中有这些文件foo1, ..., foo9, foo10, ..., foo278
+
 ```bash
 # 把foo1到foo9的文件重命名为foo01到foo09，重命名的文件只是有4个字符长度名称的文件，文件名中的foo被替换为foo0。
 rename foo foo0 foo?
@@ -158,5 +157,3 @@ rename foo foo0 foo*
 # 从foo0200到foo0278的所有文件都被重命名为foo200到foo278，文件名中的foo0被替换为foo。
 rename foo0 foo foo0[2]*
 ```
-
-

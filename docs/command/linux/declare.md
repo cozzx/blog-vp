@@ -1,5 +1,4 @@
-declare
-===
+# declare
 
 声明变量，设置或显示变量的值和属性。
 
@@ -25,7 +24,7 @@ declare [-aAfFgilnrtux] [-p] [name[=value] ...]
 - 声明变量（可选：赋值、属性）
 - 增加、删除变量的属性（可选：赋值）
 
-##  选项
+## 选项
 
 ```shell
 -f 将操作或显示限制为函数名及函数定义。
@@ -165,49 +164,46 @@ declare -F func_a func_b
 # 最好不要让函数名和变量名相同。
 ```
 
-
 ## 讨论
 
 1. 全局和局部变量
-   
+
    正如上面**例子**指出的情况，我们在日常编写程序的时候需要了解这些概念，在这里
    做个简要地介绍，当然你也可以很方便的搜索到相关内容。
-   
+
    - 全局变量：在整个脚本执行期间，只要没有被删除就**一直存在**。
    - 局部变量：在函数内定义，函数执行后就被删除。
-   
+
    建议函数内使用`local`命令，函数外使用`declare`命令。
-   
+
    > *不要在脚本中定义过多的全局变量，那样可能会被其他函数调用造成意料之外的后果，并且也不方便检查出来。*
    >
    > *更不用说缺乏必要的注释了 —— ZhuangZhu-74*
-   
+
    相关资料：
-   
+
    - [google提供的编码规范](https://github.com/google/styleguide)
    - [全局变量的讨论](https://unix.stackexchange.com/questions/381761/what-do-declare-name-and-declare-g-do)
-   
+
 2. 关于`declare` `typeset` `export` `local` `readonly`命令
-   
+
    为什么`declare`能做到的事，还需要定义其他这些命令呢？
-   
+
    因为这样语句含义会更加明确，例如：
    - 设置导出属性的变量时，`export var`和`declare -x var`。
    - 在函数内声明变量时，使用`local`。
    - 声明只读变量，使用`readonly`。
-   
+
    `typeset`和`declare`命令一样。
-   
+
 3. 关于异常情况
 
    有多种原因导致`declare`失败，关于这些情况可以参考[bash在线文档declare部分\(最新版\)](https://www.gnu.org/software/bash/manual/bash.html#index-declare)，或执行 `info bash`
    查看`declare`部分最后一大串`an attempt is`开头的句子。
-   
+
 ### 注意
 
 1. 该命令是bash内建命令，相关的帮助信息请查看`help`命令。
 2. 导出属性的相关介绍请查看'export'命令。
 3. 只读属性的相关介绍请查看'readonly'命令。
 4. 引用属性的相关介绍请查看'unset'命令的例子部分。
-
-

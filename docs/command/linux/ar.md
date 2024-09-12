@@ -6,14 +6,14 @@
 
 **ar命令** 是一个建立或修改备存文件，或是从备存文件中抽取文件的工具，ar可让您集合许多文件，成为单一的备存文件。在备存文件中，所有成员文件皆保有原来的属性与权限
 
-## 语法
+### 语法
 
 ```shell
 用法: ar [emulation options] [-]{dmpqrstx}[abcDfilMNoOPsSTuvV] [--plugin <name>] [member-name] [count] archive-file file...
       ar -M [<mri-脚本]
 ```
 
-## 选项
+### 选项
 
 > 以下内容来自 GNU ar (GNU Binutils) 2.40 版本指令
 

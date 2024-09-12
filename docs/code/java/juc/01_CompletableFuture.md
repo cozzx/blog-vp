@@ -403,7 +403,6 @@ public class PriceComparisonCase {
 - 主动触发计算
   - `public boolean complete(T value)` : 是否打断 get 方法立即返回括号值
 
-
 ```java
 @Test
 public void test1() throws InterruptedException, ExecutionException {

@@ -1,5 +1,4 @@
-syslog
-===
+# syslog
 
 系统默认的日志守护进程
 
@@ -34,5 +33,3 @@ logger -t TAG this is a test log line
 tail -n 1 messages
 Jan  5 10:37:14 localhost TAG: this is a test log line
 ```
-
-

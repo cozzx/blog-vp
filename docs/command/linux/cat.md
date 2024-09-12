@@ -1,5 +1,4 @@
-cat
-===
+#
 
 连接多个文件并打印到标准输出。
 
@@ -19,7 +18,7 @@ cat [OPTION]... [FILE]...
 
 FILE（可选）：要处理的文件，可以为一或多个。
 
-## 选项 
+## 选项
 
 ```shell
 长选项与短选项等价
@@ -43,7 +42,7 @@ FILE（可选）：要处理的文件，可以为一或多个。
 
 返回状态为成功除非给出了非法选项或非法参数。
 
-## 例子 
+## 例子
 
 ```shell
 # 合并显示多个文件
@@ -69,5 +68,3 @@ echo '######' |cat - test.log
 ### 参考链接
 
 1. [Question about LFD key](https://superuser.com/questions/328054/is-there-an-lfd-key-on-my-keyboard)
-
-

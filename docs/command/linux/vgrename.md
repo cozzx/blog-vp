@@ -1,5 +1,4 @@
-vgrename
-===
+# vgrename
 
 使用vgrename命令可以重命名卷组的名称
 
@@ -35,5 +34,3 @@ vgrename [选项] [旧卷组路径|旧卷组名称|旧卷组UUID] [新卷组路�
 [root@localhost ~]# vgrename vg1 vg2
   Volume group "vg1" successfully renamed to "vg2"
 ```
-
-

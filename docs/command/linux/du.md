@@ -1,5 +1,4 @@
-du
-===
+# du
 
 显示每个文件和目录的磁盘使用空间
 
@@ -21,6 +20,7 @@ du [选项][文件]
 -b, --bytes                            显示目录或文件大小时，以byte为单位。
 -c, --total                            除了显示个别目录或文件的大小外，同时也显示所有目录或文件的总和。
 -D, --dereference-args                 显示指定符号链接的源文件大小。
+-d, --max-depth=N                      限制文件夹深度
 -H, --si                               与-h参数相同，但是K，M，G是以1000为换算单位。
 -h, --human-readable                   以K，M，G为单位，提高信息的可读性。
 -k, --kilobytes                        以KB(1024bytes)为单位输出。
@@ -48,6 +48,7 @@ du [选项][文件]
 ### 实例
 
 文件从大到小排序
+
 ```
 ubuntu@VM-0-14-ubuntu:~/git-work/linux-command$ du -sh * |sort -rh
 2.9M    command
@@ -97,5 +98,3 @@ ubuntu@VM-0-14-ubuntu:~/git-work/linux-command/assets$ du -s .
 ubuntu@VM-0-14-ubuntu:~/git-work/linux-command/assets$ du -sh .
 1.9M    .
 ```
-
-

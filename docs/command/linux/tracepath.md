@@ -1,5 +1,4 @@
-tracepath
-===
+# tracepath
 
 追踪目的主机经过的路由信息
 
@@ -7,18 +6,18 @@ tracepath
 
 **tracepath命令** 用来追踪并显示报文到达目的主机所经过的路由信息。
 
-###  语法
+### 语法
 
 ```shell
 tracepath(参数)
 ```
 
-###  参数
+### 参数
 
-*   目的主机：指定追踪路由信息的目的主机；
-*   端口：指定使用的UDP端口号。
+* 目的主机：指定追踪路由信息的目的主机；
+* 端口：指定使用的UDP端口号。
 
-###  实例
+### 实例
 
 ```shell
 tracepath www.58.com
@@ -38,5 +37,3 @@ tracepath www.58.com
 13:  211.151.111.30 (211.151.111.30)                      asymm 12 118.989ms reached
      Resume: pmtu 1500 hops 13 back 12
 ```
-
-

@@ -1,5 +1,4 @@
-host
-===
+# host
 
 常用的分析域名查询工具
 
@@ -7,13 +6,13 @@ host
 
 **host命令** 是常用的分析域名查询工具，可以用来测试域名系统工作是否正常。
 
-###  语法
+### 语法
 
 ```shell
 host(选项)(参数)
 ```
 
-###  选项
+### 选项
 
 ```shell
 -a：显示详细的DNS信息；
@@ -28,11 +27,11 @@ host(选项)(参数)
 -6：使用IPv6.
 ```
 
-###  参数
+### 参数
 
 主机：指定要查询信息的主机信息。
 
-###  实例
+### 实例
 
 ```shell
 [root@localhost ~]# host www.jsdig.com 
@@ -52,5 +51,3 @@ www.jsdig.com.        463     IN      CNAME   host.1.jsdig.com.
 
 Received 54 bytes from 202.96.104.15#53 in 0 ms
 ```
-
-

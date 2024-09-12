@@ -1,5 +1,4 @@
-reboot
-===
+# reboot
 
 重新启动正在运行的Linux操作系统
 

@@ -14,7 +14,7 @@
 
 每个线程对象都有一个中断标识位，用于表示线程是否被中断；该标识位为 true 表示中断，为 false 表示未中断；通过调用线程对象的`interrupt`方法将该线程的标识位设置为 true；可以在别的线程中调用，也可以在自己的线程中调用。
 
-### Thread 类相关 API 
+### Thread 类相关 API
 
 `public void interrupt()` : 实例方法，仅仅是设置线程的中断状态为 true，发起一个协商而不会立刻停止线程。
 
@@ -28,7 +28,7 @@
 
 `public boolean isInterrupted()` : 实例方法，判断当前线程是否被中断（通过检查中断标志位）
 
-### 中断运行中的线程 
+### 中断运行中的线程
 
 #### interrupt()
 
@@ -302,7 +302,7 @@ public void test2() {
 > - 线程需要先获得并持有锁，必须在锁块（synchronized或lock）中
 > - 必须要先等待后唤醒，线程才能够被唤醒  
 
-方式三：`LockSupport` 类可以阻塞当前线程以及唤醒指定被阻塞的线程 
+方式三：`LockSupport` 类可以阻塞当前线程以及唤醒指定被阻塞的线程
 
 - `LockSupport` 是用于创建锁和其他同步类的基本线程阻塞原语，其中`park()`和`unpack()`而作用分别是阻塞线程和解除阻塞线程。
 - `LockSupport` 类使用了一种名为 `Permit`（许可）的概念来做到阻塞和唤醒线程的功能，每个线程都有一个许可，许可证只能有一个，累加上限是
@@ -312,7 +312,7 @@ public void test2() {
 
 `park()` / `park(Object blocker)` : 阻塞当前线程/阻塞传入的具体线程
 
-`unpark(Thread thread)` ： 唤醒处于阻塞状态的指定线程 
+`unpark(Thread thread)` ： 唤醒处于阻塞状态的指定线程
 
 ```java
 @Test
@@ -351,4 +351,3 @@ public void test3() {
 
 - 当调用`park`时，如果有凭证，则会直接消耗掉这个凭证然后正常退出。如果没有凭证，则必须阻塞等待凭证可用
 - 当调用`unpark`时，它会增加一个凭证，但凭证最多只能有1个，累加无效。
-

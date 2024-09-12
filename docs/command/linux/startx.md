@@ -1,5 +1,4 @@
-startx
-===
+# startx
 
 用来启动X Window
 
@@ -7,18 +6,18 @@ startx
 
 **startx命令** 用来启动X Window，实际上启动X Window的程序为xinit。
 
-###  语法
+### 语法
 
 ```shell
 startx(参数)
 ```
 
-###  参数
+### 参数
 
-*   客户端及选项：X客户端及选项；
-*   服务器及选项：X服务器及选项。
+* 客户端及选项：X客户端及选项；
+* 服务器及选项：X服务器及选项。
 
-###  实例
+### 实例
 
 要在工作站上或 X 终端上启动 X 会话，请输入：
 
@@ -26,7 +25,7 @@ startx(参数)
 startx
 ```
 
-要在工作站上强制启动 X 会话，请输入： 
+要在工作站上强制启动 X 会话，请输入：
 
 ```shell
 startx -w
@@ -86,5 +85,3 @@ $HOME/.awmrc awm 配置文件。
 $HOME/.uwmrc uwm 配置文件。
 /dev/lft* 终端或 tty、工作站初始 login shell 的界面。
 ```
-
-
