@@ -1372,7 +1372,7 @@ protected void run() {
 
 参考下图
 
-<img src="img/0032.png"  />
+![0032](./img/0032.png)
 
 `io.netty.channel.nio.NioEventLoop#select`
 
