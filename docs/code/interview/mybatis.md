@@ -78,7 +78,7 @@ Java架构交流QQ群：**578486082** （备注一下GitHub，免得被认成打
 
 ![24道Mybatis常见面试题总结及答案！](https://upload-images.jianshu.io/upload_images/11474088-809626bd6a539e0c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-第2种： 通过 <resultMap>来映射字段名和实体类属性名的一一对应的关系。
+第2种： 通过 `<resultMap>` 来映射字段名和实体类属性名的一一对应的关系。
 
 ![24道Mybatis常见面试题总结及答案！](https://upload-images.jianshu.io/upload_images/11474088-56a2dfdc7fde0de4?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -110,7 +110,7 @@ Java架构交流QQ群：**578486082** （备注一下GitHub，免得被认成打
 
 ## **11、Mybatis是如何将sql执行结果封装为目标对象并返回的？都有哪些映射形式？**
 
-> 第一种是使用 <resultMap>标签，逐一定义数据库列名和对象属性名之间的映射关系。
+> 第一种是使用 `<resultMap>` 标签，逐一定义数据库列名和对象属性名之间的映射关系。
 >
 > 第二种是使用sql列的别名功能，将列的别名书写为对象属性名。
 >
